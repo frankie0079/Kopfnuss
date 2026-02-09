@@ -1,0 +1,320 @@
+/* ============================================
+   Digital Smartbox -- Game-Screen
+   ============================================ */
+
+#view-game {
+  padding: var(--space-md);
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--space-md);
+}
+
+/* --- Haupt-Layout: Links Scoreboard, Mitte Spielfeld, Rechts leer/Buttons --- */
+.game-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--space-md);
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+}
+
+/* --- Turn-Indikator (oben, volle Breite) --- */
+.turn-indicator {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  text-align: center;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  color: var(--text-on-accent);
+  transition: background-color var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Scoreboard (links) --- */
+.game-scoreboard {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.score-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 5px solid transparent;
+  transition: all var(--transition-normal);
+}
+
+.score-card.active-team {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
+
+.score-card.eliminated {
+  opacity: 0.4;
+}
+
+.score-card-name {
+  font-size: var(--font-size-md);
+  font-weight: 800;
+  margin-bottom: var(--space-xs);
+}
+
+.score-card-scores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.score-total {
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+}
+
+.score-round {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--warning);
+}
+
+.score-progress {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-xs);
+  overflow: hidden;
+}
+
+.score-progress-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+/* --- Spielfeld (Mitte) --- */
+.game-board {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* --- Ring Container --- */
+.ring-container {
+  position: relative;
+  width: 480px;
+  height: 480px;
+}
+
+/* --- Prompt (Zentrum) --- */
+.prompt-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-md);
+  z-index: 2;
+}
+
+.prompt-text {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.prompt-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+/* --- Ring Items --- */
+.ring-item {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xs);
+  cursor: pointer;
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background-color var(--transition-normal);
+  z-index: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.ring-item:hover:not(.revealed):not(.disabled):not(.revealing) {
+  transform: var(--item-translate) scale(1.08);
+  box-shadow: var(--shadow-lg);
+}
+
+.ring-item:active:not(.revealed):not(.disabled):not(.revealing) {
+  transform: var(--item-translate) scale(0.95);
+}
+
+.ring-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ring-item.revealed {
+  cursor: default;
+}
+
+.ring-item.revealed.correct {
+  background: var(--success-light);
+  border: 3px solid var(--success);
+}
+
+.ring-item.revealed.wrong {
+  background: var(--danger-light);
+  border: 3px solid var(--danger);
+}
+
+.ring-item.revealing {
+  cursor: default;
+  pointer-events: none;
+}
+
+.item-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.item-solution {
+  display: none;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.ring-item.revealed .item-label {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+.ring-item.revealed .item-solution {
+  display: block;
+}
+
+.item-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+/* --- Action Buttons (rechts) --- */
+.game-actions {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.game-actions button {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  border-radius: var(--radius-lg);
+}
+
+/* --- Footer (unten) --- */
+.game-footer {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+}
+
+.game-footer button {
+  font-size: var(--font-size-sm);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+/* --- Rundenpause-Overlay --- */
+.round-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.round-overlay-content {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  max-width: 400px;
+}
+
+.round-overlay-content h2 {
+  margin-bottom: var(--space-md);
+}
+
+/* --- Timer-Anzeige --- */
+.timer-display {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-ring {
+  width: 60px;
+  height: 60px;
+}
+
+.timer-text {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+}
+
+.timer-text.warning {
+  color: var(--danger);
+}

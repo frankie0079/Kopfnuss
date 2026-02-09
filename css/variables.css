@@ -1,0 +1,90 @@
+/* ============================================
+   Digital Smartbox -- Design Tokens
+   ============================================ */
+
+/* --- Google Font (Nunito: verspielt, rund, freundlich) --- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  /* --- Team-Farben (Preset-Palette, 6 Stueck) --- */
+  --team-1: #FF6B6B;   /* Koralle/Rot */
+  --team-2: #4ECDC4;   /* Tuerkis */
+  --team-3: #FFE66D;   /* Sonnengelb */
+  --team-4: #A78BFA;   /* Lila */
+  --team-5: #FB923C;   /* Orange */
+  --team-6: #F472B6;   /* Pink */
+
+  /* --- UI-Farben (Light Theme) --- */
+  --bg-primary: #FFF8F0;
+  --bg-secondary: #FFF0E0;
+  --bg-card: #FFFFFF;
+  --text-primary: #2D3436;
+  --text-secondary: #636E72;
+  --text-on-accent: #FFFFFF;
+  --accent: #6C5CE7;
+  --accent-hover: #5A4BD1;
+  --success: #00B894;
+  --success-light: #D4EFDF;
+  --danger: #E17055;
+  --danger-light: #FADBD8;
+  --warning: #FDCB6E;
+  --border: #E0D5C7;
+
+  /* --- Abstufungen --- */
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+
+  /* --- Typografie --- */
+  --font-main: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3.5rem;
+
+  /* --- Abstaende --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* --- Radien (verspielt: grosszuegig rund) --- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* --- Schatten --- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(108, 92, 231, 0.3);
+
+  /* --- Transitionen --- */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* --- Dark Theme --- */
+[data-theme="dark"] {
+  --bg-primary: #1A1A2E;
+  --bg-secondary: #16213E;
+  --bg-card: #1E2A47;
+  --text-primary: #EAEAEA;
+  --text-secondary: #B0B0B0;
+  --text-on-accent: #FFFFFF;
+  --accent: #7C6CF0;
+  --accent-hover: #6C5CE7;
+  --border: #2A3A5C;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(124, 108, 240, 0.4);
+}

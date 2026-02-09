@@ -1,0 +1,265 @@
+/* ============================================
+   Digital Smartbox -- Setup-Screen
+   ============================================ */
+
+#view-setup {
+  padding: var(--space-xl) var(--space-2xl);
+  overflow-y: auto;
+  gap: var(--space-lg);
+}
+
+/* --- Titel --- */
+.setup-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--team-1), var(--team-4), var(--team-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-sm);
+}
+
+.setup-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* --- Settings Container --- */
+.setup-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* --- Section Cards --- */
+.setup-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.setup-section h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+/* --- Team-Stepper --- */
+.team-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.stepper-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-2xl);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.stepper-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 900;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* --- Team-Konfiguration --- */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.team-color-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform var(--transition-fast);
+}
+
+.team-color-dot:hover {
+  transform: scale(1.15);
+}
+
+.team-color-dot.selected {
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.team-name-input {
+  flex: 1;
+  font-size: var(--font-size-md);
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-weight: 700;
+}
+
+.team-name-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* --- Farb-Picker (6 Presets) --- */
+.color-picker {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.color-option {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+.color-option.active {
+  border-color: var(--text-primary);
+}
+
+/* --- Option Buttons (Zielpunktzahl, Timer) --- */
+.option-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-main);
+}
+
+.option-btn:hover {
+  background: var(--bg-primary);
+}
+
+.option-btn.active {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+/* --- Kartenset-Auswahl --- */
+.cardset-select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cardset-select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* --- Start-Button --- */
+.setup-footer {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.btn-start {
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--accent), #A78BFA);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-lg);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  font-family: var(--font-main);
+}
+
+.btn-start:hover:not(:disabled) {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-start:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-manage-sets {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-sm);
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+  padding: 0;
+  transition: background-color var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+}

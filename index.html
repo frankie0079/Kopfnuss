@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#6C5CE7">
+  <link rel="manifest" href="manifest.json">
+  <title>Digital Smartbox</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/setup.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/victory.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Setup: Team-Konfiguration, Settings -->
+    <section id="view-setup" class="view active"></section>
+
+    <!-- Game: Spielscreen mit Ring, Scoreboard, Buttons -->
+    <section id="view-game" class="view"></section>
+
+    <!-- Victory: Sieges-Screen -->
+    <section id="view-victory" class="view"></section>
+
+    <!-- Import: Kartenset-Verwaltung -->
+    <section id="view-import" class="view"></section>
+  </div>
+
+  <!-- JSZip (fuer ZIP-Import) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- App Entry Point -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

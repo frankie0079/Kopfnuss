@@ -5,6 +5,9 @@
 import { state } from '../state.js';
 import { router } from '../app.js';
 import { audio } from '../services/audio.js';
+import { GameModel } from '../models/game.js';
+import { DEMO_SET } from '../data/demo-set.js';
+import { cardStore } from '../services/card-store.js';
 
 // ── Init / Destroy ──────────────────────────
 
@@ -60,28 +63,57 @@ function initVictory() {
   });
 
   document.getElementById('btn-rematch')?.addEventListener('click', () => {
-    // Gleiches Config, neues Spiel
-    const { GameModel } = _getGameModelImport();
-    const config = state.get('gameConfig');
-    if (config) {
-      // Wir muessen GameModel dynamisch importieren
-      import('../models/game.js').then(({ GameModel }) => {
-        // Kartenset erneut laden
-        import('../data/demo-set.js').then(({ DEMO_SET }) => {
-          const game = new GameModel({
-            teams: finalTeams.map(t => ({ name: t.name, color: t.color })),
-            targetScore: config.targetScore,
-            timerSeconds: config.timerSeconds,
-            cardSet: DEMO_SET // TODO: richtiges Set aus IndexedDB laden
-          });
-          state.set('game', game);
-          router.navigate('game');
-        });
-      });
-    } else {
-      router.navigate('setup');
-    }
+    _startRematch(finalTeams);
   });
+}
+
+/**
+ * Rematch starten: Neues Spiel mit gleichen Teams und Einstellungen.
+ * @param {Array} teams -- Team-Objekte aus dem letzten Spiel
+ */
+async function _startRematch(teams) {
+  try {
+    const config = state.get('gameConfig');
+    if (!config) {
+      console.warn('[Victory] Kein gameConfig vorhanden, gehe zu Setup.');
+      router.navigate('setup');
+      return;
+    }
+
+    // Kartenset laden (statische Imports, kein dynamisches import())
+    let cardSet = null;
+    const cardSetId = config.selectedCardSetId || 'demo';
+
+    if (cardSetId === 'demo') {
+      cardSet = DEMO_SET;
+    } else {
+      try {
+        cardSet = await cardStore.getSet(cardSetId);
+      } catch (dbErr) {
+        console.warn('[Victory] Kartenset aus DB laden fehlgeschlagen:', dbErr);
+      }
+    }
+
+    // Fallback auf Demo-Set
+    if (!cardSet) {
+      console.warn('[Victory] Kartenset nicht gefunden, nutze Demo-Set.');
+      cardSet = DEMO_SET;
+    }
+
+    // Neues Spiel mit gleichen Teams und Settings erstellen
+    const game = new GameModel({
+      teams: teams.map(t => ({ name: t.name, color: t.color })),
+      targetScore: config.targetScore,
+      timerSeconds: config.timerSeconds,
+      cardSet
+    });
+
+    state.set('game', game);
+    router.navigate('game');
+  } catch (err) {
+    console.error('[Victory] Rematch fehlgeschlagen:', err);
+    router.navigate('setup');
+  }
 }
 
 function destroyVictory() {
@@ -126,9 +158,6 @@ function _createConfetti(parentEl) {
   // Konfetti nach 6 Sekunden entfernen
   setTimeout(() => container.remove(), 6000);
 }
-
-// Unused placeholder
-function _getGameModelImport() { return null; }
 
 function _escapeHtml(text) {
   if (!text) return '';

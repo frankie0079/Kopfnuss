@@ -44,15 +44,15 @@ Eine offline-faehige Web-App (iPad-optimiert), die das physische Spiel "Smart 10
 
 ## Lokal starten
 
+**Einfach:** Doppelklick auf `start.bat` – startet Server und öffnet den Browser.
+
+**Oder manuell:**
 ```bash
-# Einfachen Webserver starten (z.B. mit Python)
-python -m http.server 8080
-
-# Oder mit Node.js
-npx serve .
+python -m http.server 8081
 ```
+Dann im Browser: `http://localhost:8081`
 
-Dann im Browser oeffnen: `http://localhost:8080`
+**Wichtig:** Port 8081 nutzen (nicht 8080). Der Service Worker ist an 8080 gebunden – dort würden alte Dateien aus dem Cache geladen. Nach Code-Änderungen: F5 zum Neuladen.
 
 ---
 

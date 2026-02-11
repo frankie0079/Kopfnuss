@@ -28,7 +28,14 @@ Bevor mit Implementierung oder Code-Aenderungen begonnen wird, gilt zwingend:
 Solange offene Fragen bestehen:
 - darf kein Code geschrieben oder geaendert werden.
 
-## Projekt: Digital Smartbox- Techstack: HTML5 + CSS3 + Vanilla JS (kein Framework)
+## Projekt: Digital Smartbox
+
+**Entwicklung / Änderungen testen:**
+- Server: `start.bat` (Port 8081) oder `python -m http.server 8081`
+- `http://localhost:8081` – NICHT 8080 (dort gecachte alte Version)
+- F5 nach Änderungen. Bei `index.html` Script-Tag: `?v=X` bei Bedarf bumpen.
+
+- Techstack: HTML5 + CSS3 + Vanilla JS (kein Framework)
 - Nur iPad Landscape
 - Sprache: Deutsch
 - PWA mit Service Worker und IndexedDB

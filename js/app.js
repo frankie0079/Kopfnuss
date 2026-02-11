@@ -88,24 +88,28 @@ async function initApp() {
     document.documentElement.setAttribute('data-theme', savedTheme);
   }
 
-  // Views registrieren
-  const { registerSetup } = await import('./views/setup.js');
-  registerSetup();
+  // Views registrieren (mit Error-Handling)
+  try {
+    const [setup, game, victory, imp] = await Promise.all([
+      import('./views/setup.js'),
+      import('./views/game.js'),
+      import('./views/victory.js'),
+      import('./views/import.js')
+    ]);
+    setup.registerSetup();
+    game.registerGame();
+    victory.registerVictory();
+    imp.registerImport();
+  } catch (err) {
+    console.error('[App] View-Import fehlgeschlagen:', err);
+    document.getElementById('app').innerHTML =
+      '<p style="padding:2rem;color:red;font-size:1.2rem;">Fehler beim Laden. Bitte Seite neu laden (F5).</p>';
+    return;
+  }
 
-  const { registerGame } = await import('./views/game.js');
-  registerGame();
-
-  const { registerVictory } = await import('./views/victory.js');
-  registerVictory();
-
-  const { registerImport } = await import('./views/import.js');
-  registerImport();
-
-  // Service Worker registrieren
+  // Service Worker registrieren (nur Produktion)
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(err => {
-      console.warn('[SW] Registrierung fehlgeschlagen:', err);
-    });
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
   }
 
   // Standard-View: Setup
@@ -114,4 +118,8 @@ async function initApp() {
 
 // ── Start ───────────────────────────────────
 
-document.addEventListener('DOMContentLoaded', initApp);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

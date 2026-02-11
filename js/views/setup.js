@@ -11,30 +11,44 @@ import { getSetMeta } from '../models/card.js';
 
 // ── Konstanten ──────────────────────────────
 
-const TEAM_COLORS = [
-  { id: 'red',    value: '#FF6B6B' },
-  { id: 'teal',   value: '#4ECDC4' },
-  { id: 'yellow', value: '#FFE66D' },
-  { id: 'purple', value: '#A78BFA' },
-  { id: 'orange', value: '#FB923C' },
-  { id: 'pink',   value: '#F472B6' }
+/** Feste Farben pro Team-Slot (Index = Slot) */
+const SLOT_COLORS = [
+  '#22C55E',  // Slot 1: Grün
+  '#EAB308',  // Slot 2: Gelb
+  '#EF4444',  // Slot 3: Rot
+  '#3B82F6',  // Slot 4: Blau
+  '#EC4899',  // Slot 5: Magenta
+];
+
+/** Wählbare Teamnamen */
+const TEAM_NAME_POOL = [
+  'Team Grips & Glory',
+  'Team Synapsensalat',
+  'Team Denkfabrik',
+  'Team Antwortmaschinen',
+  'Team Wissensraketen',
+  'Team Durchblicker',
+  'Team Erleuchteten',
+  'Team Kopfgold',
+  'Team Lichtblick',
 ];
 
 const TARGET_SCORES = [10, 15, 20];
 const TIMER_OPTIONS = [
+  { label: '15s',  value: 15 },
+  { label: '30s',  value: 30 },
   { label: '45s',  value: 45 },
   { label: '60s',  value: 60 },
-  { label: '75s',  value: 75 },
-  { label: '90s',  value: 90 },
   { label: 'Aus',  value: null }
 ];
 
-const DEFAULT_TEAM_NAMES = ['Team 1', 'Team 2', 'Team 3', 'Team 4'];
+const PICKER_ITEM_H = 40;  // px Höhe pro Picker-Item
+const PICKER_VISIBLE = 3;  // sichtbare Zeilen
 
 // ── State ───────────────────────────────────
 
 let teamCount = 2;
-let teamConfigs = [];  // { name, colorIndex }
+let teamConfigs = [];  // { nameIndex: number, locked: boolean }
 let targetScore = 10;
 let timerSeconds = null;
 let selectedCardSetId = 'demo';
@@ -42,19 +56,19 @@ let selectedCardSetId = 'demo';
 // ── Init / Destroy ──────────────────────────
 
 async function initSetup() {
-  // Defaults oder gespeicherte Werte laden
   const saved = state.get('lastTeamConfig');
   if (saved) {
     teamCount = saved.teamCount || 2;
-    teamConfigs = saved.teamConfigs || [];
+    teamConfigs = (saved.teamConfigs || []).map(tc => ({
+      nameIndex: tc.nameIndex ?? 0,
+      locked: false
+    }));
     targetScore = state.get('lastTargetScore') || 10;
     timerSeconds = state.get('lastTimerSeconds') ?? null;
   }
 
-  // Team-Configs auffuellen falls noetig
   _ensureTeamConfigs();
 
-  // IndexedDB initialisieren und importierte Sets laden
   try {
     await cardStore.init();
   } catch (err) {
@@ -70,12 +84,26 @@ function destroySetup() {
 }
 
 function _ensureTeamConfigs() {
-  while (teamConfigs.length < 4) {
-    teamConfigs.push({
-      name: DEFAULT_TEAM_NAMES[teamConfigs.length],
-      colorIndex: teamConfigs.length
-    });
+  // Sicherstellen, dass für jeden möglichen Slot eine Config existiert
+  const usedIndices = new Set(teamConfigs.filter(tc => tc.locked).map(tc => tc.nameIndex));
+
+  while (teamConfigs.length < 5) {
+    // Nächsten freien Namen finden
+    let idx = 0;
+    while (usedIndices.has(idx) && idx < TEAM_NAME_POOL.length) idx++;
+    teamConfigs.push({ nameIndex: idx, locked: false });
   }
+}
+
+/** Welche nameIndex-Werte sind von ANDEREN Teams (locked) belegt? */
+function _takenIndices(excludeTeamIdx) {
+  const taken = new Set();
+  for (let i = 0; i < teamCount; i++) {
+    if (i !== excludeTeamIdx && teamConfigs[i].locked) {
+      taken.add(teamConfigs[i].nameIndex);
+    }
+  }
+  return taken;
 }
 
 // ── Render ───────────────────────────────────
@@ -83,7 +111,6 @@ function _ensureTeamConfigs() {
 async function render() {
   const el = document.getElementById('view-setup');
 
-  // Verfuegbare Kartensets laden (Demo + importierte)
   const cardSets = [{ id: 'demo', name: 'Allgemeinwissen (Demo)', count: DEMO_SET.cards.length }];
   try {
     const importedSets = await cardStore.getAllSets();
@@ -103,21 +130,19 @@ async function render() {
     </button>
 
     <h1 class="setup-title">Digital Smartbox</h1>
-    <p class="setup-subtitle">Einstellungen fuer euer Spiel</p>
+    <p class="setup-subtitle">Einstellungen für euer Spiel</p>
 
     <div class="setup-container">
       <!-- Linke Spalte: Teams -->
       <div class="setup-section">
         <h3>Teams</h3>
 
-        <!-- Stepper: Teamanzahl -->
         <div class="team-stepper">
           <button class="stepper-btn btn-primary" id="team-minus" ${teamCount <= 2 ? 'disabled' : ''}>−</button>
           <span class="stepper-value" id="team-count-display">${teamCount}</span>
-          <button class="stepper-btn btn-primary" id="team-plus" ${teamCount >= 4 ? 'disabled' : ''}>+</button>
+          <button class="stepper-btn btn-primary" id="team-plus" ${teamCount >= 5 ? 'disabled' : ''}>+</button>
         </div>
 
-        <!-- Team-Liste -->
         <div class="team-list" id="team-list">
           ${_renderTeamRows()}
         </div>
@@ -148,7 +173,6 @@ async function render() {
       </div>
     </div>
 
-    <!-- Footer: Buttons -->
     <div class="setup-footer">
       <button class="btn-ghost btn-manage-sets" id="btn-manage-sets">Kartensets verwalten</button>
       <button class="btn-start" id="btn-start">Spiel starten</button>
@@ -156,25 +180,106 @@ async function render() {
   `;
 
   _bindEvents();
+
+  // Picker nach dem Rendern initialisieren (scroll-Position setzen)
+  _initPickers();
 }
 
 function _renderTeamRows() {
   let html = '';
   for (let i = 0; i < teamCount; i++) {
     const tc = teamConfigs[i];
-    html += `
-      <div class="team-row">
-        <div class="team-color-dot" style="background-color: ${TEAM_COLORS[tc.colorIndex].value}" data-team="${i}"></div>
-        <input type="text" class="team-name-input" data-team="${i}" value="${tc.name}" maxlength="20" />
-        <div class="color-picker" data-team="${i}">
-          ${TEAM_COLORS.map((c, ci) =>
-            `<div class="color-option ${ci === tc.colorIndex ? 'active' : ''}" style="background-color: ${c.value}" data-color="${ci}"></div>`
-          ).join('')}
+    const color = SLOT_COLORS[i];
+    const taken = _takenIndices(i);
+
+    if (tc.locked) {
+      // Eingelockter Zustand: fester Name + Entsperren-Button
+      html += `
+        <div class="team-row">
+          <div class="team-color-dot" style="background-color: ${color}"></div>
+          <div class="team-name-locked">${_escapeHtml(TEAM_NAME_POOL[tc.nameIndex])}</div>
+          <button class="btn-unlock" data-team="${i}" title="Entsperren">🔓</button>
         </div>
-      </div>
-    `;
+      `;
+    } else {
+      // Scroll-Picker Zustand
+      const pickerH = PICKER_ITEM_H * PICKER_VISIBLE;
+      html += `
+        <div class="team-row">
+          <div class="team-color-dot" style="background-color: ${color}"></div>
+          <div class="team-picker" data-team="${i}" style="height: ${pickerH}px">
+            <div class="team-picker-highlight"></div>
+            <div class="team-picker-scroll" data-team="${i}">
+              ${TEAM_NAME_POOL.map((name, ni) => {
+                const isTaken = taken.has(ni);
+                return `<div class="team-picker-item ${isTaken ? 'taken' : ''}"
+                             data-name-index="${ni}"
+                             style="height: ${PICKER_ITEM_H}px; line-height: ${PICKER_ITEM_H}px">
+                          ${_escapeHtml(name)}
+                        </div>`;
+              }).join('')}
+            </div>
+          </div>
+          <button class="btn-lock" data-team="${i}" title="Bestätigen">✓</button>
+        </div>
+      `;
+    }
   }
   return html;
+}
+
+// ── Picker-Initialisierung ──────────────────
+
+function _initPickers() {
+  document.querySelectorAll('.team-picker-scroll').forEach(scroll => {
+    const teamIdx = parseInt(scroll.dataset.team);
+    const tc = teamConfigs[teamIdx];
+
+    // Zum aktuell gewählten Namen scrollen
+    const targetTop = tc.nameIndex * PICKER_ITEM_H;
+    scroll.scrollTop = targetTop;
+
+    // Scroll-Snap-Ende erkennen
+    let scrollTimer = null;
+    scroll.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => _onPickerSnap(scroll, teamIdx), 80);
+    });
+  });
+}
+
+function _onPickerSnap(scrollEl, teamIdx) {
+  const taken = _takenIndices(teamIdx);
+
+  // Nächsten gültigen Index finden
+  let rawIndex = Math.round(scrollEl.scrollTop / PICKER_ITEM_H);
+  rawIndex = Math.max(0, Math.min(rawIndex, TEAM_NAME_POOL.length - 1));
+
+  // Falls der Name vergeben ist, nächsten freien suchen
+  if (taken.has(rawIndex)) {
+    let found = false;
+    // Vorwärts suchen
+    for (let d = 1; d < TEAM_NAME_POOL.length; d++) {
+      const up = rawIndex + d;
+      const down = rawIndex - d;
+      if (up < TEAM_NAME_POOL.length && !taken.has(up)) {
+        rawIndex = up;
+        found = true;
+        break;
+      }
+      if (down >= 0 && !taken.has(down)) {
+        rawIndex = down;
+        found = true;
+        break;
+      }
+    }
+    if (!found) rawIndex = 0; // Fallback
+  }
+
+  teamConfigs[teamIdx].nameIndex = rawIndex;
+
+  // Smooth zum korrekten Snap-Punkt scrollen
+  scrollEl.scrollTo({ top: rawIndex * PICKER_ITEM_H, behavior: 'smooth' });
 }
 
 // ── Events ──────────────────────────────────
@@ -182,29 +287,42 @@ function _renderTeamRows() {
 function _bindEvents() {
   // Team-Stepper
   document.getElementById('team-minus')?.addEventListener('click', () => {
-    if (teamCount > 2) { teamCount--; render(); }
+    if (teamCount > 2) {
+      teamCount--;
+      // Entsperren des entfernten Teams
+      if (teamConfigs[teamCount]) teamConfigs[teamCount].locked = false;
+      render();
+    }
   });
 
   document.getElementById('team-plus')?.addEventListener('click', () => {
-    if (teamCount < 4) { teamCount++; _ensureTeamConfigs(); render(); }
+    if (teamCount < 5) {
+      teamCount++;
+      _ensureTeamConfigs();
+      // Neues Team soll einen freien Namen bekommen
+      const taken = _takenIndices(teamCount - 1);
+      let idx = 0;
+      while (taken.has(idx) && idx < TEAM_NAME_POOL.length) idx++;
+      teamConfigs[teamCount - 1].nameIndex = idx;
+      teamConfigs[teamCount - 1].locked = false;
+      render();
+    }
   });
 
-  // Team-Namen
-  document.querySelectorAll('.team-name-input').forEach(input => {
-    input.addEventListener('input', (e) => {
-      const idx = parseInt(e.target.dataset.team);
-      teamConfigs[idx].name = e.target.value || DEFAULT_TEAM_NAMES[idx];
+  // Lock-Buttons (Bestätigen)
+  document.querySelectorAll('.btn-lock').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.team);
+      teamConfigs[idx].locked = true;
+      render();
     });
   });
 
-  // Farbwahl
-  document.querySelectorAll('.color-picker').forEach(picker => {
-    picker.addEventListener('click', (e) => {
-      const dot = e.target.closest('.color-option');
-      if (!dot) return;
-      const teamIdx = parseInt(picker.dataset.team);
-      const colorIdx = parseInt(dot.dataset.color);
-      teamConfigs[teamIdx].colorIndex = colorIdx;
+  // Unlock-Buttons (Entsperren)
+  document.querySelectorAll('.btn-unlock').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.team);
+      teamConfigs[idx].locked = false;
       render();
     });
   });
@@ -266,16 +384,17 @@ async function _startGame() {
   }
 
   if (!cardSet) {
-    alert('Kein Kartenset ausgewaehlt oder Laden fehlgeschlagen!');
+    alert('Kein Kartenset ausgewählt oder Laden fehlgeschlagen!');
     return;
   }
 
   // Teams zusammenbauen
   const teams = [];
   for (let i = 0; i < teamCount; i++) {
+    const tc = teamConfigs[i];
     teams.push({
-      name: teamConfigs[i].name || DEFAULT_TEAM_NAMES[i],
-      color: TEAM_COLORS[teamConfigs[i].colorIndex].value
+      name: TEAM_NAME_POOL[tc.nameIndex],
+      color: SLOT_COLORS[i]
     });
   }
 
@@ -289,16 +408,33 @@ async function _startGame() {
 
   // In State speichern
   state.set('game', game);
-  state.set('gameConfig', { teamCount, teamConfigs: teamConfigs.slice(0, teamCount), targetScore, timerSeconds });
+  state.set('gameConfig', {
+    teamCount,
+    teamConfigs: teamConfigs.slice(0, teamCount).map(tc => ({ nameIndex: tc.nameIndex })),
+    targetScore,
+    timerSeconds,
+    selectedCardSetId
+  });
 
   // Settings persistieren
-  state.set('lastTeamConfig', { teamCount, teamConfigs: teamConfigs.slice(0, teamCount) });
+  state.set('lastTeamConfig', {
+    teamCount,
+    teamConfigs: teamConfigs.slice(0, teamCount).map(tc => ({ nameIndex: tc.nameIndex }))
+  });
   state.set('lastTargetScore', targetScore);
   state.set('lastTimerSeconds', timerSeconds);
   state.save();
 
-  // Zum Spiel navigieren
   router.navigate('game');
+}
+
+// ── Hilfsfunktionen ─────────────────────────
+
+function _escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 // ── Export / Registrierung ──────────────────

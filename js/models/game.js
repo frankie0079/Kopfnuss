@@ -66,6 +66,10 @@ export class GameModel {
     /** @type {Map<string, 'correct'|'wrong'>} */
     this.itemResults = new Map();
 
+    // Teamfarbe pro richtig beantwortetem Item (fuer Umrandung)
+    /** @type {Map<string, string>} */
+    this.itemTeamColors = new Map();
+
     // Gewinner
     /** @type {Team|null} */
     this.winner = null;
@@ -121,6 +125,7 @@ export class GameModel {
     this.currentCard = this._drawCard();
     this.revealedItems.clear();
     this.itemResults.clear();
+    this.itemTeamColors.clear();
     this.revealingItem = null;
 
     // Startteam setzen
@@ -168,6 +173,12 @@ export class GameModel {
    * Antwort als richtig markieren.
    * Aendert nur den Zustand, OHNE automatisch zum naechsten Team zu wechseln.
    * Die UI muss danach advanceTurn() aufrufen (nach visuellem Feedback).
+   *
+   * Siegeserkennung: Wenn die Zielpunktzahl erreicht wird, wird this.winner
+   * gesetzt, aber NICHT sofort das 'victory'-Event gefeuert. Stattdessen
+   * wird 'itemCorrect' gefeuert, damit die UI zuerst das visuelle Feedback
+   * (Ring, Scoreboard, Sound) zeigen kann. Die UI erkennt game.winner und
+   * leitet dann zum Sieges-Screen ueber.
    */
   markCorrect() {
     if (this.phase !== 'turnResult') {
@@ -176,12 +187,28 @@ export class GameModel {
 
     const team = this.activeTeam;
     team.roundScore += 1;
-    this.itemResults.set(this.revealingItem.id, 'correct');
+    const itemId = this.revealingItem.id;
+    this.itemResults.set(itemId, 'correct');
+    this.itemTeamColors.set(itemId, team.color);
     this.revealingItem = null;
+
+    // Siegpruefung: Zielpunktzahl erreicht?
+    if (team.totalScore + team.roundScore >= this.targetScore) {
+      team.totalScore += team.roundScore;
+      team.roundScore = 0;
+      team.isActive = false;
+      this.winner = team;
+      // 'itemCorrect' statt 'victory' feuern, damit UI erst Feedback zeigt.
+      // Die UI prueft game.winner und navigiert dann zum Victory-Screen.
+      this.phase = 'showingResult';
+      this._notify('itemCorrect');
+      return;
+    }
 
     // Pruefen: alle 10 Items aufgedeckt?
     if (this.revealedItems.size >= 10) {
       team.totalScore += team.roundScore;
+      team.roundScore = 0;
       team.isActive = false;
     }
 
@@ -218,12 +245,20 @@ export class GameModel {
   advanceTurn() {
     if (this.phase !== 'showingResult') return;
 
+    // Sicherheitsnetz: Gewinner bereits festgestellt (z.B. durch markCorrect)?
+    if (this.winner) {
+      this.phase = 'victory';
+      this._notify('victory');
+      return;
+    }
+
     // Alle 10 Items aufgedeckt?
     if (this.revealedItems.size >= 10) {
       // Alle noch aktiven Teams bekommen ihre Rundenpunkte
       for (const team of this.teams) {
         if (team.isActive) {
           team.totalScore += team.roundScore;
+          team.roundScore = 0;
           team.isActive = false;
         }
       }
@@ -251,6 +286,7 @@ export class GameModel {
 
     // Rundenpunkte sichern
     team.totalScore += team.roundScore;
+    team.roundScore = 0;
     team.isActive = false;
 
     this._notify('teamPassed');
@@ -277,6 +313,7 @@ export class GameModel {
     this.currentCard = this._drawCard();
     this.revealedItems.clear();
     this.itemResults.clear();
+    this.itemTeamColors.clear();
     this.revealingItem = null;
 
     this._notify('cardSkipped');
@@ -325,6 +362,7 @@ export class GameModel {
       for (const team of this.teams) {
         if (team.isActive) {
           team.totalScore += team.roundScore;
+          team.roundScore = 0;
           team.isActive = false;
         }
       }
@@ -348,6 +386,13 @@ export class GameModel {
    * Runde beenden.
    */
   _endRound() {
+    // Sicherheitsnetz: Gewinner bereits festgestellt?
+    if (this.winner) {
+      this.phase = 'victory';
+      this._notify('victory');
+      return;
+    }
+
     // Siegpruefung: wer hat zuerst die Zielpunktzahl erreicht?
     // Reihenfolge: ab Startteam im Uhrzeigersinn
     for (let i = 0; i < this.teams.length; i++) {

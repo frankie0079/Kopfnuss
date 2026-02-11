@@ -13,16 +13,17 @@
  * @param {Object} [options]
  * @param {boolean} [options.disabled]  -- alle Items deaktiviert?
  * @param {Function} [options.onItemClick]  -- Callback(itemId)
+ * @param {Map<string, string>} [options.itemTeamColors]  -- itemId -> Teamfarbe fuer richtig beantwortete Items
  */
 export function renderRing(container, card, revealedItems, itemResults, options = {}) {
-  const { disabled = false, onItemClick = null } = options;
+  const { disabled = false, onItemClick = null, itemTeamColors = new Map() } = options;
 
-  // Container-Groesse
-  const size = 480;
+  // Container-Groesse (groesser fuer maximale Lesbarkeit auf iPad)
+  const size = 640;
   const centerX = size / 2;
   const centerY = size / 2;
-  const radius = 190;  // Abstand Items vom Zentrum
-  const itemSize = 100;
+  const radius = 255;  // Abstand Items vom Zentrum
+  const itemSize = 130;
 
   let html = '';
 
@@ -44,20 +45,22 @@ export function renderRing(container, card, revealedItems, itemResults, options 
 
     const isRevealed = revealedItems.has(item.id);
     const result = itemResults.get(item.id); // 'correct' | 'wrong' | undefined
+    const teamColor = itemTeamColors.get(item.id); // Teamfarbe fuer Umrandung
 
     let classes = 'ring-item';
     if (isRevealed) classes += ' revealed';
-    if (result === 'correct') classes += ' correct';
+    if (result === 'correct') classes += ' correct ring-item-gone';
     if (result === 'wrong') classes += ' wrong';
     if (disabled && !isRevealed) classes += ' disabled';
 
-    // translate als CSS-Variable fuer Hover-Effekt
+    // translate als CSS-Variable fuer Hover-Effekt; Teamfarbe fuer richtig beantwortete Items
     const translateVal = `translate(${x}px, ${y}px)`;
+    const teamColorStyle = result === 'correct' && teamColor ? ` --team-color: ${teamColor};` : '';
 
     html += `
       <div class="${classes}"
            data-item-id="${item.id}"
-           style="transform: ${translateVal}; --item-translate: ${translateVal};"
+           style="transform: ${translateVal}; --item-translate: ${translateVal};${teamColorStyle}"
            ${isRevealed || disabled ? '' : 'tabindex="0" role="button"'}
            ${isRevealed || disabled ? 'aria-disabled="true"' : ''}>
         <div class="item-content">
@@ -120,8 +123,9 @@ function _escapeHtml(text) {
  * @param {string} itemId
  * @param {Object} item  -- das Item-Objekt
  * @param {string} result  -- 'correct' | 'wrong'
+ * @param {string} [teamColor]  -- Teamfarbe fuer Umrandung (nur bei correct)
  */
-export function updateRingItem(container, itemId, item, result) {
+export function updateRingItem(container, itemId, item, result, teamColor = null) {
   const el = container.querySelector(`[data-item-id="${itemId}"]`);
   if (!el) return;
 
@@ -131,6 +135,11 @@ export function updateRingItem(container, itemId, item, result) {
   el.removeAttribute('tabindex');
   el.removeAttribute('role');
   el.setAttribute('aria-disabled', 'true');
+
+  // Teamfarbe fuer Umrandung (richtig beantwortet)
+  if (result === 'correct' && teamColor) {
+    el.style.setProperty('--team-color', teamColor);
+  }
 
   // Inhalt aktualisieren (Loesung einblenden)
   const content = el.querySelector('.item-content');

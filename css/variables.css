@@ -6,10 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 
 :root {
-  /* --- Team-Farben (Preset-Palette, 6 Stueck) --- */
-  --team-1: #FF6B6B;   /* Koralle/Rot */
-  --team-2: #4ECDC4;   /* Tuerkis */
-  --team-3: #FFE66D;   /* Sonnengelb */
+  /* --- Team-Farben (ohne Rot/Gruen, trennscharf) --- */
+  --team-1: #6366F1;   /* Indigo */
+  --team-2: #F59E0B;   /* Amber */
+  --team-3: #FFE66D;   /* Gelb */
   --team-4: #A78BFA;   /* Lila */
   --team-5: #FB923C;   /* Orange */
   --team-6: #F472B6;   /* Pink */
@@ -43,6 +43,11 @@
   --font-size-2xl: 2rem;
   --font-size-3xl: 2.5rem;
   --font-size-4xl: 3.5rem;
+
+  /* --- Spiel-Lesbarkeit (Frage + Antworten, Tag + Nacht) --- */
+  --game-prompt-size: 1.6rem;
+  --game-item-label-size: 1.05rem;
+  --game-item-solution-size: 1.15rem;
 
   /* --- Abstaende --- */
   --space-xs: 4px;
@@ -78,6 +83,8 @@
   --bg-card: #1E2A47;
   --text-primary: #EAEAEA;
   --text-secondary: #B0B0B0;
+  --success-light: #1E3A2F;
+  --danger-light: #3A2520;
   --text-on-accent: #FFFFFF;
   --accent: #7C6CF0;
   --accent-hover: #6C5CE7;

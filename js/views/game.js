@@ -1,14 +1,13 @@
 /* ============================================
    Digital Smartbox -- Game-Screen View
    Verdrahtet GameModel mit Ring, Scoreboard,
-   Turn-Indikator, Timer, Audio und Aktions-Buttons.
+   Timer, Audio und Aktions-Buttons.
    ============================================ */
 
 import { state } from '../state.js';
 import { router } from '../app.js';
 import { renderRing, updateRingItem, setItemRevealing } from '../components/ring.js';
-import { renderScoreboard } from '../components/scoreboard.js';
-import { renderTurnIndicator } from '../components/turn-indicator.js';
+import { renderScoreboard, resetScoreboardState, animateScorePoint } from '../components/scoreboard.js';
 import { TimerComponent } from '../components/timer.js';
 import { audio } from '../services/audio.js';
 
@@ -19,7 +18,7 @@ let game = null;
 let timer = null;
 
 // DOM-Referenzen
-let elRoot, elTurn, elScoreboard, elRing, elActions, elFooter, elTimer;
+let elRoot, elScoreboard, elRing, elActions, elFooter, elTimer;
 
 // ── Init / Destroy ──────────────────────────
 
@@ -34,7 +33,6 @@ function initGame() {
 
   el.innerHTML = `
     <div class="game-layout">
-      <div class="turn-indicator" id="turn-indicator"></div>
       <div class="game-scoreboard" id="game-scoreboard"></div>
       <div class="game-board">
         <div class="ring-container" id="game-ring"></div>
@@ -50,7 +48,6 @@ function initGame() {
 
   // DOM-Referenzen cachen
   elRoot = el;
-  elTurn = document.getElementById('turn-indicator');
   elScoreboard = document.getElementById('game-scoreboard');
   elRing = document.getElementById('game-ring');
   elActions = document.getElementById('game-actions');
@@ -82,6 +79,7 @@ function destroyGame() {
     game.onStateChange = null;
   }
   game = null;
+  resetScoreboardState();
 }
 
 // ── Timer Management ────────────────────────
@@ -128,7 +126,7 @@ function _onGameStateChange(event, model) {
       break;
 
     case 'itemCorrect':
-      audio.play('correct');
+      // Kein audio.play('correct') hier - der Joy-Sound kommt aus der Fluganimation
       _onItemResult('correct');
       break;
 
@@ -138,9 +136,10 @@ function _onGameStateChange(event, model) {
       break;
 
     case 'teamPassed':
-      // Timer stoppen. Board-Render + Timer-Start passiert
-      // ueber das nachfolgende 'turnChanged'/'roundEnded'/'victory' Event.
       _stopTimer();
+      // Nur Scoreboard aktualisieren. Turn-Indikator waere falsch, da activeTeam
+      // noch das passende Team ist (_currentTeamIndex wird erst bei turnChanged gesetzt).
+      renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
       break;
 
     case 'timerExpired':
@@ -167,9 +166,6 @@ function _onGameStateChange(event, model) {
 function _renderFullBoard() {
   if (!game || !game.currentCard) return;
 
-  // Turn-Indikator
-  renderTurnIndicator(elTurn, game.activeTeam);
-
   // Scoreboard
   renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
 
@@ -177,7 +173,8 @@ function _renderFullBoard() {
   const isDisabled = game.phase !== 'turnActive';
   renderRing(elRing, game.currentCard, game.revealedItems, game.itemResults, {
     disabled: isDisabled,
-    onItemClick: _onItemClick
+    onItemClick: _onItemClick,
+    itemTeamColors: game.itemTeamColors
   });
 
   // Aktions-Buttons
@@ -308,10 +305,23 @@ function _onSkipCard() {
 }
 
 function _onQuitGame() {
-  if (confirm('Spiel wirklich beenden?')) {
-    _stopTimer();
+  _stopTimer();
+
+  // Danke-Overlay anzeigen
+  const overlay = document.createElement('div');
+  overlay.className = 'round-overlay';
+  overlay.innerHTML = `
+    <div class="round-overlay-content goodbye-overlay">
+      <h2>Dankeschön!</h2>
+      <p>Bis zum nächsten Mal ...</p>
+    </div>
+  `;
+  elRoot.appendChild(overlay);
+
+  // Nach 2.5 Sekunden zurueck zum Setup
+  setTimeout(() => {
     router.navigate('setup');
-  }
+  }, 2500);
 }
 
 function _onItemResult(result) {
@@ -322,14 +332,43 @@ function _onItemResult(result) {
   const lastItem = game.currentCard.items.find(i => i.id === lastItemId);
 
   if (lastItem) {
-    updateRingItem(elRing, lastItemId, lastItem, result);
+    // Bei richtig: kein Teamfarb-Ring mehr (Item verschwindet gleich)
+    const teamColor = null;
+    updateRingItem(elRing, lastItemId, lastItem, result, teamColor);
   }
 
-  // Scoreboard sofort aktualisieren (Punkte-Aenderung sichtbar machen)
-  renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
+  // Bei richtiger Antwort: Fluganimation ZUERST, dann Scoreboard aktualisieren
+  if (result === 'correct' && lastItemId && game.activeTeam) {
+    const ringItemEl = elRing.querySelector(`[data-item-id="${lastItemId}"]`);
+    if (ringItemEl) {
+      // Animation starten (Scoreboard wird NACH der Animation aktualisiert)
+      animateScorePoint(ringItemEl, game.activeTeam.id).then(() => {
+        ringItemEl.classList.add('ring-item-gone');
+        if (game) {
+          renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
+        }
+      });
+    } else {
+      renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
+    }
+  } else {
+    // Bei falsch: Scoreboard sofort aktualisieren
+    renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
+  }
 
   // Aktions-Buttons entfernen waehrend der Pause
   elActions.innerHTML = '';
+
+  // Siegeserkennung: Wenn ein Gewinner feststeht (durch markCorrect gesetzt),
+  // kurz das Feedback zeigen und dann sofort zum Victory-Screen wechseln.
+  if (game.winner) {
+    setTimeout(() => {
+      if (game) {
+        _onVictory();
+      }
+    }, 600);
+    return;
+  }
 
   // Nach 700ms: zum naechsten Zug uebergehen
   setTimeout(() => {

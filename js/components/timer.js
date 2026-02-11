@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Timer Component
+   Kopfnuss! -- Timer Component
    SVG-Ring-Countdown mit Tick-Sound
    ============================================ */
 

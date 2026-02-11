@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- App Entry Point + Router
+   Kopfnuss! -- App Entry Point + Router
    ============================================ */
 
 import { state } from './state.js';

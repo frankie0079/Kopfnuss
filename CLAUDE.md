@@ -28,7 +28,7 @@ Bevor mit Implementierung oder Code-Aenderungen begonnen wird, gilt zwingend:
 Solange offene Fragen bestehen:
 - darf kein Code geschrieben oder geaendert werden.
 
-## Projekt: Digital Smartbox
+## Projekt: Kopfnuss!
 
 **Entwicklung / Änderungen testen:**
 - Server: `start.bat` (Port 8081) oder `python -m http.server 8081`

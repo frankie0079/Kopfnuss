@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Setup-Screen View
+   Kopfnuss! -- Setup-Screen View
    ============================================ */
 
 import { state } from '../state.js';
@@ -129,7 +129,7 @@ async function render() {
       ${document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙'}
     </button>
 
-    <h1 class="setup-title">Digital Smartbox</h1>
+    <h1 class="setup-title">Kopfnuss!</h1>
     <p class="setup-subtitle">Einstellungen für euer Spiel</p>
 
     <div class="setup-container">

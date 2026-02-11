@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- IndexedDB Card Store
+   Kopfnuss! -- IndexedDB Card Store
    Speichert Kartensets und Bilder persistent.
    ============================================ */
 

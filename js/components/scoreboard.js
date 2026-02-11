@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Scoreboard Component
+   Kopfnuss! -- Scoreboard Component
    Rechteck-Karten mit Punktekreisen.
    Fluganimation bei richtiger Antwort.
    ============================================ */

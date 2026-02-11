@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Victory-Screen View
+   Kopfnuss! -- Victory-Screen View
    ============================================ */
 
 import { state } from '../state.js';

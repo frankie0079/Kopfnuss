@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Zentraler App-State
+   Kopfnuss! -- Zentraler App-State
    EventBus + Key-Value Store + localStorage
    ============================================ */
 

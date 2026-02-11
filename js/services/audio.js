@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Audio Manager
+   Kopfnuss! -- Audio Manager
    Web Audio API Synthese als Fallback
    (echte MP3s koennen spaeter ergaenzt werden)
    ============================================ */

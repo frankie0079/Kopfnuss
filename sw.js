@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Service Worker
+   Kopfnuss! -- Service Worker
    Network-First: Immer aktuelle Dateien,
    Cache nur als Offline-Fallback.
    ============================================ */

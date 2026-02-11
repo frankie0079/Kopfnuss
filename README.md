@@ -1,10 +1,10 @@
-# Digital Smartbox
+# Kopfnuss!
 
 *Digitale Spielbegleitung fuer Smart 10*
 
 ---
 
-## Was ist Digital Smartbox?
+## Was ist Kopfnuss!?
 
 Eine offline-faehige Web-App (iPad-optimiert), die das physische Spiel "Smart 10" digital erweitert:
 

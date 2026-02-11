@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- ZIP Import Service
+   Kopfnuss! -- ZIP Import Service
    Entpackt ZIP -> JSON + Bilder -> IndexedDB
    ============================================ */
 

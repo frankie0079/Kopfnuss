@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Ring-Layout Component
+   Kopfnuss! -- Ring-Layout Component
    10 Items kreisfoermig um den Prompt
    ============================================ */
 

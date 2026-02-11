@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Spiellogik (GameModel)
+   Kopfnuss! -- Spiellogik (GameModel)
    Reine Zustandsmaschine, kein DOM-Zugriff.
    ============================================ */
 

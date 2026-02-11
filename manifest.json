@@ -1,6 +1,6 @@
 {
-  "name": "Digital Smartbox",
-  "short_name": "Smartbox",
+  "name": "Kopfnuss!",
+  "short_name": "Kopfnuss!",
   "description": "Digitale Spielbegleitung fuer Smart 10",
   "start_url": "/index.html",
   "display": "standalone",

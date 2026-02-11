@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Game-Screen View
+   Kopfnuss! -- Game-Screen View
    Verdrahtet GameModel mit Ring, Scoreboard,
    Timer, Audio und Aktions-Buttons.
    ============================================ */

@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Turn-Indikator Component
+   Kopfnuss! -- Turn-Indikator Component
    ============================================ */
 
 /**

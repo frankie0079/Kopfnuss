@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Demo-Kartenset
+   Kopfnuss! -- Demo-Kartenset
    15 Allgemeinwissen-Karten (rein Text)
    ============================================ */
 

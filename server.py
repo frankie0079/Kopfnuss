@@ -1,5 +1,5 @@
 """
-Digital Smartbox -- Entwicklungsserver (Multi-Threaded)
+Kopfnuss! -- Entwicklungsserver (Multi-Threaded)
 
 - Verarbeitet mehrere Browser-Anfragen gleichzeitig (kein ConnectionAbortedError mehr)
 - Setzt Cache-Control: no-store auf jede Antwort (kein Browser-Cache)

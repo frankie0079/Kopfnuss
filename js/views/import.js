@@ -1,5 +1,5 @@
 /* ============================================
-   Digital Smartbox -- Import-Screen View
+   Kopfnuss! -- Import-Screen View
    ZIP-Import + Kartenset-Verwaltung
    ============================================ */
 

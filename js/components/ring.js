@@ -18,12 +18,13 @@
 export function renderRing(container, card, revealedItems, itemResults, options = {}) {
   const { disabled = false, onItemClick = null, itemTeamColors = new Map() } = options;
 
-  // Container-Groesse (groesser fuer maximale Lesbarkeit auf iPad)
-  const size = 640;
+  // Container-Groesse: dynamisch aus tatsaechlicher CSS-Groesse lesen
+  const size = container.clientWidth || 640;
+  const scale = size / 640;            // Skalierungsfaktor
   const centerX = size / 2;
   const centerY = size / 2;
-  const radius = 255;  // Abstand Items vom Zentrum
-  const itemSize = 130;
+  const radius = 255 * scale;          // Abstand Items vom Zentrum
+  const itemSize = 130 * scale;        // Item-Durchmesser
 
   let html = '';
 
@@ -60,7 +61,7 @@ export function renderRing(container, card, revealedItems, itemResults, options 
     html += `
       <div class="${classes}"
            data-item-id="${item.id}"
-           style="transform: ${translateVal}; --item-translate: ${translateVal};${teamColorStyle}"
+           style="width:${itemSize}px;height:${itemSize}px;transform: ${translateVal}; --item-translate: ${translateVal};${teamColorStyle}"
            ${isRevealed || disabled ? '' : 'tabindex="0" role="button"'}
            ${isRevealed || disabled ? 'aria-disabled="true"' : ''}>
         <div class="item-content">

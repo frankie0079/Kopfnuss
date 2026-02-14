@@ -3,7 +3,7 @@
    ============================================ */
 
 #view-game {
-  padding: var(--space-sm);
+  padding: var(--space-md);
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
@@ -14,7 +14,7 @@
 .game-layout {
   position: relative;
   display: grid;
-  grid-template-columns: 240px 1fr 180px;
+  grid-template-columns: minmax(160px, 220px) 1fr minmax(100px, 160px);
   grid-template-rows: 1fr auto;
   gap: var(--space-md);
   width: 100%;
@@ -47,9 +47,9 @@
               opacity 0.35s ease;
 }
 
-/* Aktives Team: deutlich groesser */
+/* Aktives Team: leicht hervorgehoben (1.05 statt 1.18, damit es in der Spalte bleibt) */
 .score-card.active-team {
-  transform: scale(1.18);
+  transform: scale(1.05);
   opacity: 1;
 }
 
@@ -141,21 +141,22 @@
   position: relative;
 }
 
-/* --- Ring Container (groesser fuer Lesbarkeit) --- */
+/* --- Ring Container (responsive: passt sich an Viewport an) --- */
 .ring-container {
   position: relative;
-  width: 640px;
-  height: 640px;
+  --ring-size: min(640px, calc(100vw - 380px), calc(100dvh - 120px));
+  width: var(--ring-size);
+  height: var(--ring-size);
 }
 
-/* --- Prompt (Zentrum, vergroessert) --- */
+/* --- Prompt (Zentrum, proportional zum Ring) --- */
 .prompt-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 260px;
-  height: 260px;
+  width: 40.6%;    /* 260/640 */
+  height: 40.6%;
   border-radius: var(--radius-full);
   background: var(--bg-card);
   box-shadow: var(--shadow-lg);
@@ -183,11 +184,10 @@
   border-radius: var(--radius-full);
 }
 
-/* --- Ring Items (vergroessert fuer Lesbarkeit) --- */
+/* --- Ring Items (Groesse wird inline von ring.js gesetzt) --- */
 .ring-item {
   position: absolute;
-  width: 130px;
-  height: 130px;
+  /* width/height werden dynamisch von ring.js gesetzt */
   border-radius: var(--radius-full);
   background: var(--bg-card);
   box-shadow: var(--shadow-md);

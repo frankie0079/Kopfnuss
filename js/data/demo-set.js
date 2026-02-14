@@ -1,280 +1,283 @@
 /* ============================================
-   Kopfnuss! -- Demo-Kartenset
-   15 Allgemeinwissen-Karten (rein Text)
+   Kopfnuss! -- Kartenset
+   Spielkarten (digitalisiert per
+   Foto + Gemini-OCR im Kartenmanager)
    ============================================ */
 
 export const DEMO_SET = {
   id: 'demo',
-  setName: 'Allgemeinwissen',
-  category: 'Demo',
+  setName: 'Kopfnuss Kartenset',
+  category: 'Gemischt',
   cards: [
-    // ── Karte 1: Hauptstaedte ────────────────
+    // ── Karte 1: Weissweinsorten ──────────────
     {
-      id: 'card-01',
-      prompt: { text: 'Welche dieser Staedte sind Hauptstaedte?', image: null },
+      prompt: { text: 'Ist eine Weißweinsorte?', image: null },
       items: [
-        { id: 'c01-0', label: { text: 'Berlin', image: null }, solution: { text: '✓ Deutschland', type: 'boolean_true' } },
-        { id: 'c01-1', label: { text: 'Muenchen', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c01-2', label: { text: 'Paris', image: null }, solution: { text: '✓ Frankreich', type: 'boolean_true' } },
-        { id: 'c01-3', label: { text: 'Barcelona', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c01-4', label: { text: 'Rom', image: null }, solution: { text: '✓ Italien', type: 'boolean_true' } },
-        { id: 'c01-5', label: { text: 'Istanbul', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c01-6', label: { text: 'Wien', image: null }, solution: { text: '✓ Oesterreich', type: 'boolean_true' } },
-        { id: 'c01-7', label: { text: 'Genf', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c01-8', label: { text: 'Lissabon', image: null }, solution: { text: '✓ Portugal', type: 'boolean_true' } },
-        { id: 'c01-9', label: { text: 'Marseille', image: null }, solution: { text: '✗', type: 'boolean_false' } }
+        { label: { text: 'Parellada', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Gamay', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Viognier', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Sémillon', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Riesling', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Nebbiolo', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Chardonnay', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Trebbiano', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Pinotage', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Colombard', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
       ]
     },
 
-    // ── Karte 2: Planeten ────────────────────
+    // ── Karte 2: Wiener Stadtbezirke ──────────
     {
-      id: 'card-02',
-      prompt: { text: 'Welche davon sind Planeten unseres Sonnensystems?', image: null },
+      prompt: { text: 'Ist ein Wiener Stadtbezirk?', image: null },
       items: [
-        { id: 'c02-0', label: { text: 'Mars', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c02-1', label: { text: 'Pluto', image: null }, solution: { text: '✗ Zwergplanet', type: 'boolean_false' } },
-        { id: 'c02-2', label: { text: 'Venus', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c02-3', label: { text: 'Sonne', image: null }, solution: { text: '✗ Stern', type: 'boolean_false' } },
-        { id: 'c02-4', label: { text: 'Jupiter', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c02-5', label: { text: 'Mond', image: null }, solution: { text: '✗ Trabant', type: 'boolean_false' } },
-        { id: 'c02-6', label: { text: 'Saturn', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c02-7', label: { text: 'Europa', image: null }, solution: { text: '✗ Jupiter-Mond', type: 'boolean_false' } },
-        { id: 'c02-8', label: { text: 'Neptun', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c02-9', label: { text: 'Merkur', image: null }, solution: { text: '✓', type: 'boolean_true' } }
+        { label: { text: 'Donaustadt', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Wiesing', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Wieden', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Neuhaus', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Rudolfstadt', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Mariahilf', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Alsergrund', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Semmering', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Meidling', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Penzing', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
       ]
     },
 
-    // ── Karte 3: Elemente ────────────────────
+    // ── Karte 3: Beruehmte Songs ──────────────
     {
-      id: 'card-03',
-      prompt: { text: 'Ordne die chemischen Symbole den Elementen zu!', image: null },
+      prompt: { text: 'Wer ist berühmt für diesen Song?', image: null },
       items: [
-        { id: 'c03-0', label: { text: 'Fe', image: null }, solution: { text: 'Eisen', type: 'text' } },
-        { id: 'c03-1', label: { text: 'Au', image: null }, solution: { text: 'Gold', type: 'text' } },
-        { id: 'c03-2', label: { text: 'O', image: null }, solution: { text: 'Sauerstoff', type: 'text' } },
-        { id: 'c03-3', label: { text: 'H', image: null }, solution: { text: 'Wasserstoff', type: 'text' } },
-        { id: 'c03-4', label: { text: 'Na', image: null }, solution: { text: 'Natrium', type: 'text' } },
-        { id: 'c03-5', label: { text: 'Ag', image: null }, solution: { text: 'Silber', type: 'text' } },
-        { id: 'c03-6', label: { text: 'Cu', image: null }, solution: { text: 'Kupfer', type: 'text' } },
-        { id: 'c03-7', label: { text: 'Pb', image: null }, solution: { text: 'Blei', type: 'text' } },
-        { id: 'c03-8', label: { text: 'C', image: null }, solution: { text: 'Kohlenstoff', type: 'text' } },
-        { id: 'c03-9', label: { text: 'N', image: null }, solution: { text: 'Stickstoff', type: 'text' } }
+        { label: { text: 'Jump', image: null }, solution: { text: 'Van Halen', type: 'text' } },
+        { label: { text: '9 to 5', image: null }, solution: { text: 'Dolly Parton', type: 'text' } },
+        { label: { text: 'I Will Always Love You', image: null }, solution: { text: 'Whitney Houston', type: 'text' } },
+        { label: { text: 'Wrecking Ball', image: null }, solution: { text: 'Miley Cyrus', type: 'text' } },
+        { label: { text: 'Halo', image: null }, solution: { text: 'Beyoncé', type: 'text' } },
+        { label: { text: 'Mercedes Benz', image: null }, solution: { text: 'Janis Joplin', type: 'text' } },
+        { label: { text: 'My Heart Will Go On', image: null }, solution: { text: 'Céline Dion', type: 'text' } },
+        { label: { text: 'Someone Like You', image: null }, solution: { text: 'Adele', type: 'text' } },
+        { label: { text: 'Imagine', image: null }, solution: { text: 'John Lennon', type: 'text' } },
+        { label: { text: "I'm On Fire", image: null }, solution: { text: 'Bruce Springsteen', type: 'text' } }
       ]
     },
 
-    // ── Karte 4: Tiere ──────────────────────
+    // ── Karte 4: Wikinger ─────────────────────
     {
-      id: 'card-04',
-      prompt: { text: 'Welche dieser Tiere sind Saeugetiere?', image: null },
+      prompt: { text: 'Trifft diese Aussage über die Wikinger zu?', image: null },
       items: [
-        { id: 'c04-0', label: { text: 'Delfin', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c04-1', label: { text: 'Krokodil', image: null }, solution: { text: '✗ Reptil', type: 'boolean_false' } },
-        { id: 'c04-2', label: { text: 'Fledermaus', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c04-3', label: { text: 'Pinguin', image: null }, solution: { text: '✗ Vogel', type: 'boolean_false' } },
-        { id: 'c04-4', label: { text: 'Wal', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c04-5', label: { text: 'Schildkroete', image: null }, solution: { text: '✗ Reptil', type: 'boolean_false' } },
-        { id: 'c04-6', label: { text: 'Elefant', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c04-7', label: { text: 'Hai', image: null }, solution: { text: '✗ Fisch', type: 'boolean_false' } },
-        { id: 'c04-8', label: { text: 'Schnabeltier', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c04-9', label: { text: 'Schlange', image: null }, solution: { text: '✗ Reptil', type: 'boolean_false' } }
+        { label: { text: 'Stockholm war ihre Hauptstadt', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'sie kamen bis nach Nordamerika', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'sie waren Vorfaehren der Normannen', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'sie gründeten Dublin in Irland', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'die Mehrzahl lebte von Raubzügen', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'sie lebten von ca. 400-1200 n. Chr.', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Birka war eine wichtige Handelsniederlassung', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'sie hatten Hörner an den Helmen', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'sie eroberten Paris', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'den Bug ihrer Schiffe zierte ein Drachenkopf', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
       ]
     },
 
-    // ── Karte 5: Erfindungen ────────────────
+    // ── Karte 5: Literarische Werke (Reihenfolge) ──
     {
-      id: 'card-05',
-      prompt: { text: 'In welchem Jahrhundert wurden diese Dinge erfunden?', image: null },
+      prompt: { text: 'Ordne die Werke nach dem Jahr ihrer Veröffentlichung (1=ältestes)!', image: null },
       items: [
-        { id: 'c05-0', label: { text: 'Buchdruck', image: null }, solution: { text: '15. Jhd.', type: 'text' } },
-        { id: 'c05-1', label: { text: 'Telefon', image: null }, solution: { text: '19. Jhd.', type: 'text' } },
-        { id: 'c05-2', label: { text: 'Internet', image: null }, solution: { text: '20. Jhd.', type: 'text' } },
-        { id: 'c05-3', label: { text: 'Dampfmaschine', image: null }, solution: { text: '18. Jhd.', type: 'text' } },
-        { id: 'c05-4', label: { text: 'Gluehbirne', image: null }, solution: { text: '19. Jhd.', type: 'text' } },
-        { id: 'c05-5', label: { text: 'Kompass', image: null }, solution: { text: '12. Jhd.', type: 'text' } },
-        { id: 'c05-6', label: { text: 'Fernsehen', image: null }, solution: { text: '20. Jhd.', type: 'text' } },
-        { id: 'c05-7', label: { text: 'Schiesspulver', image: null }, solution: { text: '9. Jhd.', type: 'text' } },
-        { id: 'c05-8', label: { text: 'Penicillin', image: null }, solution: { text: '20. Jhd.', type: 'text' } },
-        { id: 'c05-9', label: { text: 'Rad', image: null }, solution: { text: '4. Jtsd. v. Chr.', type: 'text' } }
+        { label: { text: 'Anonym: Gilgamesch-Epos', image: null }, solution: { text: '5', type: 'text' } },
+        { label: { text: 'Franz Kafka: Der Prozess', image: null }, solution: { text: '9', type: 'text' } },
+        { label: { text: 'William Shakespeare: Macbeth', image: null }, solution: { text: '4', type: 'text' } },
+        { label: { text: 'Daniel Defoe: Robinson Crusoe', image: null }, solution: { text: '6', type: 'text' } },
+        { label: { text: 'Sophokles: König Ödipus', image: null }, solution: { text: '2', type: 'text' } },
+        { label: { text: 'Fjodor Dostojewski: Der Idiot', image: null }, solution: { text: '8', type: 'text' } },
+        { label: { text: 'Mary Shelley: Frankenstein', image: null }, solution: { text: '7', type: 'text' } },
+        { label: { text: 'Aldous Huxley: Schöne neue Welt', image: null }, solution: { text: '10', type: 'text' } },
+        { label: { text: 'Dante Alighieri: Die göttliche Komödie', image: null }, solution: { text: '3', type: 'text' } },
+        { label: { text: 'John Milton: Das verlorene Paradies', image: null }, solution: { text: '5', type: 'text' } }
       ]
     },
 
-    // ── Karte 6: Laender & Kontinente ────────
+    // ── Karte 6: Himmelskoerper (Durchmesser) ──
     {
-      id: 'card-06',
-      prompt: { text: 'Auf welchem Kontinent liegen diese Laender?', image: null },
+      prompt: { text: 'Ordne die Himmelskörper nach ihrem Durchmesser (1=größter)!', image: null },
       items: [
-        { id: 'c06-0', label: { text: 'Brasilien', image: null }, solution: { text: 'Suedamerika', type: 'text' } },
-        { id: 'c06-1', label: { text: 'Aegypten', image: null }, solution: { text: 'Afrika', type: 'text' } },
-        { id: 'c06-2', label: { text: 'Japan', image: null }, solution: { text: 'Asien', type: 'text' } },
-        { id: 'c06-3', label: { text: 'Australien', image: null }, solution: { text: 'Ozeanien', type: 'text' } },
-        { id: 'c06-4', label: { text: 'Kanada', image: null }, solution: { text: 'Nordamerika', type: 'text' } },
-        { id: 'c06-5', label: { text: 'Norwegen', image: null }, solution: { text: 'Europa', type: 'text' } },
-        { id: 'c06-6', label: { text: 'Indien', image: null }, solution: { text: 'Asien', type: 'text' } },
-        { id: 'c06-7', label: { text: 'Nigeria', image: null }, solution: { text: 'Afrika', type: 'text' } },
-        { id: 'c06-8', label: { text: 'Argentinien', image: null }, solution: { text: 'Suedamerika', type: 'text' } },
-        { id: 'c06-9', label: { text: 'Neuseeland', image: null }, solution: { text: 'Ozeanien', type: 'text' } }
+        { label: { text: 'Sonne', image: null }, solution: { text: '1', type: 'text' } },
+        { label: { text: 'Erde', image: null }, solution: { text: '6', type: 'text' } },
+        { label: { text: 'Saturn', image: null }, solution: { text: '3', type: 'text' } },
+        { label: { text: 'Uranus', image: null }, solution: { text: '4', type: 'text' } },
+        { label: { text: 'Neptun', image: null }, solution: { text: '5', type: 'text' } },
+        { label: { text: 'Mars', image: null }, solution: { text: '7', type: 'text' } },
+        { label: { text: 'Jupiter', image: null }, solution: { text: '2', type: 'text' } },
+        { label: { text: 'Ganymed', image: null }, solution: { text: '8', type: 'text' } },
+        { label: { text: 'Titan', image: null }, solution: { text: '9', type: 'text' } },
+        { label: { text: 'Merkur', image: null }, solution: { text: '10', type: 'text' } }
       ]
     },
 
-    // ── Karte 7: Musik ──────────────────────
+    // ── Karte 7: Sportlerinnen ────────────────
     {
-      id: 'card-07',
-      prompt: { text: 'Welche dieser Kuenstler sind Solo-Kuenstler (keine Band)?', image: null },
+      prompt: { text: 'Für welchen Sport ist diese Person berühmt?', image: null },
       items: [
-        { id: 'c07-0', label: { text: 'Ed Sheeran', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c07-1', label: { text: 'Coldplay', image: null }, solution: { text: '✗ Band', type: 'boolean_false' } },
-        { id: 'c07-2', label: { text: 'Adele', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c07-3', label: { text: 'AC/DC', image: null }, solution: { text: '✗ Band', type: 'boolean_false' } },
-        { id: 'c07-4', label: { text: 'Taylor Swift', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c07-5', label: { text: 'Queen', image: null }, solution: { text: '✗ Band', type: 'boolean_false' } },
-        { id: 'c07-6', label: { text: 'Drake', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c07-7', label: { text: 'Nirvana', image: null }, solution: { text: '✗ Band', type: 'boolean_false' } },
-        { id: 'c07-8', label: { text: 'Billie Eilish', image: null }, solution: { text: '✓', type: 'boolean_true' } },
-        { id: 'c07-9', label: { text: 'ABBA', image: null }, solution: { text: '✗ Band/Gruppe', type: 'boolean_false' } }
+        { label: { text: 'Fußball', image: null }, solution: { text: 'Marta Vieira da Silva', type: 'text' } },
+        { label: { text: 'Tennis', image: null }, solution: { text: 'Serena Williams', type: 'text' } },
+        { label: { text: 'Skilanglauf', image: null }, solution: { text: 'Marit Bjørgen', type: 'text' } },
+        { label: { text: 'Snowboarden', image: null }, solution: { text: 'Anna Gasser', type: 'text' } },
+        { label: { text: 'Tennis', image: null }, solution: { text: 'Marija Scharapowa', type: 'text' } },
+        { label: { text: 'Fußball', image: null }, solution: { text: 'Birgit Prinz', type: 'text' } },
+        { label: { text: 'Stabhochsprung', image: null }, solution: { text: 'Jelena Issinbajewa', type: 'text' } },
+        { label: { text: 'Langstreckenlauf', image: null }, solution: { text: 'Paula Radcliffe', type: 'text' } },
+        { label: { text: 'Kunstturnen', image: null }, solution: { text: 'Nadia Comăneci', type: 'text' } },
+        { label: { text: 'Autorennen', image: null }, solution: { text: 'Danica Patrick', type: 'text' } }
       ]
     },
 
-    // ── Karte 8: Sport ──────────────────────
+    // ── Karte 8: Anzahl von ... ───────────────
     {
-      id: 'card-08',
-      prompt: { text: 'Wie viele Spieler hat ein Team bei diesen Sportarten (auf dem Feld)?', image: null },
+      prompt: { text: 'Anzahl der ... ? (Stand 2019)', image: null },
       items: [
-        { id: 'c08-0', label: { text: 'Fussball', image: null }, solution: { text: '11', type: 'number' } },
-        { id: 'c08-1', label: { text: 'Basketball', image: null }, solution: { text: '5', type: 'number' } },
-        { id: 'c08-2', label: { text: 'Volleyball', image: null }, solution: { text: '6', type: 'number' } },
-        { id: 'c08-3', label: { text: 'Eishockey', image: null }, solution: { text: '6', type: 'number' } },
-        { id: 'c08-4', label: { text: 'Rugby', image: null }, solution: { text: '15', type: 'number' } },
-        { id: 'c08-5', label: { text: 'Handball', image: null }, solution: { text: '7', type: 'number' } },
-        { id: 'c08-6', label: { text: 'Baseball', image: null }, solution: { text: '9', type: 'number' } },
-        { id: 'c08-7', label: { text: 'Wasserball', image: null }, solution: { text: '7', type: 'number' } },
-        { id: 'c08-8', label: { text: 'Cricket', image: null }, solution: { text: '11', type: 'number' } },
-        { id: 'c08-9', label: { text: 'Tennis Doppel', image: null }, solution: { text: '2', type: 'number' } }
+        { label: { text: 'Kapitel in der Bhagavad Gita', image: null }, solution: { text: '18', type: 'text' } },
+        { label: { text: 'Nichten von Daisy Duck', image: null }, solution: { text: '3', type: 'text' } },
+        { label: { text: 'Gesetze im Kodex Hammurabi', image: null }, solution: { text: '282', type: 'text' } },
+        { label: { text: 'Karten in einem üblichen Tarot-Set', image: null }, solution: { text: '78', type: 'text' } },
+        { label: { text: 'Jahre bei der Silberhochzeit', image: null }, solution: { text: '25', type: 'text' } },
+        { label: { text: 'täglichen Gebete eines Muslimen', image: null }, solution: { text: '5', type: 'text' } },
+        { label: { text: 'Nobelpreise für Marie Curie', image: null }, solution: { text: '2', type: 'text' } },
+        { label: { text: 'olympischen Medaillen für Monaco', image: null }, solution: { text: '0', type: 'text' } },
+        { label: { text: 'Silben in einem Daktylus', image: null }, solution: { text: '3', type: 'text' } },
+        { label: { text: 'IBAN-Stellen (Deutschland)', image: null }, solution: { text: '22', type: 'text' } }
       ]
     },
 
-    // ── Karte 9: Filme ──────────────────────
+    // ── Karte 9: Historische Ereignisse (Jahr) ──
     {
-      id: 'card-09',
-      prompt: { text: 'Welche Filme haben einen Oscar fuer den besten Film gewonnen?', image: null },
+      prompt: { text: 'Nenne das Jahr des Ereignisses!', image: null },
       items: [
-        { id: 'c09-0', label: { text: 'Titanic', image: null }, solution: { text: '✓ 1998', type: 'boolean_true' } },
-        { id: 'c09-1', label: { text: 'Avatar', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c09-2', label: { text: 'Der Pate', image: null }, solution: { text: '✓ 1973', type: 'boolean_true' } },
-        { id: 'c09-3', label: { text: 'Star Wars', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c09-4', label: { text: 'Forrest Gump', image: null }, solution: { text: '✓ 1995', type: 'boolean_true' } },
-        { id: 'c09-5', label: { text: 'Der Weisse Hai', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c09-6', label: { text: 'Schindlers Liste', image: null }, solution: { text: '✓ 1994', type: 'boolean_true' } },
-        { id: 'c09-7', label: { text: 'Inception', image: null }, solution: { text: '✗', type: 'boolean_false' } },
-        { id: 'c09-8', label: { text: 'Gladiator', image: null }, solution: { text: '✓ 2001', type: 'boolean_true' } },
-        { id: 'c09-9', label: { text: 'Die Matrix', image: null }, solution: { text: '✗', type: 'boolean_false' } }
+        { label: { text: 'Arabischer Frühling (Beginn)', image: null }, solution: { text: '2010', type: 'text' } },
+        { label: { text: 'Hindenburg-Katastrophe', image: null }, solution: { text: '1937', type: 'text' } },
+        { label: { text: 'Hurrikan Katrina', image: null }, solution: { text: '2005', type: 'text' } },
+        { label: { text: 'Tschernobyl-Katastrophe', image: null }, solution: { text: '1986', type: 'text' } },
+        { label: { text: 'Tod von Prinzessin Diana', image: null }, solution: { text: '1997', type: 'text' } },
+        { label: { text: 'Ermordung von Erzherzog Franz Ferdinand', image: null }, solution: { text: '1914', type: 'text' } },
+        { label: { text: 'Erste Mondlandung', image: null }, solution: { text: '1969', type: 'text' } },
+        { label: { text: 'Angriff auf Pearl Harbor', image: null }, solution: { text: '1941', type: 'text' } },
+        { label: { text: 'Ermordung von Benazir Bhutto', image: null }, solution: { text: '2007', type: 'text' } },
+        { label: { text: 'Kuba-Krise', image: null }, solution: { text: '1962', type: 'text' } }
       ]
     },
 
-    // ── Karte 10: Geographie ─────────────────
+    // ── Karte 10: Basketball-Abkuerzungen ─────
     {
-      id: 'card-10',
-      prompt: { text: 'Welches sind die laengsten Fluesse der Welt (Top 10)?', image: null },
+      prompt: { text: 'Was bedeutet diese Abkürzung im Basketball?', image: null },
       items: [
-        { id: 'c10-0', label: { text: 'Nil', image: null }, solution: { text: '✓ ~6.650 km', type: 'boolean_true' } },
-        { id: 'c10-1', label: { text: 'Rhein', image: null }, solution: { text: '✗ ~1.230 km', type: 'boolean_false' } },
-        { id: 'c10-2', label: { text: 'Amazonas', image: null }, solution: { text: '✓ ~6.400 km', type: 'boolean_true' } },
-        { id: 'c10-3', label: { text: 'Donau', image: null }, solution: { text: '✗ ~2.850 km', type: 'boolean_false' } },
-        { id: 'c10-4', label: { text: 'Jangtse', image: null }, solution: { text: '✓ ~6.300 km', type: 'boolean_true' } },
-        { id: 'c10-5', label: { text: 'Themse', image: null }, solution: { text: '✗ ~346 km', type: 'boolean_false' } },
-        { id: 'c10-6', label: { text: 'Mississippi', image: null }, solution: { text: '✓ ~6.275 km', type: 'boolean_true' } },
-        { id: 'c10-7', label: { text: 'Seine', image: null }, solution: { text: '✗ ~777 km', type: 'boolean_false' } },
-        { id: 'c10-8', label: { text: 'Ob', image: null }, solution: { text: '✓ ~5.410 km', type: 'boolean_true' } },
-        { id: 'c10-9', label: { text: 'Mekong', image: null }, solution: { text: '✓ ~4.350 km', type: 'boolean_true' } }
+        { label: { text: 'Turnover', image: null }, solution: { text: 'TO', type: 'text' } },
+        { label: { text: 'Steals', image: null }, solution: { text: 'ST', type: 'text' } },
+        { label: { text: 'Blocks', image: null }, solution: { text: 'BLK', type: 'text' } },
+        { label: { text: 'Minuten pro Spiel', image: null }, solution: { text: 'MPG', type: 'text' } },
+        { label: { text: 'Offensivrebounds', image: null }, solution: { text: 'OFF', type: 'text' } },
+        { label: { text: 'Assists', image: null }, solution: { text: 'AST', type: 'text' } },
+        { label: { text: 'Punkte', image: null }, solution: { text: 'PTS', type: 'text' } },
+        { label: { text: 'Gesamt Rebounds', image: null }, solution: { text: 'REB', type: 'text' } },
+        { label: { text: 'Freiwurf-Trefferquote', image: null }, solution: { text: 'FT%', type: 'text' } },
+        { label: { text: 'Punkte pro Spiel', image: null }, solution: { text: 'PPG', type: 'text' } }
       ]
     },
 
-    // ── Karte 11: Sprachen ──────────────────
+    // ── Karte 11: Seemannssprache ─────────────
     {
-      id: 'card-11',
-      prompt: { text: 'Was bedeuten diese Woerter auf Deutsch?', image: null },
+      prompt: { text: 'Wofür steht dieses Wort in der Seemannssprache?', image: null },
       items: [
-        { id: 'c11-0', label: { text: 'Merci (FR)', image: null }, solution: { text: 'Danke', type: 'text' } },
-        { id: 'c11-1', label: { text: 'Gracias (ES)', image: null }, solution: { text: 'Danke', type: 'text' } },
-        { id: 'c11-2', label: { text: 'Cat (EN)', image: null }, solution: { text: 'Katze', type: 'text' } },
-        { id: 'c11-3', label: { text: 'Casa (IT)', image: null }, solution: { text: 'Haus', type: 'text' } },
-        { id: 'c11-4', label: { text: 'Agua (ES)', image: null }, solution: { text: 'Wasser', type: 'text' } },
-        { id: 'c11-5', label: { text: 'Livre (FR)', image: null }, solution: { text: 'Buch', type: 'text' } },
-        { id: 'c11-6', label: { text: 'Bread (EN)', image: null }, solution: { text: 'Brot', type: 'text' } },
-        { id: 'c11-7', label: { text: 'Amico (IT)', image: null }, solution: { text: 'Freund', type: 'text' } },
-        { id: 'c11-8', label: { text: 'Sol (ES)', image: null }, solution: { text: 'Sonne', type: 'text' } },
-        { id: 'c11-9', label: { text: 'Fleur (FR)', image: null }, solution: { text: 'Blume', type: 'text' } }
+        { label: { text: 'Schiffsjunge', image: null }, solution: { text: 'Moses', type: 'text' } },
+        { label: { text: 'links', image: null }, solution: { text: 'Backbord', type: 'text' } },
+        { label: { text: 'rechts', image: null }, solution: { text: 'Steuerbord', type: 'text' } },
+        { label: { text: 'Schmuggelschiff', image: null }, solution: { text: 'Blender', type: 'text' } },
+        { label: { text: 'Schiffsgefängnis', image: null }, solution: { text: 'Brig', type: 'text' } },
+        { label: { text: 'Besatzung', image: null }, solution: { text: 'Crew', type: 'text' } },
+        { label: { text: 'Seile', image: null }, solution: { text: 'Ende', type: 'text' } },
+        { label: { text: 'Vorsegel', image: null }, solution: { text: 'Fock', type: 'text' } },
+        { label: { text: 'Teufel', image: null }, solution: { text: 'Der Gast', type: 'text' } },
+        { label: { text: 'vorne', image: null }, solution: { text: 'Bug', type: 'text' } }
       ]
     },
 
-    // ── Karte 12: Koerper ───────────────────
+    // ── Karte 12: Weltwunder der Neuzeit ──────
     {
-      id: 'card-12',
-      prompt: { text: 'Wie viele hat ein erwachsener Mensch davon?', image: null },
+      prompt: { text: 'Ist eines der sieben Weltwunder der Neuzeit?', image: null },
       items: [
-        { id: 'c12-0', label: { text: 'Knochen', image: null }, solution: { text: '206', type: 'number' } },
-        { id: 'c12-1', label: { text: 'Zaehne', image: null }, solution: { text: '32', type: 'number' } },
-        { id: 'c12-2', label: { text: 'Rippen', image: null }, solution: { text: '24', type: 'number' } },
-        { id: 'c12-3', label: { text: 'Wirbel', image: null }, solution: { text: '33', type: 'number' } },
-        { id: 'c12-4', label: { text: 'Finger', image: null }, solution: { text: '10', type: 'number' } },
-        { id: 'c12-5', label: { text: 'Lungen', image: null }, solution: { text: '2', type: 'number' } },
-        { id: 'c12-6', label: { text: 'Nieren', image: null }, solution: { text: '2', type: 'number' } },
-        { id: 'c12-7', label: { text: 'Herzkammern', image: null }, solution: { text: '4', type: 'number' } },
-        { id: 'c12-8', label: { text: 'Chromosomen', image: null }, solution: { text: '46', type: 'number' } },
-        { id: 'c12-9', label: { text: 'Blutgruppen', image: null }, solution: { text: '4 (A,B,AB,0)', type: 'text' } }
+        { label: { text: 'Moai-Statuen (Osterinseln)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Christo Redentor (Rio de Janeiro)', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Chinesische Mauer (China)', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Eiffelturm (Paris)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Burj Khalifa (Dubai)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Schloss Neuschwanstein (Deutschland)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Timbuktu (Mali)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Kolosseum (Rom)', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Akropolis (Athen)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Chichén Itzá (Yucatán)', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
       ]
     },
 
-    // ── Karte 13: Geschichte ────────────────
+    // ── Karte 13: Ausgestorbene Tiere ─────────
     {
-      id: 'card-13',
-      prompt: { text: 'In welchem Jahr fanden diese Ereignisse statt?', image: null },
+      prompt: { text: 'Ist in den letzten 100 Jahren ausgestorben? (Stand 2019)', image: null },
       items: [
-        { id: 'c13-0', label: { text: 'Mondlandung', image: null }, solution: { text: '1969', type: 'number' } },
-        { id: 'c13-1', label: { text: 'Mauerfall', image: null }, solution: { text: '1989', type: 'number' } },
-        { id: 'c13-2', label: { text: 'Entdeckung Amerikas', image: null }, solution: { text: '1492', type: 'number' } },
-        { id: 'c13-3', label: { text: 'Franzoesische Revolution', image: null }, solution: { text: '1789', type: 'number' } },
-        { id: 'c13-4', label: { text: 'Ende 2. Weltkrieg', image: null }, solution: { text: '1945', type: 'number' } },
-        { id: 'c13-5', label: { text: 'Titanic Untergang', image: null }, solution: { text: '1912', type: 'number' } },
-        { id: 'c13-6', label: { text: 'Erfindung Telefon', image: null }, solution: { text: '1876', type: 'number' } },
-        { id: 'c13-7', label: { text: 'Deutsche Einheit', image: null }, solution: { text: '1990', type: 'number' } },
-        { id: 'c13-8', label: { text: 'Erster Flug (Wright)', image: null }, solution: { text: '1903', type: 'number' } },
-        { id: 'c13-9', label: { text: 'Euro-Einfuehrung', image: null }, solution: { text: '2002', type: 'number' } }
+        { label: { text: 'Java-Nashorn', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Beutelwolf (Tasmanischer Tiger)', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Kleiner Kaninchennasenbeutler', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Baiji (Chinesischer Flussdelfin)', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Schneeleopard', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Java-Tiger', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Sibirischer Tiger', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Afrikanischer Elefant', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Beutelteufel (Tasmanischer Teufel)', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Kaspischer Tiger', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
       ]
     },
 
-    // ── Karte 14: Essen & Trinken ────────────
+    // ── Karte 14: Fiktive Charaktere ──────────
     {
-      id: 'card-14',
-      prompt: { text: 'Aus welchem Land stammen diese Gerichte/Getraenke urspruenglich?', image: null },
+      prompt: { text: 'Wer erschuf diesen fiktiven Charakter?', image: null },
       items: [
-        { id: 'c14-0', label: { text: 'Pizza', image: null }, solution: { text: 'Italien', type: 'text' } },
-        { id: 'c14-1', label: { text: 'Sushi', image: null }, solution: { text: 'Japan', type: 'text' } },
-        { id: 'c14-2', label: { text: 'Croissant', image: null }, solution: { text: 'Oesterreich', type: 'text' } },
-        { id: 'c14-3', label: { text: 'Hamburger', image: null }, solution: { text: 'USA', type: 'text' } },
-        { id: 'c14-4', label: { text: 'Kebab', image: null }, solution: { text: 'Tuerkei', type: 'text' } },
-        { id: 'c14-5', label: { text: 'Paella', image: null }, solution: { text: 'Spanien', type: 'text' } },
-        { id: 'c14-6', label: { text: 'Whiskey', image: null }, solution: { text: 'Irland/Schottland', type: 'text' } },
-        { id: 'c14-7', label: { text: 'Kimchi', image: null }, solution: { text: 'Korea', type: 'text' } },
-        { id: 'c14-8', label: { text: 'Gulasch', image: null }, solution: { text: 'Ungarn', type: 'text' } },
-        { id: 'c14-9', label: { text: 'Tee', image: null }, solution: { text: 'China', type: 'text' } }
+        { label: { text: 'Asterix', image: null }, solution: { text: 'Goscinny und Uderzo', type: 'text' } },
+        { label: { text: 'James Bond', image: null }, solution: { text: 'Ian Fleming', type: 'text' } },
+        { label: { text: 'Robert Langdon', image: null }, solution: { text: 'Dan Brown', type: 'text' } },
+        { label: { text: 'The Spirit', image: null }, solution: { text: 'Will Eisner', type: 'text' } },
+        { label: { text: 'Dick Tracy', image: null }, solution: { text: 'Chester Gould', type: 'text' } },
+        { label: { text: 'Gaston', image: null }, solution: { text: '(André) Franquin', type: 'text' } },
+        { label: { text: 'Die Schlümpfe', image: null }, solution: { text: 'Peyo', type: 'text' } },
+        { label: { text: 'Adrian Monk', image: null }, solution: { text: 'Andy Breckman', type: 'text' } },
+        { label: { text: 'Batman', image: null }, solution: { text: 'Bob Kane/ Bill Finger', type: 'text' } },
+        { label: { text: 'Rip Kirby', image: null }, solution: { text: 'Alex Raymond', type: 'text' } }
       ]
     },
 
-    // ── Karte 15: Mathe & Logik ──────────────
+    // ── Karte 15: Chinesische Tierkreiszeichen ──
     {
-      id: 'card-15',
-      prompt: { text: 'Wie lautet das Ergebnis?', image: null },
+      prompt: { text: 'Zählt zu den chinesischen Tierkreiszeichen?', image: null },
       items: [
-        { id: 'c15-0', label: { text: '7 × 8', image: null }, solution: { text: '56', type: 'number' } },
-        { id: 'c15-1', label: { text: '√144', image: null }, solution: { text: '12', type: 'number' } },
-        { id: 'c15-2', label: { text: '15²', image: null }, solution: { text: '225', type: 'number' } },
-        { id: 'c15-3', label: { text: '1000 ÷ 8', image: null }, solution: { text: '125', type: 'number' } },
-        { id: 'c15-4', label: { text: '3⁴', image: null }, solution: { text: '81', type: 'number' } },
-        { id: 'c15-5', label: { text: '17 + 28', image: null }, solution: { text: '45', type: 'number' } },
-        { id: 'c15-6', label: { text: '99 - 37', image: null }, solution: { text: '62', type: 'number' } },
-        { id: 'c15-7', label: { text: '11 × 11', image: null }, solution: { text: '121', type: 'number' } },
-        { id: 'c15-8', label: { text: '√256', image: null }, solution: { text: '16', type: 'number' } },
-        { id: 'c15-9', label: { text: '2¹⁰', image: null }, solution: { text: '1024', type: 'number' } }
+        { label: { text: 'Ziege', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Panda', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Affe', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Tiger', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Katze', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Elefant', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Ratte', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Grille', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Antilope', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Schlange', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
+      ]
+    },
+
+    // ── Karte 16: Jahr 1917 ───────────────────
+    {
+      prompt: { text: 'Geschah im Jahr 1917?', image: null },
+      items: [
+        { label: { text: 'Picasso wurde geboren', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Erste Russische Revolution', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'das Fernsehen wurde erfunden', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'die Balfour-Deklaration wurde beschlossen', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Marie Curie gewinnt den Nobelpreis', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Hungeraufstände in Schweden', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Beginn des 1. Weltkrieges', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'Finnland wird unabhängig', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } },
+        { label: { text: 'Astrid Lindgren wird geboren', image: null }, solution: { text: 'Falsch', type: 'boolean_false' } },
+        { label: { text: 'USA kauften die Jungferninseln', image: null }, solution: { text: 'Richtig', type: 'boolean_true' } }
       ]
     }
   ]

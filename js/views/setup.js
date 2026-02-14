@@ -7,7 +7,7 @@ import { router } from '../app.js';
 import { GameModel } from '../models/game.js';
 import { DEMO_SET } from '../data/demo-set.js';
 import { cardStore } from '../services/card-store.js';
-import { getSetMeta } from '../models/card.js';
+import { getSetMeta, normalizeCardSet } from '../models/card.js';
 
 // ── Konstanten ──────────────────────────────
 
@@ -111,7 +111,7 @@ function _takenIndices(excludeTeamIdx) {
 async function render() {
   const el = document.getElementById('view-setup');
 
-  const cardSets = [{ id: 'demo', name: 'Allgemeinwissen (Demo)', count: DEMO_SET.cards.length }];
+  const cardSets = [{ id: 'demo', name: DEMO_SET.setName, count: DEMO_SET.cards.length }];
   try {
     const importedSets = await cardStore.getAllSets();
     if (importedSets) {
@@ -374,7 +374,7 @@ async function _startGame() {
   // Kartenset laden
   let cardSet = null;
   if (selectedCardSetId === 'demo') {
-    cardSet = DEMO_SET;
+    cardSet = normalizeCardSet(DEMO_SET);
   } else {
     try {
       cardSet = await cardStore.getSet(selectedCardSetId);

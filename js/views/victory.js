@@ -8,6 +8,7 @@ import { audio } from '../services/audio.js';
 import { GameModel } from '../models/game.js';
 import { DEMO_SET } from '../data/demo-set.js';
 import { cardStore } from '../services/card-store.js';
+import { normalizeCardSet } from '../models/card.js';
 
 // ── Init / Destroy ──────────────────────────
 
@@ -85,7 +86,7 @@ async function _startRematch(teams) {
     const cardSetId = config.selectedCardSetId || 'demo';
 
     if (cardSetId === 'demo') {
-      cardSet = DEMO_SET;
+      cardSet = normalizeCardSet(DEMO_SET);
     } else {
       try {
         cardSet = await cardStore.getSet(cardSetId);
@@ -97,7 +98,7 @@ async function _startRematch(teams) {
     // Fallback auf Demo-Set
     if (!cardSet) {
       console.warn('[Victory] Kartenset nicht gefunden, nutze Demo-Set.');
-      cardSet = DEMO_SET;
+      cardSet = normalizeCardSet(DEMO_SET);
     }
 
     // Neues Spiel mit gleichen Teams und Settings erstellen

@@ -7,6 +7,7 @@ import { router } from '../app.js';
 import { cardStore } from '../services/card-store.js';
 import { importZip } from '../services/zip-import.js';
 import { getSetMeta } from '../models/card.js';
+import { DEMO_SET } from '../data/demo-set.js';
 
 // ── Init / Destroy ──────────────────────────
 
@@ -59,8 +60,8 @@ async function _render() {
           <div class="set-row" style="padding: var(--space-md); background: var(--bg-secondary); border-radius: var(--radius-md);">
             <div class="flex-between">
               <div>
-                <strong>Allgemeinwissen (Demo)</strong>
-                <br><small style="color: var(--text-secondary);">15 Karten &middot; Demo</small>
+                <strong>${_escapeHtml(DEMO_SET.setName)}</strong>
+                <br><small style="color: var(--text-secondary);">${DEMO_SET.cards.length} Karten &middot; ${_escapeHtml(DEMO_SET.category)}</small>
               </div>
               <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">Fest eingebaut</span>
             </div>

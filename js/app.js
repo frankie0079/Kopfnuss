@@ -109,7 +109,7 @@ async function initApp() {
 
   // Service Worker registrieren (nur Produktion)
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
   }
 
   // Standard-View: Setup

@@ -2,7 +2,7 @@
   "name": "Kopfnuss!",
   "short_name": "Kopfnuss!",
   "description": "Digitale Spielbegleitung fuer Smart 10",
-  "start_url": "/index.html",
+  "start_url": ".",
   "display": "standalone",
   "orientation": "landscape",
   "background_color": "#FFF8F0",

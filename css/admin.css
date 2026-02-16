@@ -1,0 +1,861 @@
+/* ============================================
+   Kopfnuss! -- Admin-Bereich (Kartenmanager)
+   Nur Komponenten-Styles, keine globalen Regeln.
+   Alles unter #view-admin, #view-batch,
+   #view-library, #view-card-editor, #view-settings
+   ============================================ */
+
+/* ── Admin-View Basis ─────────────────────── */
+
+#view-admin,
+#view-batch,
+#view-library,
+#view-card-editor,
+#view-settings {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #F5F5F5;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Sub-Views: oben zentriert, damit .admin-container greift */
+#view-batch,
+#view-library,
+#view-card-editor,
+#view-settings {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 24px 32px;
+}
+
+/* ── Layout-Container ────────────────────── */
+
+.admin-container {
+  max-width: 720px;
+  width: 100%;
+}
+
+.admin-container--wide {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ── Zurueck-Button ──────────────────────── */
+
+.admin-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background: #2C3E50;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+.admin-back-btn:hover {
+  background: #34495E;
+}
+
+.admin-back-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── Ghost-Button (Admin Hub) ────────────── */
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  background: none;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: #2C3E50;
+  color: #2C3E50;
+}
+
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+/* ── Header-Zeile (Titel + Aktionen) ─────── */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin-header h2 {
+  margin: 0;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-actions .btn {
+  width: auto;
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+/* ── Admin-Navigation (Hub) ──────────────── */
+
+.admin-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.admin-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 16px;
+  background: white;
+  border: 2px solid #ECF0F1;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.admin-nav-btn:hover {
+  border-color: #2C3E50;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.admin-nav-btn:active {
+  transform: scale(0.97);
+}
+
+.admin-nav-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.admin-nav-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2C3E50;
+}
+
+.admin-nav-desc {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ── Buttons (Admin-spezifisch) ──────────── */
+
+#view-batch .btn,
+#view-library .btn,
+#view-card-editor .btn,
+#view-settings .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;
+}
+
+#view-batch .btn:active,
+#view-library .btn:active,
+#view-card-editor .btn:active,
+#view-settings .btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: #2C3E50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #34495E;
+}
+
+.btn-secondary {
+  background: #ECF0F1;
+  color: #2C3E50;
+}
+
+.btn-danger {
+  background: #E74C3C;
+  color: white;
+}
+
+.btn-success {
+  background: #27AE60;
+  color: white;
+}
+
+/* ── Formulare ────────────────────────────── */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  background: white;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2C3E50;
+  box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.15);
+}
+
+/* ── Karten-Liste ─────────────────────────── */
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-item {
+  background: white;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.card-item:active {
+  box-shadow: 0 1px 6px rgba(0,0,0,0.15);
+}
+
+.card-item-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.card-item-meta {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ── Kategorie-Filter-Leiste ─────────────── */
+
+.category-filter-bar {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 12px 0;
+  flex-wrap: nowrap;
+}
+
+.category-filter-bar .category-badge {
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.category-filter-bar .active-filter {
+  background: #2C3E50;
+  color: white;
+}
+
+/* ── KI-Badge ────────────────────────────── */
+
+.source-badge-ki {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #8E44AD;
+  color: white;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+}
+
+.card-item--ki {
+  border-left: 3px solid #8E44AD;
+}
+
+/* ── Kategorie-Badge ──────────────────────── */
+
+.category-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #EBF5FB;
+  color: #2980B9;
+}
+
+/* ── Ladeindikator ────────────────────────── */
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ECF0F1;
+  border-top-color: #2C3E50;
+  border-radius: 50%;
+  animation: admin-spin 0.8s linear infinite;
+}
+
+@keyframes admin-spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: white;
+  font-size: 16px;
+  z-index: 100;
+}
+
+/* ── Batch-Import ─────────────────────────── */
+
+.batch-upload {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 32px;
+}
+
+.batch-hint {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.batch-hint code {
+  background: #ECF0F1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.batch-error {
+  margin-top: 16px;
+  padding: 12px;
+  background: #FDEDEC;
+  color: #E74C3C;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Zusammenfassung */
+
+.batch-summary {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.batch-stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.batch-stat {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  min-width: 100px;
+}
+
+.batch-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #2C3E50;
+}
+
+.batch-stat-lbl {
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.batch-stat-ok .batch-stat-num { color: #27AE60; }
+.batch-stat-review .batch-stat-num { color: #F39C12; }
+.batch-stat-error .batch-stat-num { color: #E74C3C; }
+
+.batch-info {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Review Side-by-Side */
+
+.batch-review {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.batch-review-warning {
+  border: 3px solid #E74C3C;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.batch-conf-review {
+  background: #E74C3C;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.batch-review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0 12px;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+
+.batch-conf {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.batch-conf-high { background: #D5F5E3; color: #27AE60; }
+.batch-conf-medium { background: #FEF9E7; color: #F39C12; }
+.batch-conf-low { background: #FDEDEC; color: #E74C3C; }
+.batch-conf-error { background: #FDEDEC; color: #E74C3C; }
+
+.batch-source {
+  margin-left: auto;
+  font-family: monospace;
+  font-size: 12px;
+  color: #999;
+}
+
+.batch-review-body {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Foto-Panel (links) */
+
+.batch-photo-panel {
+  flex: 0 0 45%;
+  max-width: 45%;
+  position: sticky;
+  top: 16px;
+}
+
+.batch-photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.batch-photo-zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  z-index: 200;
+  cursor: zoom-out;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.batch-no-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: #ECF0F1;
+  border-radius: 8px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Daten-Panel (rechts) */
+
+.batch-data-panel {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Fehlermeldungen */
+
+.batch-issues {
+  background: #FEF9E7;
+  border: 1px solid #F9E79F;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.batch-issues strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #E67E22;
+}
+
+.batch-issue {
+  color: #856404;
+  padding: 2px 0;
+  white-space: pre-line;
+}
+
+/* Item-Zeilen */
+
+.batch-item-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.batch-item-error {
+  background: #FDEDEC;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.batch-item-num {
+  width: 24px;
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.batch-item-label {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.batch-item-solution {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.batch-col-header {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Aktionsleiste */
+
+.batch-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+}
+
+.batch-actions .btn {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+/* Fortschrittsbalken */
+
+.batch-progress {
+  height: 4px;
+  background: #ECF0F1;
+  border-radius: 2px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.batch-progress-bar {
+  height: 100%;
+  background: #27AE60;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Fertig-Screen */
+
+.batch-done {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Home-Stats ──────────────────────────── */
+
+.home-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2C3E50;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Suchleiste (Bibliothek) ─────────────── */
+
+.lib-search-bar {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.lib-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  padding-right: 40px;
+  font-size: 15px;
+  border: 2px solid #ECF0F1;
+  border-radius: 10px;
+  background: white;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.lib-search-input:focus {
+  outline: none;
+  border-color: #2C3E50;
+  box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.lib-search-input::placeholder {
+  color: #bbb;
+}
+
+.lib-search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #ECF0F1;
+  color: #999;
+  font-size: 18px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.lib-search-clear:hover {
+  background: #D5DBDB;
+  color: #666;
+}
+
+/* ── Status-Filter (Alle/Neu/Gesendet) ──── */
+
+.lib-status-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.lib-status-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 2px solid #ECF0F1;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lib-status-btn:hover {
+  border-color: #2C3E50;
+  color: #2C3E50;
+}
+
+.lib-status-active {
+  background: #2C3E50;
+  color: white;
+  border-color: #2C3E50;
+}
+
+/* ── Export-Badge (gesendet/neu) ─────────── */
+
+.export-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.export-badge--sent {
+  background: #D5F5E3;
+  color: #27AE60;
+}
+
+.export-badge--new {
+  background: #FEF9E7;
+  color: #E67E22;
+}
+
+.card-item--new {
+  border-left: 3px solid #E67E22;
+}
+
+.card-item--exported {
+  border-left: 3px solid #27AE60;
+}
+
+.card-item--ki.card-item--new {
+  border-left: 3px solid #8E44AD;
+}
+
+/* ── Paginierung ─────────────────────────── */
+
+.lib-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 16px 0;
+}
+
+.lib-page-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #ECF0F1;
+  border-radius: 8px;
+  background: white;
+  color: #2C3E50;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lib-page-btn:hover:not(:disabled) {
+  border-color: #2C3E50;
+  background: #2C3E50;
+  color: white;
+}
+
+.lib-page-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.lib-page-info {
+  font-size: 13px;
+  color: #999;
+}
+
+/* ── Hilfsklassen ────────────────────────── */
+
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mb-16 { margin-bottom: 16px; }
+.gap-8 { gap: 8px; }

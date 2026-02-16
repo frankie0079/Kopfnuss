@@ -90,16 +90,18 @@ async function initApp() {
 
   // Views registrieren (mit Error-Handling)
   try {
-    const [setup, game, victory, imp] = await Promise.all([
+    const [setup, game, victory, imp, admin] = await Promise.all([
       import('./views/setup.js'),
       import('./views/game.js'),
       import('./views/victory.js'),
-      import('./views/import.js')
+      import('./views/import.js'),
+      import('./admin/admin.js')
     ]);
     setup.registerSetup();
     game.registerGame();
     victory.registerVictory();
     imp.registerImport();
+    admin.registerAdmin();
   } catch (err) {
     console.error('[App] View-Import fehlgeschlagen:', err);
     document.getElementById('app').innerHTML =

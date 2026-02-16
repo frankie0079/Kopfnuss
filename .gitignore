@@ -18,3 +18,10 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Kartenfotos (liegen auf Google Drive, zu gross fuer Git)
+Kartenfotos/
+Kartenfotos_ergebnis/
+
+# API Keys
+.env

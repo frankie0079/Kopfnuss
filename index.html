@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/victory.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
   <div id="app">
@@ -32,12 +33,19 @@
 
     <!-- Import: Kartenset-Verwaltung -->
     <section id="view-import" class="view"></section>
+
+    <!-- Admin: Kartenmanager -->
+    <section id="view-admin" class="view"></section>
+    <section id="view-batch" class="view"></section>
+    <section id="view-library" class="view"></section>
+    <section id="view-card-editor" class="view"></section>
+    <section id="view-settings" class="view"></section>
   </div>
 
   <!-- JSZip (fuer ZIP-Import) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
   <!-- App Entry Point -->
-  <script type="module" src="js/app.js?v=2"></script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

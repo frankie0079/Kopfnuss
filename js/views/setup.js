@@ -1,17 +1,16 @@
 /* ============================================
    Kopfnuss! -- Setup-Screen View
+   Unified Card Architecture: Eine Datei, ein Kartenpool
    ============================================ */
 
 import { state } from '../state.js';
 import { router } from '../app.js';
 import { GameModel } from '../models/game.js';
-import { DEMO_SET } from '../data/demo-set.js';
-import { cardStore } from '../services/card-store.js';
-import { getSetMeta, normalizeCardSet } from '../models/card.js';
+import { CARDS } from '../data/cards.js';
+import { normalizeCardSet } from '../models/card.js';
 
 // ── Konstanten ──────────────────────────────
 
-/** Feste Farben pro Team-Slot (Index = Slot) */
 const SLOT_COLORS = [
   '#22C55E',  // Slot 1: Grün
   '#EAB308',  // Slot 2: Gelb
@@ -20,7 +19,6 @@ const SLOT_COLORS = [
   '#EC4899',  // Slot 5: Magenta
 ];
 
-/** Wählbare Teamnamen */
 const TEAM_NAME_POOL = [
   'Team Grips & Glory',
   'Team Synapsensalat',
@@ -42,20 +40,113 @@ const TIMER_OPTIONS = [
   { label: 'Aus',  value: null }
 ];
 
-const PICKER_ITEM_H = 40;  // px Höhe pro Picker-Item
-const PICKER_VISIBLE = 3;  // sichtbare Zeilen
+const PICKER_ITEM_H = 40;
+const PICKER_VISIBLE = 3;
+
+const COOLDOWN_SESSIONS = 10;
+const LS_COOLDOWN_KEY = 'kopfnuss_cooldown';
 
 // ── State ───────────────────────────────────
 
 let teamCount = 2;
-let teamConfigs = [];  // { nameIndex: number, locked: boolean }
+let teamConfigs = [];
 let targetScore = 10;
 let timerSeconds = null;
-let selectedCardSetId = 'demo';
+let showCategoryMix = false;
+let categoryWeights = {};
+
+// ── Cooldown-Logik ──────────────────────────
+
+function _getCooldownData() {
+  try {
+    const raw = localStorage.getItem(LS_COOLDOWN_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) { /* ignore */ }
+  return { session: 0, played: {} };
+}
+
+function _saveCooldownData(data) {
+  localStorage.setItem(LS_COOLDOWN_KEY, JSON.stringify(data));
+}
+
+function _incrementSession() {
+  const data = _getCooldownData();
+  data.session++;
+  _saveCooldownData(data);
+  return data.session;
+}
+
+function _markCardPlayed(cardKey) {
+  const data = _getCooldownData();
+  data.played[cardKey] = data.session;
+  _saveCooldownData(data);
+}
+
+// ── Kategorie-Helfer ────────────────────────
+
+function _getCategories() {
+  const cats = {};
+  for (const card of CARDS.cards) {
+    const cat = card.category || 'Allgemeinwissen';
+    cats[cat] = (cats[cat] || 0) + 1;
+  }
+  return cats;
+}
+
+function _initCategoryWeights() {
+  const cats = _getCategories();
+  for (const cat of Object.keys(cats)) {
+    if (!(cat in categoryWeights)) {
+      categoryWeights[cat] = 100;
+    }
+  }
+}
+
+// ── Kartenpool-Aufbau ───────────────────────
+
+function _getAvailableCards() {
+  const data = _getCooldownData();
+  const currentSession = data.session;
+  let cards = [...CARDS.cards];
+
+  // Kategorien-Filter
+  if (showCategoryMix) {
+    _initCategoryWeights();
+    const cardsByCat = {};
+    for (const card of cards) {
+      const cat = card.category || 'Allgemeinwissen';
+      if (!cardsByCat[cat]) cardsByCat[cat] = [];
+      cardsByCat[cat].push(card);
+    }
+
+    const filtered = [];
+    for (const [cat, catCards] of Object.entries(cardsByCat)) {
+      const weight = categoryWeights[cat] ?? 100;
+      if (weight <= 0) continue;
+      const count = Math.max(1, Math.round(catCards.length * weight / 100));
+      // Zufaellig auswaehlen
+      const shuffled = [...catCards].sort(() => Math.random() - 0.5);
+      filtered.push(...shuffled.slice(0, count));
+    }
+    cards = filtered;
+  }
+
+  // Cooldown-Filter
+  const available = cards.filter(card => {
+    const key = card.prompt?.text || '';
+    const lastPlayed = data.played[key];
+    if (lastPlayed === undefined) return true;
+    return (currentSession - lastPlayed) >= COOLDOWN_SESSIONS;
+  });
+
+  // Wenn zu wenige Karten (< 5), Cooldown ignorieren
+  if (available.length < 5) return cards;
+  return available;
+}
 
 // ── Init / Destroy ──────────────────────────
 
-async function initSetup() {
+function initSetup() {
   const saved = state.get('lastTeamConfig');
   if (saved) {
     teamCount = saved.teamCount || 2;
@@ -68,12 +159,7 @@ async function initSetup() {
   }
 
   _ensureTeamConfigs();
-
-  try {
-    await cardStore.init();
-  } catch (err) {
-    console.warn('[Setup] IndexedDB init fehlgeschlagen:', err);
-  }
+  _initCategoryWeights();
 
   render();
 }
@@ -84,18 +170,14 @@ function destroySetup() {
 }
 
 function _ensureTeamConfigs() {
-  // Sicherstellen, dass für jeden möglichen Slot eine Config existiert
   const usedIndices = new Set(teamConfigs.filter(tc => tc.locked).map(tc => tc.nameIndex));
-
   while (teamConfigs.length < 5) {
-    // Nächsten freien Namen finden
     let idx = 0;
     while (usedIndices.has(idx) && idx < TEAM_NAME_POOL.length) idx++;
     teamConfigs.push({ nameIndex: idx, locked: false });
   }
 }
 
-/** Welche nameIndex-Werte sind von ANDEREN Teams (locked) belegt? */
 function _takenIndices(excludeTeamIdx) {
   const taken = new Set();
   for (let i = 0; i < teamCount; i++) {
@@ -108,21 +190,11 @@ function _takenIndices(excludeTeamIdx) {
 
 // ── Render ───────────────────────────────────
 
-async function render() {
+function render() {
   const el = document.getElementById('view-setup');
-
-  const cardSets = [{ id: 'demo', name: DEMO_SET.setName, count: DEMO_SET.cards.length }];
-  try {
-    const importedSets = await cardStore.getAllSets();
-    if (importedSets) {
-      for (const s of importedSets) {
-        const meta = getSetMeta(s);
-        cardSets.push({ id: meta.id, name: `${meta.setName} (${meta.category})`, count: meta.cardCount });
-      }
-    }
-  } catch (err) {
-    console.warn('[Setup] Importierte Sets laden fehlgeschlagen:', err);
-  }
+  const availableCards = _getAvailableCards();
+  const totalCards = CARDS.cards.length;
+  const cats = _getCategories();
 
   el.innerHTML = `
     <button class="theme-toggle" id="theme-toggle" aria-label="Tag/Nacht umschalten">
@@ -164,25 +236,47 @@ async function render() {
           ).join('')}
         </div>
 
-        <h3 style="margin-top: var(--space-lg)">Kartenset</h3>
-        <select class="cardset-select" id="cardset-select">
-          ${cardSets.map(s =>
-            `<option value="${s.id}" ${s.id === selectedCardSetId ? 'selected' : ''}>${s.name} (${s.count} Karten)</option>`
-          ).join('')}
-        </select>
+        <h3 style="margin-top: var(--space-lg)">Karten</h3>
+        <p class="setup-card-info">
+          Du spielst mit <strong>${availableCards.length}</strong> Karten
+        </p>
+        <button class="btn-ghost btn-toggle-cats" id="btn-toggle-categories">
+          ${showCategoryMix ? '▼' : '▶'} Karten anpassen
+        </button>
+        ${showCategoryMix ? _renderCategorySliders(cats) : ''}
       </div>
     </div>
 
     <div class="setup-footer">
-      <button class="btn-ghost btn-manage-sets" id="btn-manage-sets">Kartensets verwalten</button>
+      ${_isDesktop() ? '<button class="btn-ghost btn-manage-sets" id="btn-manage-sets">Kartenverwaltung</button>' : ''}
       <button class="btn-start" id="btn-start">Spiel starten</button>
     </div>
   `;
 
   _bindEvents();
-
-  // Picker nach dem Rendern initialisieren (scroll-Position setzen)
   _initPickers();
+}
+
+function _renderCategorySliders(cats) {
+  _initCategoryWeights();
+  return `
+    <div class="category-sliders" id="category-sliders">
+      ${Object.entries(cats).map(([name, count]) => {
+        const w = categoryWeights[name] ?? 100;
+        const included = Math.max(0, Math.round(count * w / 100));
+        return `
+          <div class="cat-slider-row">
+            <span class="cat-slider-name">${_escapeHtml(name)}</span>
+            <input type="range" min="0" max="100" step="10"
+                   value="${w}" data-category="${name}"
+                   class="cat-slider-input">
+            <span class="cat-slider-pct" data-pct-for="${name}">${w}%</span>
+            <span class="cat-slider-count">(${included}/${count})</span>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
 }
 
 function _renderTeamRows() {
@@ -193,7 +287,6 @@ function _renderTeamRows() {
     const taken = _takenIndices(i);
 
     if (tc.locked) {
-      // Eingelockter Zustand: fester Name + Entsperren-Button
       html += `
         <div class="team-row">
           <div class="team-color-dot" style="background-color: ${color}"></div>
@@ -202,7 +295,6 @@ function _renderTeamRows() {
         </div>
       `;
     } else {
-      // Scroll-Picker Zustand
       const pickerH = PICKER_ITEM_H * PICKER_VISIBLE;
       html += `
         <div class="team-row">
@@ -234,12 +326,9 @@ function _initPickers() {
   document.querySelectorAll('.team-picker-scroll').forEach(scroll => {
     const teamIdx = parseInt(scroll.dataset.team);
     const tc = teamConfigs[teamIdx];
-
-    // Zum aktuell gewählten Namen scrollen
     const targetTop = tc.nameIndex * PICKER_ITEM_H;
     scroll.scrollTop = targetTop;
 
-    // Scroll-Snap-Ende erkennen
     let scrollTimer = null;
     scroll.addEventListener('scroll', () => {
       clearTimeout(scrollTimer);
@@ -250,35 +339,19 @@ function _initPickers() {
 
 function _onPickerSnap(scrollEl, teamIdx) {
   const taken = _takenIndices(teamIdx);
-
-  // Nächsten gültigen Index finden
   let rawIndex = Math.round(scrollEl.scrollTop / PICKER_ITEM_H);
   rawIndex = Math.max(0, Math.min(rawIndex, TEAM_NAME_POOL.length - 1));
 
-  // Falls der Name vergeben ist, nächsten freien suchen
   if (taken.has(rawIndex)) {
-    let found = false;
-    // Vorwärts suchen
     for (let d = 1; d < TEAM_NAME_POOL.length; d++) {
       const up = rawIndex + d;
       const down = rawIndex - d;
-      if (up < TEAM_NAME_POOL.length && !taken.has(up)) {
-        rawIndex = up;
-        found = true;
-        break;
-      }
-      if (down >= 0 && !taken.has(down)) {
-        rawIndex = down;
-        found = true;
-        break;
-      }
+      if (up < TEAM_NAME_POOL.length && !taken.has(up)) { rawIndex = up; break; }
+      if (down >= 0 && !taken.has(down)) { rawIndex = down; break; }
     }
-    if (!found) rawIndex = 0; // Fallback
   }
 
   teamConfigs[teamIdx].nameIndex = rawIndex;
-
-  // Smooth zum korrekten Snap-Punkt scrollen
   scrollEl.scrollTo({ top: rawIndex * PICKER_ITEM_H, behavior: 'smooth' });
 }
 
@@ -289,7 +362,6 @@ function _bindEvents() {
   document.getElementById('team-minus')?.addEventListener('click', () => {
     if (teamCount > 2) {
       teamCount--;
-      // Entsperren des entfernten Teams
       if (teamConfigs[teamCount]) teamConfigs[teamCount].locked = false;
       render();
     }
@@ -299,7 +371,6 @@ function _bindEvents() {
     if (teamCount < 5) {
       teamCount++;
       _ensureTeamConfigs();
-      // Neues Team soll einen freien Namen bekommen
       const taken = _takenIndices(teamCount - 1);
       let idx = 0;
       while (taken.has(idx) && idx < TEAM_NAME_POOL.length) idx++;
@@ -309,20 +380,17 @@ function _bindEvents() {
     }
   });
 
-  // Lock-Buttons (Bestätigen)
+  // Lock/Unlock
   document.querySelectorAll('.btn-lock').forEach(btn => {
     btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.team);
-      teamConfigs[idx].locked = true;
+      teamConfigs[parseInt(btn.dataset.team)].locked = true;
       render();
     });
   });
 
-  // Unlock-Buttons (Entsperren)
   document.querySelectorAll('.btn-unlock').forEach(btn => {
     btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.team);
-      teamConfigs[idx].locked = false;
+      teamConfigs[parseInt(btn.dataset.team)].locked = false;
       render();
     });
   });
@@ -344,9 +412,30 @@ function _bindEvents() {
     render();
   });
 
-  // Kartenset
-  document.getElementById('cardset-select')?.addEventListener('change', (e) => {
-    selectedCardSetId = e.target.value;
+  // Kategorien-Mix Toggle
+  document.getElementById('btn-toggle-categories')?.addEventListener('click', () => {
+    showCategoryMix = !showCategoryMix;
+    render();
+  });
+
+  // Kategorien-Schieberegler
+  document.querySelectorAll('.cat-slider-input').forEach(slider => {
+    slider.addEventListener('input', (e) => {
+      const cat = e.target.dataset.category;
+      const val = parseInt(e.target.value);
+      categoryWeights[cat] = val;
+
+      // Live-Update der Anzeige
+      const pctEl = document.querySelector(`[data-pct-for="${cat}"]`);
+      if (pctEl) pctEl.textContent = `${val}%`;
+
+      // Verfuegbare Karten neu berechnen
+      const avail = _getAvailableCards();
+      const infoEl = document.querySelector('.setup-card-info');
+      if (infoEl) {
+        infoEl.innerHTML = `Du spielst mit <strong>${avail.length}</strong> Karten`;
+      }
+    });
   });
 
   // Theme Toggle
@@ -359,9 +448,9 @@ function _bindEvents() {
     render();
   });
 
-  // Kartensets verwalten
+  // Kartenverwaltung -> Admin
   document.getElementById('btn-manage-sets')?.addEventListener('click', () => {
-    router.navigate('import');
+    router.navigate('admin');
   });
 
   // Spiel starten
@@ -370,25 +459,27 @@ function _bindEvents() {
 
 // ── Spiel starten ───────────────────────────
 
-async function _startGame() {
-  // Kartenset laden
-  let cardSet = null;
-  if (selectedCardSetId === 'demo') {
-    cardSet = normalizeCardSet(DEMO_SET);
-  } else {
-    try {
-      cardSet = await cardStore.getSet(selectedCardSetId);
-    } catch (err) {
-      console.error('[Setup] Kartenset laden fehlgeschlagen:', err);
-    }
-  }
+function _startGame() {
+  // Session-Counter hochzaehlen
+  _incrementSession();
 
-  if (!cardSet) {
-    alert('Kein Kartenset ausgewählt oder Laden fehlgeschlagen!');
+  // Verfuegbare Karten ermitteln (mit Cooldown + Kategorienfilter)
+  const availableCards = _getAvailableCards();
+
+  if (availableCards.length === 0) {
+    alert('Keine Karten verfuegbar! Bitte Kategorien anpassen oder Cooldown abwarten.');
     return;
   }
 
-  // Teams zusammenbauen
+  // Kartenset aufbauen
+  const cardSet = normalizeCardSet({
+    id: 'kopfnuss',
+    setName: 'Kopfnuss Kartenset',
+    category: 'Gemischt',
+    cards: availableCards
+  });
+
+  // Teams
   const teams = [];
   for (let i = 0; i < teamCount; i++) {
     const tc = teamConfigs[i];
@@ -406,6 +497,12 @@ async function _startGame() {
     cardSet
   });
 
+  // Gespielte Karten tracken (Cooldown)
+  game.onCardDrawn = (card) => {
+    const key = card.prompt?.text || card.prompt;
+    if (key) _markCardPlayed(key);
+  };
+
   // In State speichern
   state.set('game', game);
   state.set('gameConfig', {
@@ -413,7 +510,7 @@ async function _startGame() {
     teamConfigs: teamConfigs.slice(0, teamCount).map(tc => ({ nameIndex: tc.nameIndex })),
     targetScore,
     timerSeconds,
-    selectedCardSetId
+    categoryWeights: showCategoryMix ? { ...categoryWeights } : null
   });
 
   // Settings persistieren
@@ -429,6 +526,10 @@ async function _startGame() {
 }
 
 // ── Hilfsfunktionen ─────────────────────────
+
+function _isDesktop() {
+  return !navigator.maxTouchPoints || navigator.maxTouchPoints <= 1;
+}
 
 function _escapeHtml(text) {
   if (!text) return '';

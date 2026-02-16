@@ -77,6 +77,10 @@ export class GameModel {
     // Callbacks fuer UI-Benachrichtigung
     /** @type {Function|null} */
     this.onStateChange = null;
+
+    // Callback fuer Cooldown-Tracking (wird von setup.js gesetzt)
+    /** @type {Function|null} */
+    this.onCardDrawn = null;
   }
 
   // ── Getter ────────────────────────────────
@@ -433,11 +437,12 @@ export class GameModel {
    */
   _drawCard() {
     if (this._cardIndex >= this._allCards.length) {
-      // Alle Karten gespielt: neu mischen
       this._shuffleArray(this._allCards);
       this._cardIndex = 0;
     }
-    return this._allCards[this._cardIndex++];
+    const card = this._allCards[this._cardIndex++];
+    if (this.onCardDrawn) this.onCardDrawn(card);
+    return card;
   }
 
   /**

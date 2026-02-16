@@ -469,6 +469,16 @@ export const DEMO_SET = {
         },
         {
           "label": {
+            "text": "John Milton: Das verlorene Paradies",
+            "image": null
+          },
+          "solution": {
+            "text": "3",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
             "text": "William Shakespeare: Macbeth",
             "image": null
           },
@@ -534,16 +544,6 @@ export const DEMO_SET = {
           },
           "solution": {
             "text": "3",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "John Milton: Das verlorene Paradies",
-            "image": null
-          },
-          "solution": {
-            "text": "5",
             "type": "text"
           }
         }
@@ -2079,71 +2079,11 @@ export const DEMO_SET = {
         },
         {
           "label": {
-            "text": "Mannschaften im Viertelfinale eines Cups",
+            "text": "Minuten einer Spielhälfte beim Fußball",
             "image": null
           },
           "solution": {
-            "text": "8",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Grand Slam Turniere im Tennissport",
-            "image": null
-          },
-          "solution": {
-            "text": "4",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Grands Prix in einer F1-Saison",
-            "image": null
-          },
-          "solution": {
-            "text": "21",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "maximalen Punkte für einen Wurf im Basketball",
-            "image": null
-          },
-          "solution": {
-            "text": "3",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Runden beim 5000-Meter-Lauf",
-            "image": null
-          },
-          "solution": {
-            "text": "12,5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Spieler in einer Handball-Mannschaft",
-            "image": null
-          },
-          "solution": {
-            "text": "7",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Löcher auf einem Golfplatz",
-            "image": null
-          },
-          "solution": {
-            "text": "18",
+            "text": "45",
             "type": "text"
           }
         },
@@ -2159,11 +2099,71 @@ export const DEMO_SET = {
         },
         {
           "label": {
-            "text": "Minuten einer Spielhälfte beim Fußball",
+            "text": "Löcher auf einem Golfplatz",
             "image": null
           },
           "solution": {
-            "text": "45",
+            "text": "18",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Spieler in einer Handball-Mannschaft",
+            "image": null
+          },
+          "solution": {
+            "text": "7",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Runden beim 5000-Meter-Lauf",
+            "image": null
+          },
+          "solution": {
+            "text": "12,5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "maximalen Punkte für einen Wurf im Basketball",
+            "image": null
+          },
+          "solution": {
+            "text": "3",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Grands Prix in einer F1-Saison",
+            "image": null
+          },
+          "solution": {
+            "text": "21",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Grand Slam Turniere im Tennissport",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Mannschaften im Viertelfinale eines Cups",
+            "image": null
+          },
+          "solution": {
+            "text": "8",
             "type": "text"
           }
         }
@@ -2812,546 +2812,6 @@ export const DEMO_SET = {
           },
           "solution": {
             "text": "Erdhalbkugel",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wer ist der königliche Gefährte von ...?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Kaiser Akihito",
-            "image": null
-          },
-          "solution": {
-            "text": "Michiko Shōda",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Prinzessin Madeleine",
-            "image": null
-          },
-          "solution": {
-            "text": "Christopher O'Neill",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "König Felipe VI.",
-            "image": null
-          },
-          "solution": {
-            "text": "Letizia Ortiz Rocasolano",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "König Willem-Alexander",
-            "image": null
-          },
-          "solution": {
-            "text": "Máxima Zorreguieta Cerruti",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Fürst Albert II.",
-            "image": null
-          },
-          "solution": {
-            "text": "Charlene Wittstock",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Prinz Haakon",
-            "image": null
-          },
-          "solution": {
-            "text": "Mette-Marit Tjessem Høiby",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Prinz Edward",
-            "image": null
-          },
-          "solution": {
-            "text": "Sophie Rhys-Jones",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Prinz Frederik",
-            "image": null
-          },
-          "solution": {
-            "text": "Mary Elizabeth Donaldson",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Prinz Carl Philip",
-            "image": null
-          },
-          "solution": {
-            "text": "Sofia Hellqvist",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Prinz William",
-            "image": null
-          },
-          "solution": {
-            "text": "Kate Middleton",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wer schrieb dieses Werk?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Kritik der reinen Vernunft",
-            "image": null
-          },
-          "solution": {
-            "text": "Immanuel Kant",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Faust",
-            "image": null
-          },
-          "solution": {
-            "text": "Johann Wolfgang von Goethe",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Neue Astronomie",
-            "image": null
-          },
-          "solution": {
-            "text": "Johannes Kepler",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Siddhartha",
-            "image": null
-          },
-          "solution": {
-            "text": "Hermann Hesse",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Professor Unrat",
-            "image": null
-          },
-          "solution": {
-            "text": "Heinrich Mann",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Der Herr der Ringe",
-            "image": null
-          },
-          "solution": {
-            "text": "J.R.R. Tolkien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Der Fänger im Roggen",
-            "image": null
-          },
-          "solution": {
-            "text": "J.D. Salinger",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Gruppenbild mit Dame",
-            "image": null
-          },
-          "solution": {
-            "text": "Heinrich Böll",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Das Sein und das Nichts",
-            "image": null
-          },
-          "solution": {
-            "text": "Jean-Paul Sartre",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kleiner Mann - was nun?",
-            "image": null
-          },
-          "solution": {
-            "text": "Hans Fallada",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Mit welchem Land wird diese Biermarke in Verbindung gebracht?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Coors",
-            "image": null
-          },
-          "solution": {
-            "text": "USA",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Karlovačko",
-            "image": null
-          },
-          "solution": {
-            "text": "Kroatien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kronenbourg 1664",
-            "image": null
-          },
-          "solution": {
-            "text": "Frankreich",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Heineken",
-            "image": null
-          },
-          "solution": {
-            "text": "Niederlande",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Beck's",
-            "image": null
-          },
-          "solution": {
-            "text": "Deutschland",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Stella Artois",
-            "image": null
-          },
-          "solution": {
-            "text": "Belgien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Pilsner Urquell",
-            "image": null
-          },
-          "solution": {
-            "text": "Tschechien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Murauer",
-            "image": null
-          },
-          "solution": {
-            "text": "Österreich",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Carlsberg",
-            "image": null
-          },
-          "solution": {
-            "text": "Dänemark",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sol",
-            "image": null
-          },
-          "solution": {
-            "text": "Mexiko",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Mit welcher Großmacht wird diese Person in Verbindung gebracht?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Babylon",
-            "image": null
-          },
-          "solution": {
-            "text": "Babylon",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Griechenland",
-            "image": null
-          },
-          "solution": {
-            "text": "Griechenland",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Nebukadnezar",
-            "image": null
-          },
-          "solution": {
-            "text": "Babylon",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Dschinghis Khan",
-            "image": null
-          },
-          "solution": {
-            "text": "Mongolisches Reich",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Hatschepsut",
-            "image": null
-          },
-          "solution": {
-            "text": "Ägypten",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Alexander der Große",
-            "image": null
-          },
-          "solution": {
-            "text": "Makedonien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Karl der Große",
-            "image": null
-          },
-          "solution": {
-            "text": "Fränkisches Reich (Frankenreich)",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Hadrian",
-            "image": null
-          },
-          "solution": {
-            "text": "Rom",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Ramses II.",
-            "image": null
-          },
-          "solution": {
-            "text": "Ägypten",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Hannibal",
-            "image": null
-          },
-          "solution": {
-            "text": "Karthago",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Für welchen Himmelskörper steht dieses Zeichen?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Merkur",
-            "image": null
-          },
-          "solution": {
-            "text": "☿",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Venus",
-            "image": null
-          },
-          "solution": {
-            "text": "♀",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Mars",
-            "image": null
-          },
-          "solution": {
-            "text": "♂",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Jupiter",
-            "image": null
-          },
-          "solution": {
-            "text": "♃",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Erde",
-            "image": null
-          },
-          "solution": {
-            "text": "⊕",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Saturn",
-            "image": null
-          },
-          "solution": {
-            "text": "♄",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Uranus",
-            "image": null
-          },
-          "solution": {
-            "text": "♅",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Neptun",
-            "image": null
-          },
-          "solution": {
-            "text": "♆",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sonne",
-            "image": null
-          },
-          "solution": {
-            "text": "☉",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Mond",
-            "image": null
-          },
-          "solution": {
-            "text": "☽",
             "type": "text"
           }
         }

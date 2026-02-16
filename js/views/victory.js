@@ -6,8 +6,7 @@ import { state } from '../state.js';
 import { router } from '../app.js';
 import { audio } from '../services/audio.js';
 import { GameModel } from '../models/game.js';
-import { DEMO_SET } from '../data/demo-set.js';
-import { cardStore } from '../services/card-store.js';
+import { CARDS } from '../data/cards.js';
 import { normalizeCardSet } from '../models/card.js';
 
 // ── Init / Destroy ──────────────────────────
@@ -52,13 +51,9 @@ function initVictory() {
     </div>
   `;
 
-  // Konfetti starten
   _createConfetti(el);
-
-  // Fanfare abspielen
   audio.play('fanfare');
 
-  // Events
   document.getElementById('btn-new-game')?.addEventListener('click', () => {
     router.navigate('setup');
   });
@@ -70,9 +65,8 @@ function initVictory() {
 
 /**
  * Rematch starten: Neues Spiel mit gleichen Teams und Einstellungen.
- * @param {Array} teams -- Team-Objekte aus dem letzten Spiel
  */
-async function _startRematch(teams) {
+function _startRematch(teams) {
   try {
     const config = state.get('gameConfig');
     if (!config) {
@@ -81,27 +75,14 @@ async function _startRematch(teams) {
       return;
     }
 
-    // Kartenset laden (statische Imports, kein dynamisches import())
-    let cardSet = null;
-    const cardSetId = config.selectedCardSetId || 'demo';
+    // Kartenset direkt aus CARDS laden
+    const cardSet = normalizeCardSet({
+      id: 'kopfnuss',
+      setName: 'Kopfnuss Kartenset',
+      category: 'Gemischt',
+      cards: CARDS.cards
+    });
 
-    if (cardSetId === 'demo') {
-      cardSet = normalizeCardSet(DEMO_SET);
-    } else {
-      try {
-        cardSet = await cardStore.getSet(cardSetId);
-      } catch (dbErr) {
-        console.warn('[Victory] Kartenset aus DB laden fehlgeschlagen:', dbErr);
-      }
-    }
-
-    // Fallback auf Demo-Set
-    if (!cardSet) {
-      console.warn('[Victory] Kartenset nicht gefunden, nutze Demo-Set.');
-      cardSet = normalizeCardSet(DEMO_SET);
-    }
-
-    // Neues Spiel mit gleichen Teams und Settings erstellen
     const game = new GameModel({
       teams: teams.map(t => ({ name: t.name, color: t.color })),
       targetScore: config.targetScore,
@@ -155,8 +136,6 @@ function _createConfetti(parentEl) {
   }
 
   parentEl.appendChild(container);
-
-  // Konfetti nach 6 Sekunden entfernen
   setTimeout(() => container.remove(), 6000);
 }
 

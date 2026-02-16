@@ -4,7 +4,7 @@
    Cache nur als Offline-Fallback.
    ============================================ */
 
-const CACHE_NAME = 'smartbox-v18';
+const CACHE_NAME = 'smartbox-v32';
 
 // ── Bei localhost: sofort selbst deregistrieren ──
 
@@ -37,7 +37,7 @@ if (self.location.hostname === 'localhost' || self.location.hostname === '127.0.
     './js/state.js',
     './js/models/card.js',
     './js/models/game.js',
-    './js/data/demo-set.js',
+    './js/data/cards.js',
     './js/views/setup.js',
     './js/views/game.js',
     './js/views/victory.js',
@@ -47,8 +47,15 @@ if (self.location.hostname === 'localhost' || self.location.hostname === '127.0.
     './js/components/turn-indicator.js',
     './js/components/timer.js',
     './js/services/audio.js',
-    './js/services/card-store.js',
-    './js/services/zip-import.js',
+    './css/admin.css',
+    './js/admin/admin.js',
+    './js/admin/batch-import.js',
+    './js/admin/card-editor.js',
+    './js/admin/library.js',
+    './js/admin/settings.js',
+    './js/admin/card-db.js',
+    './js/admin/export.js',
+    './js/admin/vision-api.js',
     'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
     'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap'
   ];

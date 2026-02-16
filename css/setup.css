@@ -290,6 +290,99 @@
   font-size: var(--font-size-sm);
 }
 
+/* --- Karten-Info --- */
+.setup-card-info {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.setup-card-info strong {
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: var(--font-size-lg);
+}
+
+.btn-toggle-cats {
+  font-size: var(--font-size-sm);
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+}
+
+/* --- Kategorie-Schieberegler --- */
+.category-sliders {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cat-slider-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.cat-slider-name {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 80px;
+}
+
+.cat-slider-input {
+  flex: 2;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.cat-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.cat-slider-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.cat-slider-pct {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+}
+
+.cat-slider-count {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  min-width: 42px;
+  text-align: right;
+}
+
 /* --- Theme Toggle --- */
 .theme-toggle {
   position: fixed;

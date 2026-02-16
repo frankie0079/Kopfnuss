@@ -38,9 +38,9 @@ export class TimerComponent {
 
       this._remaining -= 1;
 
-      // Tick-Sound in den letzten 5 Sekunden
-      if (this._remaining <= 5 && this._remaining > 0) {
-        audio.play('tick');
+      // Timer-Countdown-Sound bei 10 Sekunden starten
+      if (this._remaining === 10 && typeof audio.playTimerCountdown === 'function') {
+        audio.playTimerCountdown();
       }
 
       this._render();
@@ -63,6 +63,7 @@ export class TimerComponent {
       this._intervalId = null;
     }
     this._running = false;
+    if (typeof audio.stopTimerCountdown === 'function') audio.stopTimerCountdown();
   }
 
   /**
@@ -70,6 +71,7 @@ export class TimerComponent {
    */
   pause() {
     this._running = false;
+    if (typeof audio.stopTimerCountdown === 'function') audio.stopTimerCountdown();
   }
 
   /**

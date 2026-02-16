@@ -4,7 +4,7 @@
    Cache nur als Offline-Fallback.
    ============================================ */
 
-const CACHE_NAME = 'smartbox-v32';
+const CACHE_NAME = 'smartbox-v35';
 
 // ── Bei localhost: sofort selbst deregistrieren ──
 
@@ -56,6 +56,18 @@ if (self.location.hostname === 'localhost' || self.location.hostname === '127.0.
     './js/admin/card-db.js',
     './js/admin/export.js',
     './js/admin/vision-api.js',
+    './assets/sounds/correct-1.mp3',
+    './assets/sounds/correct-2.mp3',
+    './assets/sounds/correct-3.mp3',
+    './assets/sounds/correct-4.mp3',
+    './assets/sounds/correct-5.mp3',
+    './assets/sounds/wrong-1.mp3',
+    './assets/sounds/wrong-2.mp3',
+    './assets/sounds/wrong-3.mp3',
+    './assets/sounds/timer-10s.mp3',
+    './assets/sounds/victory-1.mp3',
+    './assets/sounds/victory-2.mp3',
+    './assets/sounds/victory-3.mp3',
     'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
     'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap'
   ];

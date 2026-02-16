@@ -29,6 +29,9 @@ function initGame() {
     return;
   }
 
+  // Sounds vorladen (safe check fuer Cache-Kompatibilitaet)
+  if (typeof audio.preload === 'function') audio.preload();
+
   const el = document.getElementById('view-game');
 
   el.innerHTML = `
@@ -126,7 +129,7 @@ function _onGameStateChange(event, model) {
       break;
 
     case 'itemCorrect':
-      // Kein audio.play('correct') hier - der Joy-Sound kommt aus der Fluganimation
+      audio.play('correct');
       _onItemResult('correct');
       break;
 
@@ -143,8 +146,6 @@ function _onGameStateChange(event, model) {
       break;
 
     case 'timerExpired':
-      // Timer stoppen. Board-Render + Timer-Start passiert
-      // ueber das nachfolgende 'turnChanged'/'roundEnded'/'victory' Event.
       _stopTimer();
       audio.play('wrong');
       break;

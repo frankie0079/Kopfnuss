@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T08:56:12.225Z",
+  "updatedAt": "2026-02-17T09:17:52.350Z",
   "cards": [
     {
       "prompt": {
@@ -676,7 +676,7 @@ export const CARDS = {
             "image": null
           },
           "solution": {
-            "text": "5",
+            "text": "1",
             "type": "text"
           }
         },
@@ -696,7 +696,7 @@ export const CARDS = {
             "image": null
           },
           "solution": {
-            "text": "3",
+            "text": "5",
             "type": "text"
           }
         },
@@ -3602,6 +3602,224 @@ export const CARDS = {
           "solution": {
             "text": "Richtig",
             "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Which brand is known for this advertising slogan?",
+        "image": null
+      },
+      "category": "Wirtschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Because you're worth it",
+            "image": null
+          },
+          "solution": {
+            "text": "L'Oréal",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The happiest place on Earth",
+            "image": null
+          },
+          "solution": {
+            "text": "Disneyland",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Taste the rainbow",
+            "image": null
+          },
+          "solution": {
+            "text": "Skittles",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Finger lickin' good",
+            "image": null
+          },
+          "solution": {
+            "text": "KFC",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Have a break",
+            "image": null
+          },
+          "solution": {
+            "text": "KitKat",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Connecting people",
+            "image": null
+          },
+          "solution": {
+            "text": "Nokia",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Ultimate Driving Machine",
+            "image": null
+          },
+          "solution": {
+            "text": "BMW",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Open Happiness",
+            "image": null
+          },
+          "solution": {
+            "text": "Coca-Cola",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Impossible is nothing",
+            "image": null
+          },
+          "solution": {
+            "text": "Adidas",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Every little helps",
+            "image": null
+          },
+          "solution": {
+            "text": "Tesco",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Erkennst du die Marke hinter dem Werbeslogan?",
+        "image": null
+      },
+      "category": "Wirtschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Nichts ist unmöglich",
+            "image": null
+          },
+          "solution": {
+            "text": "Toyota",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Vorsprung durch Technik",
+            "image": null
+          },
+          "solution": {
+            "text": "Audi",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Freude am Fahren",
+            "image": null
+          },
+          "solution": {
+            "text": "BMW",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Haribo macht Kinder froh",
+            "image": null
+          },
+          "solution": {
+            "text": "Haribo",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Geiz ist geil",
+            "image": null
+          },
+          "solution": {
+            "text": "Saturn",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wenn's um Geld geht",
+            "image": null
+          },
+          "solution": {
+            "text": "Sparkasse",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Da weiß man, was man hat",
+            "image": null
+          },
+          "solution": {
+            "text": "Persil",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Aus Erfahrung gut",
+            "image": null
+          },
+          "solution": {
+            "text": "AEG",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Die zarteste Versuchung",
+            "image": null
+          },
+          "solution": {
+            "text": "Milka",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Es gibt Dinge, die kann man nicht kaufen",
+            "image": null
+          },
+          "solution": {
+            "text": "Mastercard",
+            "type": "text"
           }
         }
       ]

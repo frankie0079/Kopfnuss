@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T10:03:20.070Z",
+  "updatedAt": "2026-02-17T10:16:46.666Z",
   "cards": [
     {
       "prompt": {
@@ -7634,6 +7634,115 @@ export const CARDS = {
           },
           "solution": {
             "text": "Harry Potter",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welcher Komponist schrieb dieses berühmte Werk?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Mondscheinsonate",
+            "image": null
+          },
+          "solution": {
+            "text": "Beethoven",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Die Zauberflöte",
+            "image": null
+          },
+          "solution": {
+            "text": "Mozart",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Der Freischütz",
+            "image": null
+          },
+          "solution": {
+            "text": "Carl Maria von Weber",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Hänsel und Gretel (Oper)",
+            "image": null
+          },
+          "solution": {
+            "text": "Humperdinck",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Walkürenritt",
+            "image": null
+          },
+          "solution": {
+            "text": "Richard Wagner",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Also sprach Zarathustra",
+            "image": null
+          },
+          "solution": {
+            "text": "Richard Strauss",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Die Forelle",
+            "image": null
+          },
+          "solution": {
+            "text": "Franz Schubert",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erlkönig",
+            "image": null
+          },
+          "solution": {
+            "text": "Franz Schubert",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Toccata und Fuge d-Moll",
+            "image": null
+          },
+          "solution": {
+            "text": "Johann Sebastian Bach",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Carmina Burana",
+            "image": null
+          },
+          "solution": {
+            "text": "Carl Orff",
             "type": "text"
           }
         }

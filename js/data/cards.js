@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T17:44:21.654Z",
+  "updatedAt": "2026-02-17T17:57:52.926Z",
   "cards": [
     {
       "prompt": {
@@ -3281,115 +3281,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Hatte weltweit über 1 Milliarde Dollar Einspielergebnis?",
-        "image": null
-      },
-      "category": "Musik/Entertainment/Movie",
-      "items": [
-        {
-          "label": {
-            "text": "Avatar",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Avengers: Endgame",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Inception",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Jurassic World",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Interstellar",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "The Dark Knight",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "La La Land",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Frozen",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Oppenheimer",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Top Gun: Maverick",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "Spielte Leonardo DiCaprio die Hauptrolle?",
         "image": null
       },
@@ -4156,7 +4047,7 @@ export const CARDS = {
         "text": "Fluss, Wüste oder Berg?",
         "image": null
       },
-      "category": "Allgemein",
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
@@ -6235,7 +6126,7 @@ export const CARDS = {
             "image": null
           },
           "solution": {
-            "text": "Gänseoder Entenleber",
+            "text": "Gänse oder Entenleber",
             "type": "text"
           }
         },
@@ -6551,115 +6442,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Spielte Zinédine Zidane in diesem Verein?",
-        "image": null
-      },
-      "category": "Sport",
-      "items": [
-        {
-          "label": {
-            "text": "Tottenham Hotspur FC",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Juventus Turin",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "AS Cannes",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "AC Mailand",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "FC Chelsea",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "FC Barcelona",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Girondins Bordeaux",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Borussia Dortmund",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Paris Saint-Germain",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Real Madrid",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "Wer hat den zugehörigen Oscar für den besten Hauptdarsteller erhalten?",
         "image": null
       },
@@ -6826,7 +6608,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Nr. 5, „Schicksalssinfonie\"",
+            "text": "Nr. 5, „Schicksalssinfonie",
             "image": null
           },
           "solution": {
@@ -7308,115 +7090,6 @@ export const CARDS = {
           "solution": {
             "text": "Bronze",
             "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Ist eine autonome Region?",
-        "image": null
-      },
-      "category": "Geografie",
-      "items": [
-        {
-          "label": {
-            "text": "Färöer-Inseln",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Kanarische Inseln",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Sahara",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Isle of Wight",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Mongolei",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Tibet",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Sizilien",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Sardinien",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Baskenland",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Madeira",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
           }
         }
       ]

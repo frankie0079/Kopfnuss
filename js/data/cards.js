@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T10:16:46.666Z",
+  "updatedAt": "2026-02-17T10:25:36.772Z",
   "cards": [
     {
       "prompt": {
@@ -7743,6 +7743,333 @@ export const CARDS = {
           },
           "solution": {
             "text": "Carl Orff",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist ein Künstler oder eine Band der Neuen Deutschen Welle?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Nena",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Trio",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Extrabreit",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ideal",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Grauzone",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "D.Ö.F.",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Herbert Grönemeyer",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Udo Lindenberg",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Marius Müller-Westernhagen",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "BAP",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welcher Künstler oder welche Band hatte diesen NDW-Hit?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "99 Luftballons",
+            "image": null
+          },
+          "solution": {
+            "text": "Nena",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Da Da Da",
+            "image": null
+          },
+          "solution": {
+            "text": "Trio",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Skandal im Sperrbezirk",
+            "image": null
+          },
+          "solution": {
+            "text": "Spider Murphy Gang",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Goldener Reiter",
+            "image": null
+          },
+          "solution": {
+            "text": "Joachim Witt",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Der Kommissar",
+            "image": null
+          },
+          "solution": {
+            "text": "Falco",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sternenhimmel",
+            "image": null
+          },
+          "solution": {
+            "text": "Hubert Kah",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Eisbär",
+            "image": null
+          },
+          "solution": {
+            "text": "Grauzone",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Carbonara",
+            "image": null
+          },
+          "solution": {
+            "text": "Spliff",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Codo",
+            "image": null
+          },
+          "solution": {
+            "text": "D.Ö.F.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Bruttosozialprodukt",
+            "image": null
+          },
+          "solution": {
+            "text": "Geier Sturzflug",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Aus welchem NDW-Hit stammt diese Textzeile?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Eisbären müssen nie weinen",
+            "image": null
+          },
+          "solution": {
+            "text": "Eisbär",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Völlig losgelöst von der Erde",
+            "image": null
+          },
+          "solution": {
+            "text": "Major Tom",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ich lieb dich nicht, du liebst mich nicht",
+            "image": null
+          },
+          "solution": {
+            "text": "Da Da Da",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Düse, düse, düse im Sauseschritt",
+            "image": null
+          },
+          "solution": {
+            "text": "Codo",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Das ist gefährlich, Lebensgefährlich, zu viel Gefühl",
+            "image": null
+          },
+          "solution": {
+            "text": "Blaue Augen",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Keine Atempause, Geschichte wird gemacht",
+            "image": null
+          },
+          "solution": {
+            "text": "Ein Jahr (Es geht voran)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ich will Spaß, ich geb Gas",
+            "image": null
+          },
+          "solution": {
+            "text": "Ich will Spaß",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Weil jeder Rosis Nummer wählt",
+            "image": null
+          },
+          "solution": {
+            "text": "Skandal im Sperrbezirk",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wenn sich Opa am Sonntag auf sein Fahrrad schwingt",
+            "image": null
+          },
+          "solution": {
+            "text": "Bruttosozialprodukt",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "die Lippen sind blau, die Haare grün",
+            "image": null
+          },
+          "solution": {
+            "text": "Hurra, hurra, die Schule brennt",
             "type": "text"
           }
         }

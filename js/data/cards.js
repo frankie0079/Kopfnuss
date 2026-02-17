@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T10:29:07.197Z",
+  "updatedAt": "2026-02-17T10:33:59.066Z",
   "cards": [
     {
       "prompt": {
@@ -8289,6 +8289,551 @@ export const CARDS = {
           "solution": {
             "text": "Robert Pattinson",
             "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hat Deutschland bei dieser Fußball-WM im Finale gespielt?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "WM 1954 (Schweiz)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1974 (Deutschland)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1990 (Italien)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2014 (Brasilien)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1986 (Mexiko)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2002 (Japan/Südkorea)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2006 (Deutschland)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2010 (Südafrika)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1978 (Argentinien)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1998 (Frankreich)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Gegen welches Land spielte Deutschland in diesem Turnier-Finale?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "WM-Finale 1954",
+            "image": null
+          },
+          "solution": {
+            "text": "Ungarn",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 1966",
+            "image": null
+          },
+          "solution": {
+            "text": "England",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 1974",
+            "image": null
+          },
+          "solution": {
+            "text": "Niederlande",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 1982",
+            "image": null
+          },
+          "solution": {
+            "text": "Italien",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 1986",
+            "image": null
+          },
+          "solution": {
+            "text": "Argentinien",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 1990",
+            "image": null
+          },
+          "solution": {
+            "text": "Argentinien",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 2002",
+            "image": null
+          },
+          "solution": {
+            "text": "Brasilien",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM-Finale 2014",
+            "image": null
+          },
+          "solution": {
+            "text": "Argentinien",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "EM-Finale 1992",
+            "image": null
+          },
+          "solution": {
+            "text": "Dänemark",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "EM-Finale 2008",
+            "image": null
+          },
+          "solution": {
+            "text": "Spanien",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wer war bei diesem Turnier Bundestrainer bzw. Teamchef?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "WM 1954 (Wunder von Bern)",
+            "image": null
+          },
+          "solution": {
+            "text": "Sepp Herberger",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1974 (Titel im eigenen Land)",
+            "image": null
+          },
+          "solution": {
+            "text": "Helmut Schön",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 1990 (Titel in Rom)",
+            "image": null
+          },
+          "solution": {
+            "text": "Franz Beckenbauer",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2014 (Titel in Rio)",
+            "image": null
+          },
+          "solution": {
+            "text": "Joachim Löw",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2006 (Sommermärchen)",
+            "image": null
+          },
+          "solution": {
+            "text": "Jürgen Klinsmann",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "EM 1996 (Titel in England)",
+            "image": null
+          },
+          "solution": {
+            "text": "Berti Vogts",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "EM 1980 (Titel in Italien)",
+            "image": null
+          },
+          "solution": {
+            "text": "Jupp Derwall",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WM 2002 (Finale in Yokohama)",
+            "image": null
+          },
+          "solution": {
+            "text": "Rudi Völler",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "EM 2024 (Heim-EM)",
+            "image": null
+          },
+          "solution": {
+            "text": "Julian Nagelsmann",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "EM 2008 (Finale in Wien)",
+            "image": null
+          },
+          "solution": {
+            "text": "Joachim Löw",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hat mehr als 100 Länderspiele für Deutschland absolviert?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Lothar Matthäus (150)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Miroslav Klose (137)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Lukas Podolski (130)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Bastian Schweinsteiger (121)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Philipp Lahm (113)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Toni Kroos (114)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Oliver Kahn (86)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Michael Ballack (98)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Mesut Özil (92)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Mario Götze (63)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hat mehr als 40 Länderspieltore für Deutschland erzielt?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Miroslav Klose (71)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Gerd Müller (68)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Lukas Podolski (49)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Jürgen Klinsmann (47)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Rudi Völler (47)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Karl-Heinz Rummenigge (45)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Uwe Seeler (43)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Thomas Müller (44)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Bastian Schweinsteiger (24)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Lothar Matthäus (23)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         }
       ]

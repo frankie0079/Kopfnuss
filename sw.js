@@ -4,7 +4,7 @@
    Cache nur als Offline-Fallback.
    ============================================ */
 
-const CACHE_NAME = 'smartbox-v35';
+const CACHE_NAME = 'smartbox-v38';
 
 // ── Bei localhost: sofort selbst deregistrieren ──
 

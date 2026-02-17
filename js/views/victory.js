@@ -99,6 +99,7 @@ function _startRematch(teams) {
 }
 
 function destroyVictory() {
+  if (typeof audio.stopAll === 'function') audio.stopAll();
   const el = document.getElementById('view-victory');
   el.innerHTML = '';
 }

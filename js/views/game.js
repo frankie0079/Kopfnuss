@@ -74,6 +74,7 @@ function initGame() {
 }
 
 function destroyGame() {
+  if (typeof audio.stopAll === 'function') audio.stopAll();
   if (timer) {
     timer.destroy();
     timer = null;

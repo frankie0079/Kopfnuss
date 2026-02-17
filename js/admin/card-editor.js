@@ -68,11 +68,19 @@ export function registerCardEditor(app) {
         </div>
 
         <div class="form-group">
-          <label style="display:flex; gap:6px; align-items:center;">
-            <span style="width:24px;"></span>
-            <span style="flex:1;">Moeglichkeit</span>
-            <span style="${card.cardType === 'boolean' ? 'width:36px; text-align:center;' : 'flex:1; text-align:center;'}">Loesung</span>
-          </label>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <label style="display:flex; gap:6px; align-items:center; flex:1; margin-bottom:0;">
+              <span style="width:24px;"></span>
+              <span style="flex:1;">Moeglichkeit</span>
+              <span style="${card.cardType === 'boolean' ? 'width:36px; text-align:center;' : 'flex:1; text-align:center;'}">Loesung</span>
+            </label>
+            ${card.cardType !== 'boolean' ? `
+              <button class="btn btn-secondary" id="editor-swap-cols"
+                style="width:auto; padding:4px 12px; font-size:12px; white-space:nowrap;">
+                &#8644; Spalten tauschen
+              </button>
+            ` : ''}
+          </div>
           <div id="edit-items">
           ${card.items.map((item, i) => {
             const isBool = card.cardType === 'boolean';
@@ -124,6 +132,22 @@ export function registerCardEditor(app) {
         toggle.style.color = newVal ? '#27AE60' : '#E74C3C';
       });
     });
+
+    // Spalten tauschen (Moeglichkeit <-> Loesung)
+    const swapBtn = view.querySelector('#editor-swap-cols');
+    if (swapBtn) {
+      swapBtn.addEventListener('click', () => {
+        view.querySelectorAll('#edit-items > div').forEach(row => {
+          const labelInput = row.querySelector('.edit-item-label');
+          const solutionInput = row.querySelector('.edit-item-solution-text');
+          if (labelInput && solutionInput) {
+            const tmp = labelInput.value;
+            labelInput.value = solutionInput.value;
+            solutionInput.value = tmp;
+          }
+        });
+      });
+    }
 
     // Speichern
     view.querySelector('#btn-save-card').addEventListener('click', async () => {

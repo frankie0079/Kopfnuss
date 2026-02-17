@@ -136,14 +136,21 @@ class AudioManager {
   }
 
   /**
+   * Alle laufenden Sounds sofort stoppen.
+   */
+  stopAll() {
+    this._stopCurrent();
+    this.stopTimerCountdown();
+  }
+
+  /**
    * Stummschaltung.
    * @param {boolean} muted
    */
   setMuted(muted) {
     this._muted = muted;
     if (muted) {
-      this.stopTimerCountdown();
-      this._stopCurrent();
+      this.stopAll();
     }
   }
 
@@ -320,3 +327,8 @@ class AudioManager {
 }
 
 export const audio = new AudioManager();
+
+// Sounds stoppen wenn Tab unsichtbar wird (iPad-Deckel zu, Tab-Wechsel)
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) audio.stopAll();
+});

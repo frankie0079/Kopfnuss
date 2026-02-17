@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T09:17:52.350Z",
+  "updatedAt": "2026-02-17T09:27:40.781Z",
   "cards": [
     {
       "prompt": {
@@ -3819,6 +3819,115 @@ export const CARDS = {
           },
           "solution": {
             "text": "Mastercard",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welcher Musiker ist oder war Lead-Gitarrist dieser Band?",
+        "image": null
+      },
+      "category": "Musik",
+      "items": [
+        {
+          "label": {
+            "text": "AC/DC",
+            "image": null
+          },
+          "solution": {
+            "text": "Angus Young",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Led Zeppelin",
+            "image": null
+          },
+          "solution": {
+            "text": "Jimmy Page",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Pink Floyd",
+            "image": null
+          },
+          "solution": {
+            "text": "David Gilmour",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Guns N' Roses",
+            "image": null
+          },
+          "solution": {
+            "text": "Slash",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Rolling Stones",
+            "image": null
+          },
+          "solution": {
+            "text": "Keith Richards",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Queen",
+            "image": null
+          },
+          "solution": {
+            "text": "Brian May",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Deep Purple",
+            "image": null
+          },
+          "solution": {
+            "text": "Ritchie Blackmore",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dire Straits",
+            "image": null
+          },
+          "solution": {
+            "text": "Mark Knopfler",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Radiohead",
+            "image": null
+          },
+          "solution": {
+            "text": "Jonny Greenwood",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Smiths",
+            "image": null
+          },
+          "solution": {
+            "text": "Johnny Marr",
             "type": "text"
           }
         }

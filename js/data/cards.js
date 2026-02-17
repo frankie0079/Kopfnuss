@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T10:25:36.772Z",
+  "updatedAt": "2026-02-17T10:29:07.197Z",
   "cards": [
     {
       "prompt": {
@@ -8070,6 +8070,224 @@ export const CARDS = {
           },
           "solution": {
             "text": "Hurra, hurra, die Schule brennt",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hat weltweit über 1 Milliarde US-Dollar eingespielt?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Barbie (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Top Gun: Maverick (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Avengers: Endgame (2019)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Spider-Man: No Way Home (2021)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Inside Out 2 (2024)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Frozen II (2019)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Oppenheimer (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Dune: Part Two (2024)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "The Batman (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Tenet (2020)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welcher Schauspieler spielte die Hauptrolle in diesem Blockbuster?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Barbie (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Margot Robbie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Oppenheimer (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Cillian Murphy",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Top Gun: Maverick (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Tom Cruise",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Joker (2019)",
+            "image": null
+          },
+          "solution": {
+            "text": "Joaquin Phoenix",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Black Panther (2018)",
+            "image": null
+          },
+          "solution": {
+            "text": "Chadwick Boseman",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dune: Part Two (2024)",
+            "image": null
+          },
+          "solution": {
+            "text": "Timothée Chalamet",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Spider-Man: No Way Home (2021)",
+            "image": null
+          },
+          "solution": {
+            "text": "Tom Holland",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wonder Woman (2017)",
+            "image": null
+          },
+          "solution": {
+            "text": "Gal Gadot",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Bohemian Rhapsody (2018)",
+            "image": null
+          },
+          "solution": {
+            "text": "Rami Malek",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Batman (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Robert Pattinson",
             "type": "text"
           }
         }

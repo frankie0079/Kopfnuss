@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T11:08:48.400Z",
+  "updatedAt": "2026-02-17T17:44:21.654Z",
   "cards": [
     {
       "prompt": {
@@ -6231,101 +6231,101 @@ export const CARDS = {
       "items": [
         {
           "label": {
-            "text": "Gänseoder Entenleber",
-            "image": null
-          },
-          "solution": {
             "text": "Foie gras",
+            "image": null
+          },
+          "solution": {
+            "text": "Gänseoder Entenleber",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kartoffeln",
-            "image": null
-          },
-          "solution": {
             "text": "Gnocchi",
+            "image": null
+          },
+          "solution": {
+            "text": "Kartoffeln",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Sesamkörner",
-            "image": null
-          },
-          "solution": {
             "text": "Tahini",
+            "image": null
+          },
+          "solution": {
+            "text": "Sesamkörner",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Sojabohnen",
-            "image": null
-          },
-          "solution": {
             "text": "Tofu",
+            "image": null
+          },
+          "solution": {
+            "text": "Sojabohnen",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Weizeneiweiß (Gluten)",
-            "image": null
-          },
-          "solution": {
             "text": "Seitan",
+            "image": null
+          },
+          "solution": {
+            "text": "Weizeneiweiß (Gluten)",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "(Puder) Zucker",
-            "image": null
-          },
-          "solution": {
             "text": "Zitronenglasur",
+            "image": null
+          },
+          "solution": {
+            "text": "(Puder) Zucker",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Hühnchen",
-            "image": null
-          },
-          "solution": {
             "text": "Yakitori",
+            "image": null
+          },
+          "solution": {
+            "text": "Hühnchen",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Granatapfel",
-            "image": null
-          },
-          "solution": {
             "text": "Grenadine",
+            "image": null
+          },
+          "solution": {
+            "text": "Granatapfel",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Aubergine",
-            "image": null
-          },
-          "solution": {
             "text": "Baba Ghanoush",
+            "image": null
+          },
+          "solution": {
+            "text": "Aubergine",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "roher Fisch",
+            "text": "Sashimi",
             "image": null
           },
           "solution": {
-            "text": "Sashimi",
+            "text": "roher Fisch",
             "type": "text"
           }
         }

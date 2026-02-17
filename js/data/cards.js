@@ -1,14 +1,20 @@
-/* Kopfnuss! -- Spieldatei */
+/* ============================================
+   Kopfnuss! -- Spieldatei
+   Alle verifizierten Karten im Game-Format.
+   Generiert aus der Kartenverwaltung.
+   Bei Aenderungen: Admin > Spieldatei exportieren
+   ============================================ */
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-16T18:30:00Z",
+  "updatedAt": "2026-02-17T08:33:35.405Z",
   "cards": [
     {
       "prompt": {
         "text": "Ist eine Weißweinsorte?",
         "image": null
       },
+      "category": "Essen & Trinken",
       "items": [
         {
           "label": {
@@ -110,123 +116,14 @@ export const CARDS = {
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Essen & Trinken"
-    },
-    {
-      "prompt": {
-        "text": "Ist ein Wiener Stadtbezirk?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Donaustadt",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Wiesing",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Wieden",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Neuhaus",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Rudolfstadt",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Mariahilf",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Alsergrund",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Semmering",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Meidling",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Penzing",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ],
-      "category": "Geografie"
+      ]
     },
     {
       "prompt": {
         "text": "Wer ist berühmt für diesen Song?",
         "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
@@ -328,14 +225,123 @@ export const CARDS = {
             "type": "text"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist ein Wiener Stadtbezirk?",
+        "image": null
+      },
+      "category": "Geografie",
+      "items": [
+        {
+          "label": {
+            "text": "Donaustadt",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Wiesing",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Wieden",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Neuhaus",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Rudolfstadt",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Mariahilf",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Alsergrund",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Semmering",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Meidling",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Penzing",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
     },
     {
       "prompt": {
         "text": "Trifft diese Aussage über die Wikinger zu?",
         "image": null
       },
+      "category": "Geschichte",
       "items": [
         {
           "label": {
@@ -437,123 +443,14 @@ export const CARDS = {
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Geschichte"
-    },
-    {
-      "prompt": {
-        "text": "Ordne die Werke nach dem Jahr ihrer Veröffentlichung (1=ältestes)!",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Anonym: Gilgamesch-Epos",
-            "image": null
-          },
-          "solution": {
-            "text": "5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Franz Kafka: Der Prozess",
-            "image": null
-          },
-          "solution": {
-            "text": "9",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "John Milton: Das verlorene Paradies",
-            "image": null
-          },
-          "solution": {
-            "text": "3",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "William Shakespeare: Macbeth",
-            "image": null
-          },
-          "solution": {
-            "text": "4",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Daniel Defoe: Robinson Crusoe",
-            "image": null
-          },
-          "solution": {
-            "text": "6",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sophokles: König Ödipus",
-            "image": null
-          },
-          "solution": {
-            "text": "2",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Fjodor Dostojewski: Der Idiot",
-            "image": null
-          },
-          "solution": {
-            "text": "8",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Mary Shelley: Frankenstein",
-            "image": null
-          },
-          "solution": {
-            "text": "7",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Aldous Huxley: Schöne neue Welt",
-            "image": null
-          },
-          "solution": {
-            "text": "10",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Dante Alighieri: Die göttliche Komödie",
-            "image": null
-          },
-          "solution": {
-            "text": "3",
-            "type": "text"
-          }
-        }
-      ],
-      "category": "Allgemeinwissen"
+      ]
     },
     {
       "prompt": {
         "text": "Ordne die Himmelskörper nach ihrem Durchmesser (1=größter)!",
         "image": null
       },
+      "category": "Wissenschaft",
       "items": [
         {
           "label": {
@@ -655,123 +552,14 @@ export const CARDS = {
             "type": "text"
           }
         }
-      ],
-      "category": "Wissenschaft"
-    },
-    {
-      "prompt": {
-        "text": "Für welchen Sport ist diese Person berühmt?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Fußball",
-            "image": null
-          },
-          "solution": {
-            "text": "Marta Vieira da Silva",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tennis",
-            "image": null
-          },
-          "solution": {
-            "text": "Serena Williams",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Skilanglauf",
-            "image": null
-          },
-          "solution": {
-            "text": "Marit Bjørgen",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Snowboarden",
-            "image": null
-          },
-          "solution": {
-            "text": "Anna Gasser",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tennis",
-            "image": null
-          },
-          "solution": {
-            "text": "Marija Scharapowa",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Fußball",
-            "image": null
-          },
-          "solution": {
-            "text": "Birgit Prinz",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Stabhochsprung",
-            "image": null
-          },
-          "solution": {
-            "text": "Jelena Issinbajewa",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Langstreckenlauf",
-            "image": null
-          },
-          "solution": {
-            "text": "Paula Radcliffe",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kunstturnen",
-            "image": null
-          },
-          "solution": {
-            "text": "Nadia Comăneci",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Autorennen",
-            "image": null
-          },
-          "solution": {
-            "text": "Danica Patrick",
-            "type": "text"
-          }
-        }
-      ],
-      "category": "Sport"
+      ]
     },
     {
       "prompt": {
         "text": "Anzahl der ... ? (Stand 2019)",
         "image": null
       },
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
@@ -873,341 +661,232 @@ export const CARDS = {
             "type": "text"
           }
         }
-      ],
-      "category": "Allgemeinwissen"
+      ]
     },
     {
       "prompt": {
-        "text": "Nenne das Jahr des Ereignisses!",
+        "text": "Für welchen Sport ist diese Person berühmt?",
         "image": null
       },
+      "category": "Sport",
       "items": [
         {
           "label": {
-            "text": "Arabischer Frühling (Beginn)",
+            "text": "Fußball",
             "image": null
           },
           "solution": {
-            "text": "2010",
+            "text": "Marta Vieira da Silva",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Hindenburg-Katastrophe",
+            "text": "Tennis",
             "image": null
           },
           "solution": {
-            "text": "1937",
+            "text": "Serena Williams",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Hurrikan Katrina",
+            "text": "Skilanglauf",
             "image": null
           },
           "solution": {
-            "text": "2005",
+            "text": "Marit Bjørgen",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Tschernobyl-Katastrophe",
+            "text": "Snowboarden",
             "image": null
           },
           "solution": {
-            "text": "1986",
+            "text": "Anna Gasser",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Tod von Prinzessin Diana",
+            "text": "Tennis",
             "image": null
           },
           "solution": {
-            "text": "1997",
+            "text": "Marija Scharapowa",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ermordung von Erzherzog Franz Ferdinand",
+            "text": "Fußball",
             "image": null
           },
           "solution": {
-            "text": "1914",
+            "text": "Birgit Prinz",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Erste Mondlandung",
+            "text": "Stabhochsprung",
             "image": null
           },
           "solution": {
-            "text": "1969",
+            "text": "Jelena Issinbajewa",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Angriff auf Pearl Harbor",
+            "text": "Langstreckenlauf",
             "image": null
           },
           "solution": {
-            "text": "1941",
+            "text": "Paula Radcliffe",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ermordung von Benazir Bhutto",
+            "text": "Kunstturnen",
             "image": null
           },
           "solution": {
-            "text": "2007",
+            "text": "Nadia Comăneci",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kuba-Krise",
+            "text": "Autorennen",
             "image": null
           },
           "solution": {
-            "text": "1962",
+            "text": "Danica Patrick",
             "type": "text"
           }
         }
-      ],
-      "category": "Geschichte"
+      ]
     },
     {
       "prompt": {
-        "text": "Was bedeutet diese Abkürzung im Basketball?",
+        "text": "Ordne die Werke nach dem Jahr ihrer Veröffentlichung (1=ältestes)!",
         "image": null
       },
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
-            "text": "Turnover",
+            "text": "Anonym: Gilgamesch-Epos",
             "image": null
           },
           "solution": {
-            "text": "TO",
+            "text": "5",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Steals",
+            "text": "Franz Kafka: Der Prozess",
             "image": null
           },
           "solution": {
-            "text": "ST",
+            "text": "9",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Blocks",
+            "text": "John Milton: Das verlorene Paradies",
             "image": null
           },
           "solution": {
-            "text": "BLK",
+            "text": "3",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Minuten pro Spiel",
+            "text": "William Shakespeare: Macbeth",
             "image": null
           },
           "solution": {
-            "text": "MPG",
+            "text": "4",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Offensivrebounds",
+            "text": "Daniel Defoe: Robinson Crusoe",
             "image": null
           },
           "solution": {
-            "text": "OFF",
+            "text": "6",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Assists",
+            "text": "Sophokles: König Ödipus",
             "image": null
           },
           "solution": {
-            "text": "AST",
+            "text": "2",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Punkte",
+            "text": "Fjodor Dostojewski: Der Idiot",
             "image": null
           },
           "solution": {
-            "text": "PTS",
+            "text": "8",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Gesamt Rebounds",
+            "text": "Mary Shelley: Frankenstein",
             "image": null
           },
           "solution": {
-            "text": "REB",
+            "text": "7",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Freiwurf-Trefferquote",
+            "text": "Aldous Huxley: Schöne neue Welt",
             "image": null
           },
           "solution": {
-            "text": "FT%",
+            "text": "10",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Punkte pro Spiel",
+            "text": "Dante Alighieri: Die göttliche Komödie",
             "image": null
           },
           "solution": {
-            "text": "PPG",
+            "text": "3",
             "type": "text"
           }
         }
-      ],
-      "category": "Sport"
-    },
-    {
-      "prompt": {
-        "text": "Wofür steht dieses Wort in der Seemannssprache?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Schiffsjunge",
-            "image": null
-          },
-          "solution": {
-            "text": "Moses",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "links",
-            "image": null
-          },
-          "solution": {
-            "text": "Backbord",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "rechts",
-            "image": null
-          },
-          "solution": {
-            "text": "Steuerbord",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Schmuggelschiff",
-            "image": null
-          },
-          "solution": {
-            "text": "Blender",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Schiffsgefängnis",
-            "image": null
-          },
-          "solution": {
-            "text": "Brig",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Besatzung",
-            "image": null
-          },
-          "solution": {
-            "text": "Crew",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Seile",
-            "image": null
-          },
-          "solution": {
-            "text": "Ende",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Vorsegel",
-            "image": null
-          },
-          "solution": {
-            "text": "Fock",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Teufel",
-            "image": null
-          },
-          "solution": {
-            "text": "Der Gast",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "vorne",
-            "image": null
-          },
-          "solution": {
-            "text": "Bug",
-            "type": "text"
-          }
-        }
-      ],
-      "category": "Allgemeinwissen"
+      ]
     },
     {
       "prompt": {
         "text": "Ist eines der sieben Weltwunder der Neuzeit?",
         "image": null
       },
+      "category": "Geografie",
       "items": [
         {
           "label": {
@@ -1309,232 +988,232 @@ export const CARDS = {
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Geografie"
+      ]
     },
     {
       "prompt": {
-        "text": "Ist in den letzten 100 Jahren ausgestorben? (Stand 2019)",
+        "text": "Nenne das Jahr des Ereignisses!",
         "image": null
       },
+      "category": "Geschichte",
       "items": [
         {
           "label": {
-            "text": "Java-Nashorn",
+            "text": "Arabischer Frühling (Beginn)",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "2010",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Beutelwolf (Tasmanischer Tiger)",
+            "text": "Hindenburg-Katastrophe",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "1937",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kleiner Kaninchennasenbeutler",
+            "text": "Hurrikan Katrina",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "2005",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Baiji (Chinesischer Flussdelfin)",
+            "text": "Tschernobyl-Katastrophe",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "1986",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schneeleopard",
+            "text": "Tod von Prinzessin Diana",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "1997",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Java-Tiger",
+            "text": "Ermordung von Erzherzog Franz Ferdinand",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "1914",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Sibirischer Tiger",
+            "text": "Erste Mondlandung",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "1969",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Afrikanischer Elefant",
+            "text": "Angriff auf Pearl Harbor",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "1941",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Beutelteufel (Tasmanischer Teufel)",
+            "text": "Ermordung von Benazir Bhutto",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "2007",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kaspischer Tiger",
+            "text": "Kuba-Krise",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "1962",
+            "type": "text"
           }
         }
-      ],
-      "category": "Wissenschaft"
+      ]
     },
     {
       "prompt": {
-        "text": "Wer erschuf diesen fiktiven Charakter?",
+        "text": "Wofür steht dieses Wort in der Seemannssprache?",
         "image": null
       },
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
-            "text": "Asterix",
+            "text": "Schiffsjunge",
             "image": null
           },
           "solution": {
-            "text": "Goscinny und Uderzo",
+            "text": "Moses",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "James Bond",
+            "text": "links",
             "image": null
           },
           "solution": {
-            "text": "Ian Fleming",
+            "text": "Backbord",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Robert Langdon",
+            "text": "rechts",
             "image": null
           },
           "solution": {
-            "text": "Dan Brown",
+            "text": "Steuerbord",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "The Spirit",
+            "text": "Schmuggelschiff",
             "image": null
           },
           "solution": {
-            "text": "Will Eisner",
+            "text": "Blender",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Dick Tracy",
+            "text": "Schiffsgefängnis",
             "image": null
           },
           "solution": {
-            "text": "Chester Gould",
+            "text": "Brig",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Gaston",
+            "text": "Besatzung",
             "image": null
           },
           "solution": {
-            "text": "(André) Franquin",
+            "text": "Crew",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Die Schlümpfe",
+            "text": "Seile",
             "image": null
           },
           "solution": {
-            "text": "Peyo",
+            "text": "Ende",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Adrian Monk",
+            "text": "Vorsegel",
             "image": null
           },
           "solution": {
-            "text": "Andy Breckman",
+            "text": "Fock",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Batman",
+            "text": "Teufel",
             "image": null
           },
           "solution": {
-            "text": "Bob Kane/ Bill Finger",
+            "text": "Der Gast",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Rip Kirby",
+            "text": "vorne",
             "image": null
           },
           "solution": {
-            "text": "Alex Raymond",
+            "text": "Bug",
             "type": "text"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
         "text": "Zählt zu den chinesischen Tierkreiszeichen?",
         "image": null
       },
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
@@ -1636,232 +1315,14 @@ export const CARDS = {
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Allgemeinwissen"
-    },
-    {
-      "prompt": {
-        "text": "Geschah im Jahr 1917?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Picasso wurde geboren",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Erste Russische Revolution",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "das Fernsehen wurde erfunden",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "die Balfour-Deklaration wurde beschlossen",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Marie Curie gewinnt den Nobelpreis",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Hungeraufstände in Schweden",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Beginn des 1. Weltkrieges",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Finnland wird unabhängig",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Astrid Lindgren wird geboren",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "USA kauften die Jungferninseln",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ],
-      "category": "Geschichte"
-    },
-    {
-      "prompt": {
-        "text": "Welchem Sport ist dieser Begriff zuzuordnen?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Darts",
-            "image": null
-          },
-          "solution": {
-            "text": "Bull's Eye",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Baseball",
-            "image": null
-          },
-          "solution": {
-            "text": "Strikeout",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Boxen",
-            "image": null
-          },
-          "solution": {
-            "text": "Uppercut",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kendo",
-            "image": null
-          },
-          "solution": {
-            "text": "Kenshi",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Basketball",
-            "image": null
-          },
-          "solution": {
-            "text": "Rebound",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Golf",
-            "image": null
-          },
-          "solution": {
-            "text": "Hole-in-one",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Fechten",
-            "image": null
-          },
-          "solution": {
-            "text": "Riposte",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Dressurreiten",
-            "image": null
-          },
-          "solution": {
-            "text": "Piaffe",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tennis",
-            "image": null
-          },
-          "solution": {
-            "text": "Rebreak",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Snooker",
-            "image": null
-          },
-          "solution": {
-            "text": "Frame",
-            "type": "text"
-          }
-        }
-      ],
-      "category": "Sport"
+      ]
     },
     {
       "prompt": {
         "text": "Ist ein Bezirk Bayerns?",
         "image": null
       },
+      "category": "Geografie",
       "items": [
         {
           "label": {
@@ -1963,232 +1424,668 @@ export const CARDS = {
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Geografie"
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist in den letzten 100 Jahren ausgestorben? (Stand 2019)",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Java-Nashorn",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Beutelwolf (Tasmanischer Tiger)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Kleiner Kaninchennasenbeutler",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Baiji (Chinesischer Flussdelfin)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Schneeleopard",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Java-Tiger",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Sibirischer Tiger",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Afrikanischer Elefant",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Beutelteufel (Tasmanischer Teufel)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Kaspischer Tiger",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
     },
     {
       "prompt": {
         "text": "Welche Marke ist bekannt für diesen Werbeslogan?",
         "image": null
       },
+      "category": "Wirtschaft",
       "items": [
         {
           "label": {
-            "text": "Mc Donald's",
-            "image": null
-          },
-          "solution": {
             "text": "I'm lovin' it",
+            "image": null
+          },
+          "solution": {
+            "text": "Mc Donald's",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Apple",
-            "image": null
-          },
-          "solution": {
             "text": "Think different",
+            "image": null
+          },
+          "solution": {
+            "text": "Apple",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ritter Sport",
-            "image": null
-          },
-          "solution": {
             "text": "Quadratisch. Praktisch. Gut.",
+            "image": null
+          },
+          "solution": {
+            "text": "Ritter Sport",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Media Markt",
-            "image": null
-          },
-          "solution": {
             "text": "Ich bin doch nicht blöd.",
+            "image": null
+          },
+          "solution": {
+            "text": "Media Markt",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Red Bull",
-            "image": null
-          },
-          "solution": {
             "text": "Verleiht Flüüügel!",
+            "image": null
+          },
+          "solution": {
+            "text": "Red Bull",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Esso",
-            "image": null
-          },
-          "solution": {
             "text": "Pack den Tiger in den Tank!",
+            "image": null
+          },
+          "solution": {
+            "text": "Esso",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Nespresso",
-            "image": null
-          },
-          "solution": {
             "text": "What else?",
+            "image": null
+          },
+          "solution": {
+            "text": "Nespresso",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "L'Oréal",
-            "image": null
-          },
-          "solution": {
             "text": "Weil ich es mir wert bin",
+            "image": null
+          },
+          "solution": {
+            "text": "L'Oréal",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ferrero",
-            "image": null
-          },
-          "solution": {
             "text": "Guten Freunden gibt man ein Küsschen.",
+            "image": null
+          },
+          "solution": {
+            "text": "Ferrero",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Nike",
+            "text": "Just do it",
             "image": null
           },
           "solution": {
-            "text": "Just do it",
+            "text": "Nike",
             "type": "text"
           }
         }
-      ],
-      "category": "Wirtschaft"
+      ]
     },
     {
       "prompt": {
-        "text": "Anzahl der ... (Stand 2019)",
+        "text": "Welchem Sport ist dieser Begriff zuzuordnen?",
         "image": null
       },
+      "category": "Sport",
       "items": [
         {
           "label": {
-            "text": "Punkte, um einen Satz beim Tischtennis zu gewinnen",
+            "text": "Darts",
             "image": null
           },
           "solution": {
-            "text": "11",
+            "text": "Bull's Eye",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Minuten einer Spielhälfte beim Fußball",
+            "text": "Baseball",
             "image": null
           },
           "solution": {
-            "text": "45",
+            "text": "Strikeout",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kilometer bei einem Halbmarathon",
+            "text": "Boxen",
             "image": null
           },
           "solution": {
-            "text": "21,1",
+            "text": "Uppercut",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Löcher auf einem Golfplatz",
+            "text": "Kendo",
             "image": null
           },
           "solution": {
-            "text": "18",
+            "text": "Kenshi",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Spieler in einer Handball-Mannschaft",
+            "text": "Basketball",
             "image": null
           },
           "solution": {
-            "text": "7",
+            "text": "Rebound",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Runden beim 5000-Meter-Lauf",
+            "text": "Golf",
             "image": null
           },
           "solution": {
-            "text": "12,5",
+            "text": "Hole-in-one",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "maximalen Punkte für einen Wurf im Basketball",
+            "text": "Fechten",
             "image": null
           },
           "solution": {
-            "text": "3",
+            "text": "Riposte",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Grands Prix in einer F1-Saison",
+            "text": "Dressurreiten",
             "image": null
           },
           "solution": {
-            "text": "21",
+            "text": "Piaffe",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Grand Slam Turniere im Tennissport",
+            "text": "Tennis",
             "image": null
           },
           "solution": {
-            "text": "4",
+            "text": "Rebreak",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Mannschaften im Viertelfinale eines Cups",
+            "text": "Snooker",
             "image": null
           },
           "solution": {
-            "text": "8",
+            "text": "Frame",
             "type": "text"
           }
         }
-      ],
-      "category": "Allgemeinwissen"
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Geschah im Jahr 1917?",
+        "image": null
+      },
+      "category": "Geschichte",
+      "items": [
+        {
+          "label": {
+            "text": "Picasso wurde geboren",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Erste Russische Revolution",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "das Fernsehen wurde erfunden",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "die Balfour-Deklaration wurde beschlossen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Marie Curie gewinnt den Nobelpreis",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Hungeraufstände in Schweden",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Beginn des 1. Weltkrieges",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Finnland wird unabhängig",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Astrid Lindgren wird geboren",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "USA kauften die Jungferninseln",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wer erschuf diesen fiktiven Charakter?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Asterix",
+            "image": null
+          },
+          "solution": {
+            "text": "Goscinny und Uderzo",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "James Bond",
+            "image": null
+          },
+          "solution": {
+            "text": "Ian Fleming",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Robert Langdon",
+            "image": null
+          },
+          "solution": {
+            "text": "Dan Brown",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Spirit",
+            "image": null
+          },
+          "solution": {
+            "text": "Will Eisner",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dick Tracy",
+            "image": null
+          },
+          "solution": {
+            "text": "Chester Gould",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gaston",
+            "image": null
+          },
+          "solution": {
+            "text": "(André) Franquin",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Die Schlümpfe",
+            "image": null
+          },
+          "solution": {
+            "text": "Peyo",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Adrian Monk",
+            "image": null
+          },
+          "solution": {
+            "text": "Andy Breckman",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Batman",
+            "image": null
+          },
+          "solution": {
+            "text": "Bob Kane/ Bill Finger",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Rip Kirby",
+            "image": null
+          },
+          "solution": {
+            "text": "Alex Raymond",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wie lautet der wissenschaftliche Begriff dafür?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Erdhalbkugel",
+            "image": null
+          },
+          "solution": {
+            "text": "Hemisphäre",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gasund Partikelwolke im Weltraum",
+            "image": null
+          },
+          "solution": {
+            "text": "Nebel",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Variante eines Elements",
+            "image": null
+          },
+          "solution": {
+            "text": "Isotop",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Zusammenhang zwischen zwei Variablen",
+            "image": null
+          },
+          "solution": {
+            "text": "Korrelation",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wissen, das auf Erfahrung beruht",
+            "image": null
+          },
+          "solution": {
+            "text": "Empirie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Annahme, die überprüft werden kann",
+            "image": null
+          },
+          "solution": {
+            "text": "Hypothese",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Unordnung (vor allem in der Thermodynamik)",
+            "image": null
+          },
+          "solution": {
+            "text": "Entropie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Verlässlichkeit einer Messung",
+            "image": null
+          },
+          "solution": {
+            "text": "Reliabilität",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "untersuchte Einheit einer Studie",
+            "image": null
+          },
+          "solution": {
+            "text": "Variable",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "gültige Wahrheit, die keines Beweises bedarf",
+            "image": null
+          },
+          "solution": {
+            "text": "Axiom",
+            "type": "text"
+          }
+        }
+      ]
     },
     {
       "prompt": {
         "text": "War einer der 12 Apostel?",
         "image": null
       },
+      "category": "Geschichte",
       "items": [
         {
           "label": {
@@ -2290,14 +2187,14 @@ export const CARDS = {
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Geschichte"
+      ]
     },
     {
       "prompt": {
         "text": "Welchem der 7 Kontinente wird die Insel (gruppe) geografisch zugeordnet?",
         "image": null
       },
+      "category": "Geografie",
       "items": [
         {
           "label": {
@@ -2399,232 +2296,123 @@ export const CARDS = {
             "type": "text"
           }
         }
-      ],
-      "category": "Geografie"
+      ]
     },
     {
       "prompt": {
-        "text": "Ist ein Auto von VW?",
+        "text": "Anzahl der ... (Stand 2019)",
         "image": null
       },
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
-            "text": "Down!",
+            "text": "Punkte, um einen Satz beim Tischtennis zu gewinnen",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "11",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "e-up!",
+            "text": "Minuten einer Spielhälfte beim Fußball",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "45",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "T-Roc",
+            "text": "Kilometer bei einem Halbmarathon",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "21,1",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Tiger",
+            "text": "Löcher auf einem Golfplatz",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "18",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Touareg",
+            "text": "Spieler in einer Handball-Mannschaft",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "7",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Caddy",
+            "text": "Runden beim 5000-Meter-Lauf",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "12,5",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Amarok",
+            "text": "maximalen Punkte für einen Wurf im Basketball",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "3",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Cubit",
+            "text": "Grands Prix in einer F1-Saison",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "21",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Sharan",
+            "text": "Grand Slam Turniere im Tennissport",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "4",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Touran",
+            "text": "Mannschaften im Viertelfinale eines Cups",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "8",
+            "type": "text"
           }
         }
-      ],
-      "category": "Wirtschaft"
-    },
-    {
-      "prompt": {
-        "text": "Erzielte 2018 über 20 Milliarden US-Dollar Gewinn?",
-        "image": null
-      },
-      "items": [
-        {
-          "label": {
-            "text": "Samsung Electronics",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Microsoft",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Shell",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Bank of China",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "IKEA",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Bank of America",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Apple",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Alibaba",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Amazon",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Daimler AG",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        }
-      ],
-      "category": "Wirtschaft"
+      ]
     },
     {
       "prompt": {
         "text": "Welche Hauptfarbe hat diese Frucht / Pflanze?",
         "image": null
       },
+      "category": "Wissenschaft",
       "items": [
         {
           "label": {
@@ -2726,997 +2514,1206 @@ export const CARDS = {
             "type": "text"
           }
         }
-      ],
-      "category": "Wissenschaft"
+      ]
     },
     {
       "prompt": {
-        "text": "Wie lautet der wissenschaftliche Begriff dafür?",
+        "text": "Ist ein Auto von VW?",
         "image": null
       },
+      "category": "Wirtschaft",
       "items": [
         {
           "label": {
-            "text": "Hemisphäre",
+            "text": "Down!",
             "image": null
           },
           "solution": {
-            "text": "Nebel",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Gasund Partikelwolke im Weltraum",
+            "text": "e-up!",
             "image": null
           },
           "solution": {
-            "text": "Isotop",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Variante eines Elements",
+            "text": "T-Roc",
             "image": null
           },
           "solution": {
-            "text": "Korrelation",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Zusammenhang zwischen zwei Variablen",
+            "text": "Tiger",
             "image": null
           },
           "solution": {
-            "text": "Empirie",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Wissen, das auf Erfahrung beruht",
+            "text": "Touareg",
             "image": null
           },
           "solution": {
-            "text": "Hypothese",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Annahme, die überprüft werden kann",
+            "text": "Caddy",
             "image": null
           },
           "solution": {
-            "text": "Entropie",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Unordnung (vor allem in der Thermodynamik)",
+            "text": "Amarok",
             "image": null
           },
           "solution": {
-            "text": "Reliabilität",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Verlässlichkeit einer Messung",
+            "text": "Cubit",
             "image": null
           },
           "solution": {
-            "text": "Variable",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "untersuchte Einheit einer Studie",
+            "text": "Sharan",
             "image": null
           },
           "solution": {
-            "text": "Axiom",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "gültige Wahrheit, die keines Beweises bedarf",
+            "text": "Touran",
             "image": null
           },
           "solution": {
-            "text": "Erdhalbkugel",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         }
-      ],
-      "category": "Wissenschaft"
+      ]
     },
     {
       "prompt": {
-        "text": "Ist ein Film von Christopher Nolan?"
+        "text": "Gehört zum Marvel Cinematic Universe (MCU)?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Inception"
+            "text": "Avengers: Endgame",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "The Dark Knight"
+            "text": "Spider-Man: No Way Home",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Blade Runner 2049"
+            "text": "Black Panther",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Venom",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Interstellar"
+            "text": "Shang-Chi",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Shutter Island"
+            "text": "X-Men: Dark Phoenix",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Memento"
+            "text": "Eternals",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Arrival"
+            "text": "Morbius",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Tenet"
+            "text": "Guardians of the Galaxy",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "The Prestige"
+            "text": "Logan",
+            "image": null
           },
           "solution": {
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Dunkirk"
-          },
-          "solution": {
-            "type": "boolean_true"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Gehört zum Marvel Cinematic Universe (MCU)?"
+        "text": "Ist ein Film von Christopher Nolan?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Avengers: Endgame"
+            "text": "Inception",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Spider-Man: No Way Home"
+            "text": "The Dark Knight",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Black Panther"
+            "text": "Blade Runner 2049",
+            "image": null
           },
           "solution": {
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Venom"
-          },
-          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Shang-Chi"
+            "text": "Interstellar",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "X-Men: Dark Phoenix"
+            "text": "Shutter Island",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Eternals"
+            "text": "Memento",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Morbius"
+            "text": "Arrival",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Guardians of the Galaxy"
+            "text": "Tenet",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Logan"
+            "text": "The Prestige",
+            "image": null
           },
           "solution": {
-            "type": "boolean_false"
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Dunkirk",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Gewann den Oscar für den besten Film?"
+        "text": "Gewann den Oscar für den besten Film?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Titanic"
+            "text": "Titanic",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Schindlers Liste"
+            "text": "Schindlers Liste",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Der Pate"
+            "text": "Der Pate",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Inception"
+            "text": "Inception",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Pulp Fiction"
+            "text": "Pulp Fiction",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Parasite"
+            "text": "Parasite",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "The Shawshank Redemption"
+            "text": "The Shawshank Redemption",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "CODA"
+            "text": "CODA",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Oppenheimer"
+            "text": "Oppenheimer",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Avatar"
+            "text": "Avatar",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Ist ein Star-Wars-Film?"
+        "text": "Hat Quentin Tarantino Regie geführt?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Das Imperium schlägt zurück"
+            "text": "Pulp Fiction",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Die Rückkehr der Jedi-Ritter"
+            "text": "Kill Bill",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Rogue One"
+            "text": "Sin City",
+            "image": null
           },
           "solution": {
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Star Trek: Into Darkness"
-          },
-          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Solo"
+            "text": "Django Unchained",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Dune"
+            "text": "From Dusk Till Dawn",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Die Rache der Sith"
+            "text": "Inglourious Basterds",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Der Aufstieg Skywalkers"
+            "text": "Natural Born Killers",
+            "image": null
           },
           "solution": {
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Valerian"
-          },
-          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Die letzten Jedi"
+            "text": "The Hateful Eight",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "True Romance",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Once Upon a Time in Hollywood",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Hat Quentin Tarantino Regie geführt?"
+        "text": "Ist ein Star-Wars-Film?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Pulp Fiction"
+            "text": "Das Imperium schlägt zurück",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Kill Bill"
+            "text": "Die Rückkehr der Jedi-Ritter",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Sin City"
+            "text": "Rogue One",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Star Trek: Into Darkness",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Django Unchained"
+            "text": "Solo",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "From Dusk Till Dawn"
+            "text": "Dune",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Inglourious Basterds"
+            "text": "Die Rache der Sith",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Natural Born Killers"
+            "text": "Der Aufstieg Skywalkers",
+            "image": null
           },
           "solution": {
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "The Hateful Eight"
-          },
-          "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "True Romance"
+            "text": "Valerian",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Once Upon a Time in Hollywood"
+            "text": "Die letzten Jedi",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Ist ein Studio-Ghibli-Film?"
+        "text": "Ist eine reale Person Vorlage für den Film?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Chihiros Reise ins Zauberland"
+            "text": "Schindlers Liste",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Mein Nachbar Totoro"
+            "text": "The Social Network",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Your Name"
+            "text": "Forrest Gump",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Prinzessin Mononoke"
+            "text": "Oppenheimer",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Akira"
+            "text": "Joker",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Das wandelnde Schloss"
+            "text": "Bohemian Rhapsody",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Ghost in the Shell"
+            "text": "Shutter Island",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Ponyo"
+            "text": "The Imitation Game",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Weathering with You"
+            "text": "Inception",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Die letzten Glühwürmchen"
+            "text": "A Beautiful Mind",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Spielte Leonardo DiCaprio die Hauptrolle?"
+        "text": "Ist ein Studio-Ghibli-Film?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Titanic"
+            "text": "Chihiros Reise ins Zauberland",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "The Wolf of Wall Street"
+            "text": "Mein Nachbar Totoro",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "The Departed"
+            "text": "Your Name",
+            "image": null
           },
           "solution": {
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Fight Club"
-          },
-          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "The Revenant"
+            "text": "Prinzessin Mononoke",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "American Psycho"
+            "text": "Akira",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Catch Me If You Can"
+            "text": "Das wandelnde Schloss",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Gangs of New York"
+            "text": "Ghost in the Shell",
+            "image": null
           },
           "solution": {
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "The Talented Mr. Ripley"
-          },
-          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Once Upon a Time in Hollywood"
+            "text": "Ponyo",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Weathering with You",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Die letzten Glühwürmchen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Ist eine reale Person Vorlage für den Film?"
+        "text": "Hatte weltweit über 1 Milliarde Dollar Einspielergebnis?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Schindlers Liste"
+            "text": "Avatar",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "The Social Network"
+            "text": "Avengers: Endgame",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Forrest Gump"
+            "text": "Inception",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Oppenheimer"
+            "text": "Jurassic World",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Joker"
+            "text": "Interstellar",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Bohemian Rhapsody"
+            "text": "The Dark Knight",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Shutter Island"
+            "text": "La La Land",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "The Imitation Game"
+            "text": "Frozen",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Inception"
+            "text": "Oppenheimer",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "A Beautiful Mind"
+            "text": "Top Gun: Maverick",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Hatte weltweit über 1 Milliarde Dollar Einspielergebnis?"
+        "text": "Spielte Leonardo DiCaprio die Hauptrolle?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Avatar"
+            "text": "Titanic",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Avengers: Endgame"
+            "text": "The Wolf of Wall Street",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Inception"
+            "text": "The Departed",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Fight Club",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Jurassic World"
+            "text": "The Revenant",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Interstellar"
+            "text": "American Psycho",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "The Dark Knight"
+            "text": "Catch Me If You Can",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "La La Land"
+            "text": "Gangs of New York",
+            "image": null
           },
           "solution": {
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Frozen"
-          },
-          "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Oppenheimer"
+            "text": "The Talented Mr. Ripley",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Top Gun: Maverick"
+            "text": "Once Upon a Time in Hollywood",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     },
     {
       "prompt": {
-        "text": "Erschien zuerst als Manga, bevor der Kinofilm kam?"
+        "text": "Erschien zuerst als Manga, bevor der Kinofilm kam?",
+        "image": null
       },
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Dragon Ball"
+            "text": "Dragon Ball",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Naruto"
+            "text": "Naruto",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Pacific Rim"
+            "text": "Pacific Rim",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "One Piece"
+            "text": "One Piece",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Alita: Battle Angel"
+            "text": "Alita: Battle Angel",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Attack on Titan"
+            "text": "Attack on Titan",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Ready Player One"
+            "text": "Ready Player One",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Demon Slayer"
+            "text": "Demon Slayer",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "Inception"
+            "text": "Inception",
+            "image": null
           },
           "solution": {
+            "text": "Falsch",
             "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "Old Boy"
+            "text": "Old Boy",
+            "image": null
           },
           "solution": {
+            "text": "Richtig",
             "type": "boolean_true"
           }
         }
-      ],
-      "category": "Musik/Entertainment/Movie"
+      ]
     }
   ]
 };

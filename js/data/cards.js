@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T09:27:40.781Z",
+  "updatedAt": "2026-02-17T09:30:53.660Z",
   "cards": [
     {
       "prompt": {
@@ -3829,7 +3829,7 @@ export const CARDS = {
         "text": "Welcher Musiker ist oder war Lead-Gitarrist dieser Band?",
         "image": null
       },
-      "category": "Musik",
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {

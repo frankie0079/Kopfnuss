@@ -1,8 +1,8 @@
 /* ============================================
-   Kopfnuss! -- Animationen
+   Kopfnuss! -- Animationen (Retro Warm)
    ============================================ */
 
-/* --- Reveal-Animation (Item aufdecken) --- */
+/* --- Reveal-Animation (Item aufdecken – warmes Glow) --- */
 .ring-item.revealing {
   animation: revealPulse 2s ease-in-out forwards;
   z-index: 10;
@@ -11,30 +11,30 @@
 @keyframes revealPulse {
   0% {
     transform: var(--item-translate) scale(1);
-    box-shadow: var(--shadow-md);
+    box-shadow: 3px 3px 0 var(--border);
   }
   15% {
     transform: var(--item-translate) scale(1.15);
-    box-shadow: 0 0 25px rgba(108, 92, 231, 0.5);
+    box-shadow: 0 0 25px rgba(180, 77, 45, 0.4);
   }
   30% {
     transform: var(--item-translate) scale(1.1);
-    box-shadow: 0 0 35px rgba(108, 92, 231, 0.6);
+    box-shadow: 0 0 35px rgba(180, 77, 45, 0.5);
   }
   50% {
     transform: var(--item-translate) scale(1.2);
-    box-shadow: 0 0 40px rgba(108, 92, 231, 0.7);
+    box-shadow: 0 0 40px rgba(180, 77, 45, 0.6);
   }
   70% {
     transform: var(--item-translate) scale(1.15);
-    box-shadow: 0 0 30px rgba(108, 92, 231, 0.5);
+    box-shadow: 0 0 30px rgba(180, 77, 45, 0.4);
   }
   85% {
     transform: var(--item-translate) scale(1.05);
   }
   100% {
     transform: var(--item-translate) scale(1);
-    box-shadow: var(--shadow-md);
+    box-shadow: 3px 3px 0 var(--border);
   }
 }
 
@@ -103,7 +103,7 @@
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* --- Konfetti (fuer Sieges-Screen) --- */
+/* --- Konfetti (fuer Sieges-Screen – Retro Warm Farben) --- */
 .confetti-container {
   position: fixed;
   inset: 0;
@@ -118,7 +118,7 @@
   height: var(--confetti-size, 10px);
   top: -20px;
   left: var(--confetti-left, 50%);
-  background-color: var(--confetti-color, #FF6B6B);
+  background-color: var(--confetti-color, #d4704e);
   border-radius: var(--confetti-radius, 2px);
   animation: confettiFall var(--confetti-duration, 3s) ease-in forwards;
   animation-delay: var(--confetti-delay, 0s);
@@ -148,13 +148,13 @@
   }
 }
 
-/* --- Pulsieren (fuer aktives Team im Scoreboard) --- */
+/* --- Pulsieren (fuer aktives Team im Scoreboard – Retro Warm Schatten) --- */
 .score-card.active-team {
   animation: activePulse 2s ease-in-out infinite;
 }
 
 @keyframes activePulse {
   0%   { box-shadow: var(--shadow-md); }
-  50%  { box-shadow: var(--shadow-lg); }
+  50%  { box-shadow: 4px 4px 0 var(--accent-hover), 0 4px 20px rgba(180, 77, 45, 0.15); }
   100% { box-shadow: var(--shadow-md); }
 }

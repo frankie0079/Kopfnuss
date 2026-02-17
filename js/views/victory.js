@@ -110,7 +110,7 @@ function _createConfetti(parentEl) {
   const container = document.createElement('div');
   container.className = 'confetti-container';
 
-  const colors = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#A78BFA', '#FB923C', '#F472B6', '#00B894'];
+  const colors = ['#d4704e', '#e9c46a', '#2d6a4f', '#b44d2d', '#f4a261', '#d8f3dc', '#c75a38'];
   const count = 60;
 
   for (let i = 0; i < count; i++) {

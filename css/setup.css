@@ -1,54 +1,83 @@
 /* ============================================
-   Kopfnuss! -- Setup-Screen
+   Kopfnuss! -- Setup-Screen (Retro Warm)
    ============================================ */
 
 #view-setup {
   padding: var(--space-xl) var(--space-2xl);
   overflow-y: auto;
   gap: var(--space-lg);
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
 }
 
-/* --- Titel --- */
+/* --- Titel (Luckiest Guy, Terracotta, 3D-Schatten) --- */
 .setup-title {
-  font-size: var(--font-size-4xl);
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--team-1), var(--team-4), var(--team-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--space-sm);
+  font-family: var(--font-title);
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--accent);
+  text-shadow: 3px 3px 0 var(--title-shadow);
+  margin-bottom: 2px;
+  /* Kein Gradient mehr */
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
 }
 
+/* --- Untertitel (Caveat Handschrift) --- */
 .setup-subtitle {
-  font-size: var(--font-size-lg);
+  font-family: var(--font-handwriting);
+  font-size: 19px;
+  font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
+}
+
+/* --- Night Mode: Titel --- */
+[data-theme="dark"] .setup-title {
+  color: #ffb088;
+  text-shadow: 0 0 30px rgba(255, 140, 80, 0.3), 3px 3px 0 rgba(180, 77, 45, 0.4);
 }
 
 /* --- Settings Container --- */
 .setup-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: 20px;
   width: 100%;
   max-width: 900px;
 }
 
-/* --- Section Cards --- */
+/* --- Section Cards (Retro Warm: Border + Hard Shadow) --- */
 .setup-section {
   background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  border-radius: 16px;
+  padding: 20px;
+  border: 2px solid var(--border);
   box-shadow: var(--shadow-md);
+  text-align: left;
+}
+
+[data-theme="dark"] .setup-section {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 .setup-section h3 {
-  font-size: var(--font-size-lg);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-bottom: var(--space-md);
   color: var(--text-primary);
 }
 
-/* --- Team-Stepper --- */
+/* --- Team-Stepper (+/- Buttons) --- */
 .team-stepper {
   display: flex;
   align-items: center;
@@ -58,190 +87,614 @@
 }
 
 .stepper-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-2xl);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--accent);
   color: var(--text-on-accent);
+  box-shadow: 2px 2px 0 var(--accent-hover);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stepper-btn:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.stepper-btn:active:not(:disabled) {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 0 var(--accent-hover);
+}
+
+[data-theme="dark"] .stepper-btn {
+  background-color: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .stepper-value {
-  font-size: var(--font-size-3xl);
+  font-family: var(--font-display);
+  font-size: 36px;
   font-weight: 900;
-  min-width: 60px;
+  min-width: 30px;
   text-align: center;
+  color: var(--text-primary);
 }
 
-/* --- Team-Konfiguration --- */
+/* --- Team-Liste (fixierte Hoehe, Slot Machines verteilen sich) --- */
 .team-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 12px;
+  height: 480px;
 }
 
-.team-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-}
+.team-list[data-team-count="3"] { gap: 8px; }
+.team-list[data-team-count="4"] { gap: 6px; }
+.team-list[data-team-count="5"] { gap: 4px; }
 
-/* --- Farbpunkt (feste Farbe, nicht klickbar) --- */
-.team-color-dot {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
-  flex-shrink: 0;
-}
-
-/* --- Scroll-Picker (iOS-artige Trommel) --- */
-.team-picker {
-  flex: 1;
+/* ===== SLOT MACHINE COMPONENT ===== */
+.slot-machine {
+  border-radius: 20px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  border: 2px solid var(--border);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.team-picker-highlight {
+.slot-machine.green {
+  background: rgba(45, 106, 79, 0.06);
+  border: 2.5px solid rgba(45, 106, 79, 0.15);
+  box-shadow: 4px 4px 0 rgba(45, 106, 79, 0.08);
+}
+
+.slot-machine.gold {
+  background: rgba(233, 196, 106, 0.1);
+  border: 2.5px solid rgba(233, 196, 106, 0.2);
+  box-shadow: 4px 4px 0 rgba(233, 196, 106, 0.1);
+}
+
+/* Team 3: Terracotta */
+.slot-machine.terra {
+  background: rgba(212, 112, 78, 0.06);
+  border: 2.5px solid rgba(212, 112, 78, 0.15);
+  box-shadow: 4px 4px 0 rgba(212, 112, 78, 0.08);
+}
+
+/* Team 4: Lila */
+.slot-machine.lilac {
+  background: rgba(167, 139, 250, 0.06);
+  border: 2.5px solid rgba(167, 139, 250, 0.15);
+  box-shadow: 4px 4px 0 rgba(167, 139, 250, 0.08);
+}
+
+/* Team 5: Orange */
+.slot-machine.orange {
+  background: rgba(251, 146, 60, 0.06);
+  border: 2.5px solid rgba(251, 146, 60, 0.15);
+  box-shadow: 4px 4px 0 rgba(251, 146, 60, 0.08);
+}
+
+/* Night Mode alle Farben */
+[data-theme="dark"] .slot-machine.green {
+  background: rgba(45, 106, 79, 0.1);
+  border: 2px solid rgba(149, 213, 178, 0.15);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .slot-machine.gold {
+  background: rgba(233, 196, 106, 0.08);
+  border: 2px solid rgba(252, 211, 77, 0.15);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .slot-machine.terra {
+  background: rgba(212, 112, 78, 0.08);
+  border: 2px solid rgba(212, 112, 78, 0.2);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .slot-machine.lilac {
+  background: rgba(167, 139, 250, 0.08);
+  border: 2px solid rgba(167, 139, 250, 0.2);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .slot-machine.orange {
+  background: rgba(251, 146, 60, 0.08);
+  border: 2px solid rgba(251, 146, 60, 0.2);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* --- Slot Machine Header --- */
+.sm-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sm-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.slot-machine.green .sm-dot  { background: #2d6a4f; }
+.slot-machine.gold .sm-dot   { background: #e9c46a; }
+.slot-machine.terra .sm-dot  { background: #d4704e; }
+.slot-machine.lilac .sm-dot  { background: #A78BFA; }
+.slot-machine.orange .sm-dot { background: #FB923C; }
+
+[data-theme="dark"] .slot-machine.green .sm-dot  { background: #95d5b2; }
+[data-theme="dark"] .slot-machine.gold .sm-dot   { background: #fcd34d; }
+[data-theme="dark"] .slot-machine.terra .sm-dot  { background: #ffb088; }
+[data-theme="dark"] .slot-machine.lilac .sm-dot  { background: #c4b5fd; }
+[data-theme="dark"] .slot-machine.orange .sm-dot { background: #fdba74; }
+
+.sm-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8b7355;
+}
+
+[data-theme="dark"] .sm-label {
+  color: #8b7355;
+}
+
+/* --- Slot Machine Body (Fenster + Spin-Button) --- */
+.sm-body {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* --- Slot-Fenster (flex:1 füllt verfuegbaren Platz) --- */
+.sm-window {
+  flex: 1;
+  min-height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  border: 2.5px solid #e8dcc8;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.05), 3px 3px 0 #e8dcc8;
+}
+
+[data-theme="dark"] .sm-window {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 176, 136, 0.1);
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.25), 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Center Highlight Band */
+.sm-window::before {
+  content: '';
   position: absolute;
   top: 50%;
+  left: 6px;
+  right: 6px;
+  height: 34px;
+  transform: translateY(-50%);
+  border-radius: 8px;
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(180, 77, 45, 0.06);
+  border: 2px solid rgba(180, 77, 45, 0.15);
+}
+
+[data-theme="dark"] .sm-window::before {
+  background: rgba(212, 112, 78, 0.08);
+  border: 2px solid rgba(212, 112, 78, 0.2);
+}
+
+/* Fade Kanten oben/unten */
+.sm-window::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    transparent 30%,
+    transparent 70%,
+    #fff 100%
+  );
+}
+
+[data-theme="dark"] .sm-window::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 22, 37, 0.95) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(26, 22, 37, 0.95) 100%
+  );
+}
+
+/* --- Reel (scrollende Namensliste) --- */
+.sm-reel {
+  position: absolute;
   left: 0;
   right: 0;
-  height: 40px;
-  transform: translateY(-50%);
-  border-top: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
-  pointer-events: none;
-  z-index: 1;
+  will-change: transform;
 }
 
-.team-picker-scroll {
-  height: 100%;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 40px 0;
+.sm-reel-item {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b7355;
+  opacity: 0.2;
+  user-select: none;
+  transition: opacity 0.15s, font-size 0.15s;
 }
 
-.team-picker-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.team-picker-item {
-  scroll-snap-align: center;
-  text-align: center;
-  font-size: var(--font-size-md);
-  font-weight: 700;
-  font-family: var(--font-main);
-  color: var(--text-primary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 var(--space-sm);
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.team-picker-item.taken {
-  opacity: 0.25;
-  text-decoration: line-through;
-  pointer-events: none;
-}
-
-/* --- Eingelockter Teamname --- */
-.team-name-locked {
-  flex: 1;
-  font-size: var(--font-size-md);
+.sm-reel-item.center {
+  opacity: 1;
+  font-size: 16px;
   font-weight: 800;
-  font-family: var(--font-main);
-  color: var(--text-primary);
-  padding: var(--space-sm) var(--space-md);
+  color: #5c4433;
 }
 
-/* --- Lock / Unlock Buttons --- */
-.btn-lock,
-.btn-unlock {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
+[data-theme="dark"] .sm-reel-item {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .sm-reel-item.center {
+  color: #d4b8a0;
+}
+
+/* --- Spin-Button --- */
+.sm-lever-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.sm-spin-btn {
+  width: 56px;
+  height: 56px;
+  aspect-ratio: 1;
+  border-radius: 50%;
   border: none;
-  font-size: var(--font-size-lg);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 36px;
   flex-shrink: 0;
-  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  transition: all 0.2s;
 }
 
-.btn-lock {
-  background: var(--success);
-  color: var(--text-on-accent);
+.slot-machine.green .sm-spin-btn {
+  background: linear-gradient(145deg, #2d6a4f, #3a8c6a);
+  color: #d8f3dc;
+  box-shadow: 3px 3px 0 #1b4332, 0 6px 16px rgba(45, 106, 79, 0.2);
 }
 
-.btn-lock:hover {
-  transform: scale(1.1);
+.slot-machine.gold .sm-spin-btn {
+  background: linear-gradient(145deg, #e9c46a, #f0d68a);
+  color: #5c4433;
+  box-shadow: 3px 3px 0 #c9a84c, 0 6px 16px rgba(233, 196, 106, 0.2);
 }
 
-.btn-unlock {
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
+.slot-machine.terra .sm-spin-btn {
+  background: linear-gradient(145deg, #d4704e, #e8916e);
+  color: #fff;
+  box-shadow: 3px 3px 0 #9c4a2e, 0 6px 16px rgba(212, 112, 78, 0.2);
 }
 
-.btn-unlock:hover {
-  background: var(--border);
-  transform: scale(1.1);
+.slot-machine.lilac .sm-spin-btn {
+  background: linear-gradient(145deg, #A78BFA, #c4b5fd);
+  color: #fff;
+  box-shadow: 3px 3px 0 #7c5fd4, 0 6px 16px rgba(167, 139, 250, 0.2);
 }
 
-/* --- Option Buttons (Zielpunktzahl, Timer) --- */
+.slot-machine.orange .sm-spin-btn {
+  background: linear-gradient(145deg, #FB923C, #fdba74);
+  color: #5c3a0e;
+  box-shadow: 3px 3px 0 #c06a1c, 0 6px 16px rgba(251, 146, 60, 0.2);
+}
+
+[data-theme="dark"] .slot-machine.green .sm-spin-btn {
+  background: linear-gradient(145deg, #2d6a4f, #3a8c6a);
+  color: #95d5b2;
+  box-shadow: 3px 3px 0 #0d2818, 0 0 20px rgba(45, 106, 79, 0.3);
+}
+
+[data-theme="dark"] .slot-machine.gold .sm-spin-btn {
+  background: linear-gradient(145deg, #b8941e, #e9c46a);
+  color: #3a2e0e;
+  box-shadow: 3px 3px 0 #3a2e0e, 0 0 20px rgba(233, 196, 106, 0.2);
+}
+
+[data-theme="dark"] .slot-machine.terra .sm-spin-btn {
+  background: linear-gradient(145deg, #c75a38, #d4704e);
+  color: #ffb088;
+  box-shadow: 3px 3px 0 #5c2a12, 0 0 20px rgba(212, 112, 78, 0.3);
+}
+
+[data-theme="dark"] .slot-machine.lilac .sm-spin-btn {
+  background: linear-gradient(145deg, #7c5fd4, #A78BFA);
+  color: #e8e0ff;
+  box-shadow: 3px 3px 0 #4a2ea0, 0 0 20px rgba(167, 139, 250, 0.3);
+}
+
+[data-theme="dark"] .slot-machine.orange .sm-spin-btn {
+  background: linear-gradient(145deg, #c06a1c, #FB923C);
+  color: #ffe8d0;
+  box-shadow: 3px 3px 0 #5c3a0e, 0 0 20px rgba(251, 146, 60, 0.3);
+}
+
+.sm-spin-btn:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.sm-spin-btn:active:not(:disabled) {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.sm-spin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sm-spin-btn.spinning {
+  animation: smPulseBtn 0.6s ease infinite;
+}
+
+@keyframes smPulseBtn {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+.sm-spin-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8b7355;
+}
+
+[data-theme="dark"] .sm-spin-label {
+  color: #6b5c4a;
+}
+
+/* --- Gewaehlter Teamname (rechts im Header neben "Team X") --- */
+.sm-chosen-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+  white-space: nowrap;
+}
+
+.sm-chosen-name.visible {
+  opacity: 1;
+}
+
+/* --- Slot Machine Footer (Respin) --- */
+.sm-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  min-height: 24px;
+}
+
+.sm-respin {
+  font-family: var(--font-handwriting);
+  font-size: 14px;
+  color: #c0956e;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.sm-respin.visible {
+  opacity: 1;
+}
+
+[data-theme="dark"] .sm-respin {
+  color: #d4c4ae;
+}
+
+/* === Stufenweise Skalierung bei 3+ Teams === */
+
+/* 3 Teams – nur Chrome schrumpfen */
+[data-team-count="3"] .slot-machine { padding: 10px 12px; }
+[data-team-count="3"] .sm-header { margin-bottom: 4px; }
+[data-team-count="3"] .sm-body { gap: 8px; }
+[data-team-count="3"] .sm-window::before { height: 28px; }
+[data-team-count="3"] .sm-spin-btn { width: 50px; height: 50px; font-size: 30px; }
+[data-team-count="3"] .sm-reel-item { font-size: 13px; }
+[data-team-count="3"] .sm-reel-item.center { font-size: 15px; }
+[data-team-count="3"] .sm-footer { margin-top: 2px; min-height: 14px; }
+[data-team-count="3"] .sm-respin { font-size: 12px; }
+
+/* 4 Teams – Chrome weiter schrumpfen, Inhalt bleibt */
+[data-team-count="4"] .slot-machine { padding: 6px 10px; border-width: 2px; }
+[data-team-count="4"] .sm-header { margin-bottom: 2px; }
+[data-team-count="4"] .sm-dot { width: 12px; height: 12px; }
+[data-team-count="4"] .sm-label { font-size: 11px; }
+[data-team-count="4"] .sm-window::before { height: 24px; }
+[data-team-count="4"] .sm-window { border-radius: 10px; }
+[data-team-count="4"] .sm-spin-btn { width: 44px; height: 44px; font-size: 26px; }
+[data-team-count="4"] .sm-spin-label { display: none; }
+[data-team-count="4"] .sm-reel-item { font-size: 13px; }
+[data-team-count="4"] .sm-reel-item.center { font-size: 14px; }
+[data-team-count="4"] .sm-footer { margin-top: 0; min-height: 0; }
+[data-team-count="4"] .sm-respin { font-size: 10px; }
+[data-team-count="4"] .sm-lever-wrap { gap: 2px; }
+[data-team-count="4"] .sm-body { gap: 6px; }
+
+/* 5 Teams – minimales Chrome, Inhalt fast gleich */
+[data-team-count="5"] .slot-machine { padding: 4px 8px; border-width: 1.5px; border-radius: 14px; }
+[data-team-count="5"] .sm-header { margin-bottom: 0; }
+[data-team-count="5"] .sm-dot { width: 10px; height: 10px; }
+[data-team-count="5"] .sm-label { font-size: 11px; }
+[data-team-count="5"] .sm-window { border-radius: 8px; }
+[data-team-count="5"] .sm-window::before { height: 20px; border-radius: 4px; }
+[data-team-count="5"] .sm-spin-btn { width: 42px; height: 42px; font-size: 24px; }
+[data-team-count="5"] .sm-spin-label { display: none; }
+[data-team-count="5"] .sm-reel-item { font-size: 13px; }
+[data-team-count="5"] .sm-reel-item.center { font-size: 14px; }
+[data-team-count="5"] .sm-footer { margin-top: 0; min-height: 0; }
+[data-team-count="5"] .sm-respin { font-size: 9px; }
+[data-team-count="5"] .sm-lever-wrap { gap: 1px; }
+[data-team-count="5"] .sm-body { gap: 4px; }
+
+/* --- Slot Machine Hint --- */
+.sm-hint {
+  font-family: var(--font-handwriting);
+  font-size: 15px;
+  text-align: center;
+  margin-top: 12px;
+  color: #c0956e;
+}
+
+[data-theme="dark"] .sm-hint {
+  color: #6b5c4a;
+}
+
+[data-team-count="4"] ~ .sm-hint,
+[data-team-count="5"] ~ .sm-hint { display: none; }
+
+/* --- Winner Flash --- */
+.sm-window.winner {
+  animation: smWinFlash 0.6s ease 2;
+}
+
+@keyframes smWinFlash {
+  0%   { box-shadow: inset 0 0 0 rgba(180, 77, 45, 0); }
+  30%  { box-shadow: inset 0 0 30px rgba(180, 77, 45, 0.15); }
+  100% { box-shadow: inset 0 0 0 rgba(180, 77, 45, 0); }
+}
+
+[data-theme="dark"] .sm-window.winner {
+  animation: smWinFlashNight 0.6s ease 2;
+}
+
+@keyframes smWinFlashNight {
+  0%   { box-shadow: inset 0 0 0 rgba(212, 112, 78, 0); }
+  30%  { box-shadow: inset 0 0 30px rgba(212, 112, 78, 0.2); }
+  100% { box-shadow: inset 0 0 0 rgba(212, 112, 78, 0); }
+}
+
+/* --- Slot Machine Confetti --- */
+.sm-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sm-confetti-dot {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes smConfettiFall {
+  0%   { opacity: 1; transform: translateY(-10px) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translateY(80px) rotate(360deg) scale(0.3); }
+}
+
+/* --- Option Buttons / Chips (Zielpunktzahl, Timer) --- */
 .option-group {
   display: flex;
-  gap: var(--space-sm);
+  gap: 8px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .option-btn {
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-lg);
-  font-size: var(--font-size-md);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
   font-weight: 700;
+  font-family: var(--font-display);
   background: var(--bg-secondary);
-  color: var(--text-primary);
-  border: 2px solid transparent;
+  color: var(--text-secondary);
+  border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  font-family: var(--font-main);
+  box-shadow: var(--shadow-sm);
 }
 
 .option-btn:hover {
-  background: var(--bg-primary);
+  background: rgba(180, 77, 45, 0.08);
+  color: var(--accent);
 }
 
 .option-btn.active {
   background: var(--accent);
   color: var(--text-on-accent);
-  border-color: var(--accent);
+  border-color: transparent;
+  box-shadow: 2px 2px 0 var(--accent-hover);
+}
+
+/* Night Mode Chips */
+[data-theme="dark"] .option-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .option-btn.active {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
 
 /* --- Kartenset-Auswahl --- */
 .cardset-select {
   width: 100%;
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   border: 2px solid var(--border);
   background: var(--bg-card);
   color: var(--text-primary);
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   font-size: var(--font-size-md);
   font-weight: 600;
   cursor: pointer;
@@ -252,61 +705,133 @@
   outline: none;
 }
 
-/* --- Start-Button --- */
+/* --- Footer mit Buttons --- */
 .setup-footer {
   width: 100%;
   max-width: 900px;
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   margin-top: var(--space-md);
 }
 
+/* Wenn nur ein Button (iPad: kein Kartenverwaltung), zentrieren */
+.setup-footer .btn-start:first-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+/* --- "Spiel starten" Button (gross, Retro Warm) --- */
 .btn-start {
-  padding: var(--space-md) var(--space-2xl);
-  font-size: var(--font-size-xl);
+  padding: 16px 40px;
+  font-size: 17px;
   font-weight: 900;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, var(--accent), #A78BFA);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 14px;
+  background: var(--accent);
   color: var(--text-on-accent);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 4px 4px 0 var(--accent-hover);
   border: none;
   cursor: pointer;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  font-family: var(--font-main);
+  justify-self: start;
 }
 
 .btn-start:hover:not(:disabled) {
-  transform: scale(1.03);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+  box-shadow: 5px 5px 0 var(--accent-hover);
 }
 
 .btn-start:active:not(:disabled) {
-  transform: scale(0.97);
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 var(--accent-hover);
 }
 
+/* Night Mode "Spiel starten" */
+[data-theme="dark"] .btn-start {
+  background: linear-gradient(135deg, #c75a38, #d4704e);
+  color: var(--text-on-accent);
+  box-shadow: 4px 4px 0 #8a3520, 0 0 24px rgba(199, 90, 56, 0.25);
+}
+
+[data-theme="dark"] .btn-start:hover:not(:disabled) {
+  box-shadow: 5px 5px 0 #8a3520, 0 0 32px rgba(199, 90, 56, 0.35);
+}
+
+/* --- Kartenverwaltung-Button (sekundaer) --- */
 .btn-manage-sets {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--font-size-sm);
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  justify-self: end;
+}
+
+.btn-manage-sets:hover {
+  color: var(--accent);
+  background: rgba(180, 77, 45, 0.06);
+}
+
+[data-theme="dark"] .btn-manage-sets {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* --- Karten-Info --- */
 .setup-card-info {
-  font-size: var(--font-size-md);
+  font-family: var(--font-body);
+  font-size: 13px;
   color: var(--text-secondary);
+  margin-top: 12px;
   margin-bottom: var(--space-sm);
 }
 
 .setup-card-info strong {
   color: var(--text-primary);
   font-weight: 800;
-  font-size: var(--font-size-lg);
+  font-family: var(--font-display);
 }
 
+/* --- "Karten anpassen" Toggle --- */
 .btn-toggle-cats {
-  font-size: var(--font-size-sm);
-  padding: var(--space-xs) var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(180, 77, 45, 0.06);
+  color: var(--accent);
+  border: none;
+}
+
+[data-theme="dark"] .btn-toggle-cats {
+  color: #ffb088;
+  background: rgba(212, 112, 78, 0.1);
+}
+
+/* --- Section Labels (Zielpunktzahl, Timer, Karten) --- */
+.setup-section .s-label {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
 }
 
 /* --- Kategorie-Schieberegler --- */
@@ -321,15 +846,16 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: var(--space-xs) var(--space-sm);
+  padding: 6px 10px;
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
 }
 
 .cat-slider-name {
   flex: 1;
-  font-size: var(--font-size-sm);
+  font-size: 13px;
   font-weight: 600;
+  font-family: var(--font-display);
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
@@ -355,7 +881,7 @@
   border-radius: 50%;
   background: var(--accent);
   cursor: pointer;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 0 var(--accent-hover);
 }
 
 .cat-slider-input::-moz-range-thumb {
@@ -365,12 +891,13 @@
   background: var(--accent);
   cursor: pointer;
   border: none;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 0 var(--accent-hover);
 }
 
 .cat-slider-pct {
   font-size: var(--font-size-sm);
   font-weight: 700;
+  font-family: var(--font-display);
   color: var(--accent);
   min-width: 36px;
   text-align: right;
@@ -390,7 +917,7 @@
   right: var(--space-md);
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   background: var(--bg-card);
   border: 2px solid var(--border);
   display: flex;
@@ -398,12 +925,116 @@
   justify-content: center;
   cursor: pointer;
   font-size: var(--font-size-xl);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   z-index: 100;
   padding: 0;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .theme-toggle:hover {
   background: var(--bg-secondary);
+  box-shadow: var(--shadow-accent);
+}
+
+[data-theme="dark"] .theme-toggle {
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* --- Cooldown-Hilfe (Fragezeichen + Tooltip) --- */
+.cooldown-help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: none;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-left: 4px;
+  transition: all var(--transition-fast);
+  box-shadow: none;
+}
+
+.cooldown-help-btn:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+[data-theme="dark"] .cooldown-help-btn {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+}
+
+[data-theme="dark"] .cooldown-help-btn:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.cooldown-tooltip {
+  margin-top: 10px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+[data-theme="dark"] .cooldown-tooltip {
+  border-color: var(--border);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cooldown-tooltip-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.cooldown-tooltip-text strong {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.cooldown-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  background: var(--danger);
+  color: #fff;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cooldown-reset-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cooldown-reset-btn:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
 }

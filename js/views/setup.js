@@ -1,6 +1,7 @@
 /* ============================================
    Kopfnuss! -- Setup-Screen View
    Unified Card Architecture: Eine Datei, ein Kartenpool
+   Slot Machine Teamname-Picker
    ============================================ */
 
 import { state } from '../state.js';
@@ -12,23 +13,25 @@ import { normalizeCardSet } from '../models/card.js';
 // ── Konstanten ──────────────────────────────
 
 const SLOT_COLORS = [
-  '#22C55E',  // Slot 1: Grün
-  '#EAB308',  // Slot 2: Gelb
-  '#EF4444',  // Slot 3: Rot
-  '#3B82F6',  // Slot 4: Blau
-  '#EC4899',  // Slot 5: Magenta
+  '#2d6a4f',  // Slot 1: Gruen
+  '#e9c46a',  // Slot 2: Gold
+  '#d4704e',  // Slot 3: Terracotta
+  '#A78BFA',  // Slot 4: Lila
+  '#FB923C',  // Slot 5: Orange
 ];
 
 const TEAM_NAME_POOL = [
-  'Team Grips & Glory',
+  'Team Durchblicker',
   'Team Synapsensalat',
+  'Team Erleuchteten',
+  'Team Kopfgold',
+  'Team Grips & Glory',
   'Team Denkfabrik',
   'Team Antwortmaschinen',
   'Team Wissensraketen',
-  'Team Durchblicker',
-  'Team Erleuchteten',
-  'Team Kopfgold',
-  'Team Lichtblick',
+  'Team Hirnakrobaten',
+  'Team Quizkanonen',
+  'Team Schlaumeier',
 ];
 
 const TARGET_SCORES = [10, 15, 20];
@@ -40,8 +43,16 @@ const TIMER_OPTIONS = [
   { label: 'Aus',  value: null }
 ];
 
-const PICKER_ITEM_H = 40;
-const PICKER_VISIBLE = 3;
+// Slot Machine Konstanten
+const SM_SPIN_DURATION = 3000;
+const SM_EXTRA_ROTATIONS = 4;
+
+// Item-Hoehen je nach Teamanzahl (Fenster-Hoehe kommt aus DOM via flex)
+const SM_ITEM_HEIGHTS = { 2: 34, 3: 30, 4: 26, 5: 22 };
+
+function _itemH() {
+  return SM_ITEM_HEIGHTS[teamCount] || 34;
+}
 
 const COOLDOWN_SESSIONS = 10;
 const LS_COOLDOWN_KEY = 'kopfnuss_cooldown';
@@ -49,7 +60,7 @@ const LS_COOLDOWN_KEY = 'kopfnuss_cooldown';
 // ── State ───────────────────────────────────
 
 let teamCount = 2;
-let teamConfigs = [];
+let teamConfigs = [];   // { nameIndex: number }
 let targetScore = 10;
 let timerSeconds = null;
 let showCategoryMix = false;
@@ -109,7 +120,6 @@ function _getAvailableCards() {
   const currentSession = data.session;
   let cards = [...CARDS.cards];
 
-  // Kategorien-Filter
   if (showCategoryMix) {
     _initCategoryWeights();
     const cardsByCat = {};
@@ -124,14 +134,12 @@ function _getAvailableCards() {
       const weight = categoryWeights[cat] ?? 100;
       if (weight <= 0) continue;
       const count = Math.max(1, Math.round(catCards.length * weight / 100));
-      // Zufaellig auswaehlen
       const shuffled = [...catCards].sort(() => Math.random() - 0.5);
       filtered.push(...shuffled.slice(0, count));
     }
     cards = filtered;
   }
 
-  // Cooldown-Filter
   const available = cards.filter(card => {
     const key = card.prompt?.text || '';
     const lastPlayed = data.played[key];
@@ -139,7 +147,6 @@ function _getAvailableCards() {
     return (currentSession - lastPlayed) >= COOLDOWN_SESSIONS;
   });
 
-  // Wenn zu wenige Karten (< 5), Cooldown ignorieren
   if (available.length < 5) return cards;
   return available;
 }
@@ -151,8 +158,7 @@ function initSetup() {
   if (saved) {
     teamCount = saved.teamCount || 2;
     teamConfigs = (saved.teamConfigs || []).map(tc => ({
-      nameIndex: tc.nameIndex ?? 0,
-      locked: false
+      nameIndex: tc.nameIndex ?? 0
     }));
     targetScore = state.get('lastTargetScore') || 10;
     timerSeconds = state.get('lastTimerSeconds') ?? null;
@@ -170,22 +176,10 @@ function destroySetup() {
 }
 
 function _ensureTeamConfigs() {
-  const usedIndices = new Set(teamConfigs.filter(tc => tc.locked).map(tc => tc.nameIndex));
   while (teamConfigs.length < 5) {
-    let idx = 0;
-    while (usedIndices.has(idx) && idx < TEAM_NAME_POOL.length) idx++;
-    teamConfigs.push({ nameIndex: idx, locked: false });
+    const idx = teamConfigs.length % TEAM_NAME_POOL.length;
+    teamConfigs.push({ nameIndex: idx });
   }
-}
-
-function _takenIndices(excludeTeamIdx) {
-  const taken = new Set();
-  for (let i = 0; i < teamCount; i++) {
-    if (i !== excludeTeamIdx && teamConfigs[i].locked) {
-      taken.add(teamConfigs[i].nameIndex);
-    }
-  }
-  return taken;
 }
 
 // ── Render ───────────────────────────────────
@@ -201,13 +195,19 @@ function render() {
       ${document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙'}
     </button>
 
+    <span class="star" style="top:90px;right:40px;">✦</span>
+    <span class="star" style="bottom:120px;left:60px;">✧</span>
+    <span class="star" style="top:300px;right:120px;">⋆</span>
+    <span class="star" style="top:200px;left:30px;">⋆</span>
+    <span class="star" style="bottom:200px;right:60px;">✧</span>
+
     <h1 class="setup-title">Kopfnuss!</h1>
-    <p class="setup-subtitle">Einstellungen für euer Spiel</p>
+    <div class="setup-subtitle">~ Wie wollt Ihr spielen? ~</div>
 
     <div class="setup-container">
       <!-- Linke Spalte: Teams -->
       <div class="setup-section">
-        <h3>Teams</h3>
+        <h3>Team-Einstellungen</h3>
 
         <div class="team-stepper">
           <button class="stepper-btn btn-primary" id="team-minus" ${teamCount <= 2 ? 'disabled' : ''}>−</button>
@@ -215,9 +215,10 @@ function render() {
           <button class="stepper-btn btn-primary" id="team-plus" ${teamCount >= 5 ? 'disabled' : ''}>+</button>
         </div>
 
-        <div class="team-list" id="team-list">
-          ${_renderTeamRows()}
+        <div class="team-list" id="team-list" data-team-count="${teamCount}">
+          ${_renderSlotMachines()}
         </div>
+        <div class="sm-hint">🎰 Drückt den Button und lasst das Glück entscheiden!</div>
       </div>
 
       <!-- Rechte Spalte: Spieleinstellungen -->
@@ -238,9 +239,23 @@ function render() {
 
         <h3 style="margin-top: var(--space-lg)">Karten</h3>
         <p class="setup-card-info">
-          Du spielst mit <strong>${availableCards.length}</strong> Karten
+          Du spielst mit <strong>${availableCards.length}</strong> von ${totalCards} Karten
+          ${availableCards.length < totalCards
+            ? `<span style="font-size:0.85em; color:#888;"> (${totalCards - availableCards.length} im Cooldown)
+                 <button class="cooldown-help-btn" id="btn-cooldown-help" aria-label="Was ist Cooldown?">?</button>
+               </span>`
+            : ''}
         </p>
-        <button class="btn-ghost btn-toggle-cats" id="btn-toggle-categories">
+        <div class="cooldown-tooltip hidden" id="cooldown-tooltip">
+          <p class="cooldown-tooltip-text">
+            <strong>Was ist Cooldown?</strong><br>
+            Karten, die kürzlich gespielt wurden, pausieren für ${COOLDOWN_SESSIONS} Runden,
+            damit sich Fragen nicht zu schnell wiederholen.
+            Danach sind sie automatisch wieder verfügbar.
+          </p>
+          <button class="cooldown-reset-btn" id="btn-cooldown-reset">Cooldown zurücksetzen</button>
+        </div>
+        <button class="btn-toggle-cats" id="btn-toggle-categories">
           ${showCategoryMix ? '▼' : '▶'} Karten anpassen
         </button>
         ${showCategoryMix ? _renderCategorySliders(cats) : ''}
@@ -254,7 +269,8 @@ function render() {
   `;
 
   _bindEvents();
-  _initPickers();
+  // Warten bis Flex-Layout berechnet ist, damit clientHeight korrekt ist
+  requestAnimationFrame(() => _initSlotMachines());
 }
 
 function _renderCategorySliders(cats) {
@@ -279,80 +295,186 @@ function _renderCategorySliders(cats) {
   `;
 }
 
-function _renderTeamRows() {
+// ── Slot Machine HTML ───────────────────────
+
+function _renderSlotMachines() {
   let html = '';
   for (let i = 0; i < teamCount; i++) {
-    const tc = teamConfigs[i];
-    const color = SLOT_COLORS[i];
-    const taken = _takenIndices(i);
+    const colorClasses = ['green', 'gold', 'terra', 'lilac', 'orange'];
+    const colorClass = colorClasses[i] || 'green';
 
-    if (tc.locked) {
-      html += `
-        <div class="team-row">
-          <div class="team-color-dot" style="background-color: ${color}"></div>
-          <div class="team-name-locked">${_escapeHtml(TEAM_NAME_POOL[tc.nameIndex])}</div>
-          <button class="btn-unlock" data-team="${i}" title="Entsperren">🔓</button>
+    html += `
+      <div class="slot-machine ${colorClass}" id="sm-team${i}">
+        <div class="sm-confetti" id="sm-confetti${i}"></div>
+        <div class="sm-header">
+          <div class="sm-dot"></div>
+          <span class="sm-label">Team ${i + 1}</span>
+          <span class="sm-chosen-name" id="sm-result${i}"></span>
         </div>
-      `;
-    } else {
-      const pickerH = PICKER_ITEM_H * PICKER_VISIBLE;
-      html += `
-        <div class="team-row">
-          <div class="team-color-dot" style="background-color: ${color}"></div>
-          <div class="team-picker" data-team="${i}" style="height: ${pickerH}px">
-            <div class="team-picker-highlight"></div>
-            <div class="team-picker-scroll" data-team="${i}">
-              ${TEAM_NAME_POOL.map((name, ni) => {
-                const isTaken = taken.has(ni);
-                return `<div class="team-picker-item ${isTaken ? 'taken' : ''}"
-                             data-name-index="${ni}"
-                             style="height: ${PICKER_ITEM_H}px; line-height: ${PICKER_ITEM_H}px">
-                          ${_escapeHtml(name)}
-                        </div>`;
-              }).join('')}
-            </div>
+        <div class="sm-body">
+          <div class="sm-window" id="sm-window${i}">
+            <div class="sm-reel" id="sm-reel${i}"></div>
           </div>
-          <button class="btn-lock" data-team="${i}" title="Bestätigen">✓</button>
+          <div class="sm-lever-wrap">
+            <button class="sm-spin-btn" id="sm-spin${i}" data-team="${i}">🎰</button>
+            <span class="sm-spin-label">Drücken!</span>
+          </div>
         </div>
-      `;
-    }
+        <div class="sm-footer">
+          <button class="sm-respin" id="sm-respin${i}" data-team="${i}">Nochmal drehen?</button>
+        </div>
+      </div>
+    `;
   }
   return html;
 }
 
-// ── Picker-Initialisierung ──────────────────
+// ── Slot Machine Logik ──────────────────────
 
-function _initPickers() {
-  document.querySelectorAll('.team-picker-scroll').forEach(scroll => {
-    const teamIdx = parseInt(scroll.dataset.team);
-    const tc = teamConfigs[teamIdx];
-    const targetTop = tc.nameIndex * PICKER_ITEM_H;
-    scroll.scrollTop = targetTop;
+function _initSlotMachines() {
+  for (let i = 0; i < teamCount; i++) {
+    _buildReel(i);
+  }
+}
 
-    let scrollTimer = null;
-    scroll.addEventListener('scroll', () => {
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => _onPickerSnap(scroll, teamIdx), 80);
+function _buildReel(teamIdx) {
+  const reel = document.getElementById(`sm-reel${teamIdx}`);
+  const windowEl = document.getElementById(`sm-window${teamIdx}`);
+  if (!reel || !windowEl) return;
+
+  reel.innerHTML = '';
+  const repeats = SM_EXTRA_ROTATIONS + 3;
+  const itemH = _itemH();
+  const windowH = windowEl.clientHeight;
+
+  for (let r = 0; r < repeats; r++) {
+    TEAM_NAME_POOL.forEach(name => {
+      const div = document.createElement('div');
+      div.className = 'sm-reel-item';
+      div.textContent = name;
+      div.dataset.name = name;
+      div.style.height = itemH + 'px';
+      reel.appendChild(div);
     });
+  }
+
+  const tc = teamConfigs[teamIdx];
+  const centerOffset = (windowH / 2) - (itemH / 2);
+  const startY = centerOffset - (tc.nameIndex * itemH);
+  reel.style.transform = `translateY(${startY}px)`;
+  _highlightCenter(reel, startY);
+}
+
+function _highlightCenter(reel, currentY) {
+  const items = reel.querySelectorAll('.sm-reel-item');
+  const itemH = _itemH();
+  const windowH = reel.parentElement ? reel.parentElement.clientHeight : 110;
+  const centerY = windowH / 2;
+
+  items.forEach(item => {
+    const itemTop = item.offsetTop + currentY;
+    const itemCenter = itemTop + itemH / 2;
+    const dist = Math.abs(itemCenter - centerY);
+    item.classList.toggle('center', dist < itemH / 2);
   });
 }
 
-function _onPickerSnap(scrollEl, teamIdx) {
-  const taken = _takenIndices(teamIdx);
-  let rawIndex = Math.round(scrollEl.scrollTop / PICKER_ITEM_H);
-  rawIndex = Math.max(0, Math.min(rawIndex, TEAM_NAME_POOL.length - 1));
+function _easeOutQuart(t) {
+  return 1 - Math.pow(1 - t, 4);
+}
 
-  if (taken.has(rawIndex)) {
-    for (let d = 1; d < TEAM_NAME_POOL.length; d++) {
-      const up = rawIndex + d;
-      const down = rawIndex - d;
-      if (up < TEAM_NAME_POOL.length && !taken.has(up)) { rawIndex = up; break; }
-      if (down >= 0 && !taken.has(down)) { rawIndex = down; break; }
+function _spin(teamIdx) {
+  const reel      = document.getElementById(`sm-reel${teamIdx}`);
+  const spinBtn   = document.getElementById(`sm-spin${teamIdx}`);
+  const windowEl  = document.getElementById(`sm-window${teamIdx}`);
+  const resultEl  = document.getElementById(`sm-result${teamIdx}`);
+  const respinEl  = document.getElementById(`sm-respin${teamIdx}`);
+  const confettiEl = document.getElementById(`sm-confetti${teamIdx}`);
+
+  if (!reel || !spinBtn) return;
+
+  // UI zuruecksetzen
+  spinBtn.disabled = true;
+  spinBtn.classList.add('spinning');
+  resultEl.textContent = '';
+  resultEl.classList.remove('visible');
+  respinEl.classList.remove('visible');
+  windowEl.classList.remove('winner');
+  confettiEl.innerHTML = '';
+
+  // Zufaelliges Ziel
+  const targetIndex = Math.floor(Math.random() * TEAM_NAME_POOL.length);
+  const targetName = TEAM_NAME_POOL[targetIndex];
+
+  // Endposition berechnen
+  const totalNames = TEAM_NAME_POOL.length;
+  const lastSetStart = SM_EXTRA_ROTATIONS * totalNames;
+  const targetItemIndex = lastSetStart + targetIndex;
+  const itemH = _itemH();
+  const windowH = windowEl.clientHeight;
+  const centerOffset = (windowH / 2) - (itemH / 2);
+  const endY = centerOffset - (targetItemIndex * itemH);
+
+  // Startposition (oben, erster Name)
+  const startY = centerOffset;
+  reel.style.transition = 'none';
+  reel.style.transform = `translateY(${startY}px)`;
+
+  const startTime = performance.now();
+  const totalDistance = startY - endY;
+
+  function animate(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / SM_SPIN_DURATION, 1);
+    const easedProgress = _easeOutQuart(progress);
+
+    const currentY = startY - (totalDistance * easedProgress);
+    reel.style.transform = `translateY(${currentY}px)`;
+    _highlightCenter(reel, currentY);
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      // Fertig
+      spinBtn.disabled = false;
+      spinBtn.classList.remove('spinning');
+
+      // Ergebnis oben im Header anzeigen (ohne "Team ", Teamfarbe)
+      const displayName = targetName.replace(/^Team\s+/i, '');
+      resultEl.textContent = displayName;
+      resultEl.style.color = SLOT_COLORS[teamIdx] || SLOT_COLORS[0];
+      setTimeout(() => {
+        resultEl.classList.add('visible');
+        respinEl.classList.add('visible');
+        windowEl.classList.add('winner');
+        _spawnSlotConfetti(confettiEl);
+      }, 100);
+
+      // Teamnamen im State speichern
+      teamConfigs[teamIdx].nameIndex = targetIndex;
     }
   }
 
-  teamConfigs[teamIdx].nameIndex = rawIndex;
-  scrollEl.scrollTo({ top: rawIndex * PICKER_ITEM_H, behavior: 'smooth' });
+  requestAnimationFrame(animate);
+}
+
+function _spawnSlotConfetti(container) {
+  const colors = ['#b44d2d', '#e9c46a', '#2d6a4f', '#d4704e', '#95d5b2', '#fcd34d'];
+
+  for (let i = 0; i < 16; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'sm-confetti-dot';
+    dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+    dot.style.left = (10 + Math.random() * 80) + '%';
+    dot.style.top = (20 + Math.random() * 30) + '%';
+    const size = (4 + Math.random() * 5) + 'px';
+    dot.style.width = size;
+    dot.style.height = size;
+    dot.style.animation = `smConfettiFall ${0.6 + Math.random() * 0.8}s ease ${Math.random() * 0.3}s forwards`;
+    container.appendChild(dot);
+  }
+
+  setTimeout(() => { container.innerHTML = ''; }, 2000);
 }
 
 // ── Events ──────────────────────────────────
@@ -362,7 +484,6 @@ function _bindEvents() {
   document.getElementById('team-minus')?.addEventListener('click', () => {
     if (teamCount > 2) {
       teamCount--;
-      if (teamConfigs[teamCount]) teamConfigs[teamCount].locked = false;
       render();
     }
   });
@@ -371,27 +492,21 @@ function _bindEvents() {
     if (teamCount < 5) {
       teamCount++;
       _ensureTeamConfigs();
-      const taken = _takenIndices(teamCount - 1);
-      let idx = 0;
-      while (taken.has(idx) && idx < TEAM_NAME_POOL.length) idx++;
-      teamConfigs[teamCount - 1].nameIndex = idx;
-      teamConfigs[teamCount - 1].locked = false;
       render();
     }
   });
 
-  // Lock/Unlock
-  document.querySelectorAll('.btn-lock').forEach(btn => {
+  // Slot Machine Spin-Buttons
+  document.querySelectorAll('.sm-spin-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      teamConfigs[parseInt(btn.dataset.team)].locked = true;
-      render();
+      _spin(parseInt(btn.dataset.team));
     });
   });
 
-  document.querySelectorAll('.btn-unlock').forEach(btn => {
+  // Slot Machine Respin-Buttons
+  document.querySelectorAll('.sm-respin').forEach(btn => {
     btn.addEventListener('click', () => {
-      teamConfigs[parseInt(btn.dataset.team)].locked = false;
-      render();
+      _spin(parseInt(btn.dataset.team));
     });
   });
 
@@ -425,15 +540,16 @@ function _bindEvents() {
       const val = parseInt(e.target.value);
       categoryWeights[cat] = val;
 
-      // Live-Update der Anzeige
       const pctEl = document.querySelector(`[data-pct-for="${cat}"]`);
       if (pctEl) pctEl.textContent = `${val}%`;
 
-      // Verfuegbare Karten neu berechnen
       const avail = _getAvailableCards();
       const infoEl = document.querySelector('.setup-card-info');
       if (infoEl) {
-        infoEl.innerHTML = `Du spielst mit <strong>${avail.length}</strong> Karten`;
+        const total = CARDS.cards.length;
+        const cd = total - avail.length;
+        infoEl.innerHTML = `Du spielst mit <strong>${avail.length}</strong> von ${total} Karten`
+          + (cd > 0 ? ` <span style="font-size:0.85em; color:#888;">(${cd} im Cooldown) <button class="cooldown-help-btn" id="btn-cooldown-help" aria-label="Was ist Cooldown?">?</button></span>` : '');
       }
     });
   });
@@ -445,6 +561,20 @@ function _bindEvents() {
     document.documentElement.setAttribute('data-theme', next);
     state.set('theme', next);
     state.save();
+    render();
+  });
+
+  // Cooldown-Hilfe anzeigen/verstecken
+  document.getElementById('btn-cooldown-help')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const tooltip = document.getElementById('cooldown-tooltip');
+    if (tooltip) tooltip.classList.toggle('hidden');
+  });
+
+  // Cooldown zuruecksetzen
+  document.getElementById('btn-cooldown-reset')?.addEventListener('click', () => {
+    localStorage.removeItem(LS_COOLDOWN_KEY);
+    document.getElementById('cooldown-tooltip')?.classList.add('hidden');
     render();
   });
 
@@ -460,10 +590,8 @@ function _bindEvents() {
 // ── Spiel starten ───────────────────────────
 
 function _startGame() {
-  // Session-Counter hochzaehlen
   _incrementSession();
 
-  // Verfuegbare Karten ermitteln (mit Cooldown + Kategorienfilter)
   const availableCards = _getAvailableCards();
 
   if (availableCards.length === 0) {
@@ -471,7 +599,6 @@ function _startGame() {
     return;
   }
 
-  // Kartenset aufbauen
   const cardSet = normalizeCardSet({
     id: 'kopfnuss',
     setName: 'Kopfnuss Kartenset',
@@ -479,7 +606,6 @@ function _startGame() {
     cards: availableCards
   });
 
-  // Teams
   const teams = [];
   for (let i = 0; i < teamCount; i++) {
     const tc = teamConfigs[i];
@@ -489,7 +615,6 @@ function _startGame() {
     });
   }
 
-  // GameModel erstellen
   const game = new GameModel({
     teams,
     targetScore,
@@ -497,13 +622,11 @@ function _startGame() {
     cardSet
   });
 
-  // Gespielte Karten tracken (Cooldown)
   game.onCardDrawn = (card) => {
     const key = card.prompt?.text || card.prompt;
     if (key) _markCardPlayed(key);
   };
 
-  // In State speichern
   state.set('game', game);
   state.set('gameConfig', {
     teamCount,
@@ -513,7 +636,6 @@ function _startGame() {
     categoryWeights: showCategoryMix ? { ...categoryWeights } : null
   });
 
-  // Settings persistieren
   state.set('lastTeamConfig', {
     teamCount,
     teamConfigs: teamConfigs.slice(0, teamCount).map(tc => ({ nameIndex: tc.nameIndex }))

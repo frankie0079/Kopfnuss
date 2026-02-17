@@ -1,5 +1,5 @@
 /* ============================================
-   Kopfnuss! -- Base / Reset
+   Kopfnuss! -- Base / Reset (Retro Warm)
    ============================================ */
 
 /* --- Reset --- */
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 500;
   color: var(--text-primary);
   background-color: var(--bg-primary);
   line-height: 1.5;
@@ -32,8 +32,23 @@ body {
   -webkit-user-select: none;
 }
 
+/* --- Dezentes Gitter-Hintergrundmuster (global) --- */
+#app {
+  background-color: var(--bg-primary);
+  background-image:
+    repeating-linear-gradient(
+      0deg, transparent, transparent 39px,
+      var(--grid-color) 39px, var(--grid-color) 40px
+    ),
+    repeating-linear-gradient(
+      90deg, transparent, transparent 39px,
+      var(--grid-color) 39px, var(--grid-color) 40px
+    );
+}
+
 /* --- Grundlegende Elemente --- */
 h1, h2, h3, h4 {
+  font-family: var(--font-display);
   font-weight: 800;
   line-height: 1.2;
 }
@@ -48,13 +63,13 @@ p {
   color: var(--text-secondary);
 }
 
-/* --- Buttons --- */
+/* --- Buttons (Retro Warm: Gabarito, harte Schatten) --- */
 button {
-  font-family: var(--font-main);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: var(--font-size-lg);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-xl);
   cursor: pointer;
   transition: transform var(--transition-fast),
@@ -78,7 +93,7 @@ button:disabled {
 .btn-primary {
   background-color: var(--accent);
   color: var(--text-on-accent);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-accent);
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -89,7 +104,7 @@ button:disabled {
 .btn-success {
   background-color: var(--success);
   color: var(--text-on-accent);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-green);
 }
 
 .btn-success:hover:not(:disabled) {
@@ -99,7 +114,7 @@ button:disabled {
 .btn-danger {
   background-color: var(--danger);
   color: var(--text-on-accent);
-  box-shadow: var(--shadow-md);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .btn-danger:hover:not(:disabled) {
@@ -108,22 +123,25 @@ button:disabled {
 
 .btn-ghost {
   background-color: transparent;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   border: 2px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-ghost:hover:not(:disabled) {
   background-color: var(--bg-secondary);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* --- Inputs --- */
 input[type="text"] {
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--font-size-md);
   padding: var(--space-sm) var(--space-md);
   border: 2px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background-color: var(--bg-card);
   color: var(--text-primary);
   outline: none;
@@ -153,4 +171,19 @@ input[type="text"]:focus {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* --- Stern-Dekorationen (Retro Warm) --- */
+.star {
+  position: absolute;
+  pointer-events: none;
+  font-size: 18px;
+  opacity: 0.06;
+  color: var(--text-primary);
+  z-index: 0;
+}
+
+[data-theme="dark"] .star {
+  opacity: 0.15;
+  color: #fcd34d;
 }

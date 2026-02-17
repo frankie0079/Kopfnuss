@@ -1,5 +1,5 @@
 /* ============================================
-   Kopfnuss! -- Victory-Screen
+   Kopfnuss! -- Victory-Screen (Retro Warm)
    ============================================ */
 
 #view-victory {
@@ -16,9 +16,11 @@
   max-width: 500px;
 }
 
+/* --- Trophaee --- */
 .victory-trophy {
   font-size: 80px;
   animation: trophyBounce 1s ease infinite;
+  filter: drop-shadow(3px 3px 0 rgba(180, 77, 45, 0.25));
 }
 
 @keyframes trophyBounce {
@@ -26,13 +28,23 @@
   50%      { transform: translateY(-15px) scale(1.1); }
 }
 
+/* --- Titel (Retro Warm: Luckiest Guy, Terracotta-Shadow) --- */
 .victory-title {
-  font-size: var(--font-size-4xl);
-  font-weight: 900;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-title);
+  font-size: 42px;
+  font-weight: 400;
+  text-shadow: 3px 3px 0 rgba(180, 77, 45, 0.25),
+               0 0 30px rgba(180, 77, 45, 0.1);
 }
 
+[data-theme="dark"] .victory-title {
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35),
+               0 0 30px rgba(199, 90, 56, 0.2);
+}
+
+/* --- Punkte-Anzeige --- */
 .victory-score {
+  font-family: var(--font-display);
   font-size: var(--font-size-2xl);
   font-weight: 700;
   color: var(--text-secondary);
@@ -53,17 +65,29 @@
   gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
   background: var(--bg-card);
-  border-radius: var(--radius-md);
+  border-radius: 14px;
+  border: 2px solid var(--border);
   box-shadow: var(--shadow-sm);
 }
 
 .victory-team-row.winner {
+  border: 3px solid var(--accent);
   box-shadow: var(--shadow-md);
   transform: scale(1.02);
-  border: 2px solid var(--warning);
+}
+
+[data-theme="dark"] .victory-team-row {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .victory-team-row.winner {
+  border-color: var(--accent);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 20px rgba(199, 90, 56, 0.15);
 }
 
 .victory-rank {
+  font-family: var(--font-display);
   font-size: var(--font-size-xl);
   font-weight: 900;
   color: var(--text-secondary);
@@ -75,9 +99,11 @@
   height: 20px;
   border-radius: var(--radius-full);
   flex-shrink: 0;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .victory-team-name {
+  font-family: var(--font-display);
   font-size: var(--font-size-lg);
   font-weight: 700;
   flex: 1;
@@ -85,13 +111,61 @@
 }
 
 .victory-team-score {
+  font-family: var(--font-display);
   font-size: var(--font-size-xl);
   font-weight: 900;
 }
 
-/* --- Buttons --- */
+/* --- Buttons (Retro Warm) --- */
 .victory-buttons {
   display: flex;
   gap: var(--space-md);
   margin-top: var(--space-md);
+}
+
+.victory-buttons .btn-start {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 32px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 4px 4px 0 var(--accent-hover);
+  cursor: pointer;
+  border: none;
+}
+
+.victory-buttons .btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--accent-hover);
+}
+
+.victory-buttons .btn-ghost {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  border: none;
+  cursor: pointer;
+}
+
+.victory-buttons .btn-ghost:hover {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .victory-buttons .btn-start {
+  box-shadow: 3px 3px 0 #8a3520, 0 0 20px rgba(199, 90, 56, 0.2);
+}
+
+[data-theme="dark"] .victory-buttons .btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }

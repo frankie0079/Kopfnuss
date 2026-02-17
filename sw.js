@@ -4,7 +4,7 @@
    Cache nur als Offline-Fallback.
    ============================================ */
 
-const CACHE_NAME = 'smartbox-v38';
+const CACHE_NAME = 'smartbox-v62';
 
 // ── Bei localhost: sofort selbst deregistrieren ──
 
@@ -69,7 +69,7 @@ if (self.location.hostname === 'localhost' || self.location.hostname === '127.0.
     './assets/sounds/victory-2.mp3',
     './assets/sounds/victory-3.mp3',
     'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
-    'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap'
+    'https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Gabarito:wght@400;600;700;900&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&display=swap'
   ];
 
   self.addEventListener('install', (event) => {

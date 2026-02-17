@@ -72,35 +72,10 @@ export function registerSettings(app) {
         '<div class="mt-24">' +
           '<h3 style="font-size:14px; color:#666; margin-bottom:8px;">Datenbank</h3>' +
           '<p id="db-info" style="font-size:13px; color:#888;">Wird geladen...</p>' +
-          '<button class="btn btn-danger mt-8" id="btn-reset-db" style="width:auto; padding:10px 20px;">' +
-            'Kartenbibliothek zuruecksetzen (26 korrekte Karten neu laden)' +
-          '</button>' +
-          '<p id="reset-status" style="font-size:13px; margin-top:8px;"></p>' +
         '</div>' +
       '</div>';
 
     loadDbInfo();
-
-    // Kartenbibliothek zuruecksetzen
-    view.querySelector('#btn-reset-db')?.addEventListener('click', async () => {
-      if (!confirm('Alle Karten in der Bibliothek loeschen und die 26 korrekten Karten aus dem Spiel-Datensatz neu importieren?')) return;
-      const btn = view.querySelector('#btn-reset-db');
-      const status = view.querySelector('#reset-status');
-      btn.disabled = true;
-      btn.textContent = 'Wird zurueckgesetzt...';
-      try {
-        await resetAndImportFromDemoSet();
-        status.style.color = '#27AE60';
-        status.textContent = 'Erledigt! Kartenbibliothek wurde zurueckgesetzt.';
-        btn.textContent = 'Erledigt!';
-        loadDbInfo();
-      } catch (err) {
-        status.style.color = '#E74C3C';
-        status.textContent = 'Fehler: ' + err.message;
-        btn.disabled = false;
-        btn.textContent = 'Kartenbibliothek zuruecksetzen';
-      }
-    });
 
     // Zurueck-Button
     view.querySelector('#settings-back')?.addEventListener('click', () => app.navigate('admin'));
@@ -151,53 +126,6 @@ export function registerSettings(app) {
     } catch {
       // Ignorieren
     }
-  }
-
-  /** Einmalig: Admin-DB leeren und 26 korrekte Karten aus demo-set.js importieren */
-  async function resetAndImportFromDemoSet() {
-    const { cardDB } = await import('./card-db.js');
-    const { DEMO_SET } = await import('../data/demo-set.js');
-
-    // 1. Alle alten Karten loeschen
-    await cardDB.deleteAllCards();
-
-    // 2. Karten aus Spiel-Format in Admin-Format konvertieren und speichern
-    for (const gameCard of DEMO_SET.cards) {
-      const promptText = typeof gameCard.prompt === 'object'
-        ? gameCard.prompt.text
-        : gameCard.prompt;
-
-      // Kartentyp aus solution.type des ersten Items ableiten
-      const firstSolType = gameCard.items?.[0]?.solution?.type || 'boolean_true';
-      const detectedType = firstSolType === 'text' ? 'text' : 'boolean';
-
-      const items = (gameCard.items || []).map((item, i) => {
-        const label = typeof item.label === 'object' ? item.label.text : item.label;
-        const isBoolTrue = item.solution?.type === 'boolean_true'
-          || item.solution === true;
-        const solutionText = typeof item.solution === 'object'
-          ? (item.solution.text || '')
-          : '';
-
-        return {
-          position: i + 1,
-          label: label || '',
-          solution: isBoolTrue,
-          solutionText: solutionText
-        };
-      });
-
-      await cardDB.saveCard({
-        prompt: promptText,
-        category: 'Allgemeinwissen',
-        cardType: detectedType,
-        items,
-        setName: 'Kopfnuss Kartenset',
-        sourceType: 'import'
-      });
-    }
-
-    console.log(`Reset: ${DEMO_SET.cards.length} Karten aus demo-set.js importiert.`);
   }
 
   /** Einmalig: Falsch als 'boolean' importierte Text-Karten reparieren */

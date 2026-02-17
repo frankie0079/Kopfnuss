@@ -42,9 +42,9 @@ function initGame() {
       </div>
       <div class="game-actions" id="game-actions"></div>
       <div class="game-footer" id="game-footer">
-        <button class="btn-ghost" id="btn-skip-card">Naechste Karte</button>
+        <button class="btn-game-footer" id="btn-skip-card">Nächste Karte</button>
         <div class="timer-display" id="game-timer"></div>
-        <button class="btn-ghost" id="btn-quit-game">Spiel beenden</button>
+        <button class="btn-game-footer" id="btn-quit-game">Spiel beenden</button>
       </div>
     </div>
   `;

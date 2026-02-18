@@ -4,7 +4,7 @@
    dem Spiel-Router.
    ============================================ */
 
-import { router } from '../app.js';
+import { router } from '../app.js?v=66';
 import { registerBatchImport } from './batch-import.js';
 import { registerLibrary } from './library.js';
 import { registerCardEditor } from './card-editor.js';
@@ -64,6 +64,23 @@ export function registerAdmin() {
 
     // Einmalige Kategorie-Reparatur (v1)
     await repairCategoriesOnce();
+
+    // Einmalige Reparatur: exported-Flags wiederherstellen (v64)
+    const repairExpKey = '_kopfnuss_exported_repaired_v64';
+    if (!localStorage.getItem(repairExpKey)) {
+      const allCards = await cardDB.getAllCards();
+      let fixed = 0;
+      for (const card of allCards) {
+        if (!card.exported) {
+          card.exported = true;
+          card.exportedAt = Date.now();
+          await cardDB.saveCard(card);
+          fixed++;
+        }
+      }
+      localStorage.setItem(repairExpKey, '1');
+      if (fixed > 0) console.log(`[Admin] Export-Reparatur: ${fixed} Karten als "Gesendet" markiert.`);
+    }
 
     const el = document.getElementById('view-admin');
     el.innerHTML = `

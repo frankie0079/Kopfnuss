@@ -6,10 +6,12 @@
 const SOUND_BASE = './assets/sounds/';
 
 const SOUND_FILES = {
-  correct: ['correct-1.mp3', 'correct-2.mp3', 'correct-3.mp3', 'correct-4.mp3', 'correct-5.mp3'],
-  wrong:   ['wrong-1.mp3', 'wrong-2.mp3', 'wrong-3.mp3'],
-  victory: ['victory-1.mp3', 'victory-2.mp3', 'victory-3.mp3'],
-  timer:   ['timer-10s.mp3']
+  correct:   ['correct-1.mp3', 'correct-2.mp3', 'correct-3.mp3'],
+  wrong:     ['wrong-1.mp3', 'wrong-2.mp3', 'wrong-3.mp3'],
+  victory:   ['victory-1.mp3', 'victory-2.mp3'],
+  timer:     ['timer-10s.mp3'],
+  startGame: ['start-game.mp3'],
+  pass:      ['passe.mp3']
 };
 
 class AudioManager {
@@ -81,6 +83,24 @@ class AudioManager {
     if (!this._playRandom('victory')) {
       this._synthFanfare();
     }
+  }
+
+  /**
+   * "Spiel starten"-Sound abspielen.
+   */
+  playStartGame() {
+    if (this._muted) return;
+    this.preload();
+    this._playRandom('startGame');
+  }
+
+  /**
+   * "Passe"-Sound abspielen.
+   */
+  playPass() {
+    if (this._muted) return;
+    this.preload();
+    this._playRandom('pass');
   }
 
   /**

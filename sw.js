@@ -4,7 +4,7 @@
    Cache nur als Offline-Fallback.
    ============================================ */
 
-const CACHE_NAME = 'smartbox-v62';
+const CACHE_NAME = 'smartbox-v66';
 
 // ── Bei localhost: sofort selbst deregistrieren ──
 
@@ -59,15 +59,14 @@ if (self.location.hostname === 'localhost' || self.location.hostname === '127.0.
     './assets/sounds/correct-1.mp3',
     './assets/sounds/correct-2.mp3',
     './assets/sounds/correct-3.mp3',
-    './assets/sounds/correct-4.mp3',
-    './assets/sounds/correct-5.mp3',
     './assets/sounds/wrong-1.mp3',
     './assets/sounds/wrong-2.mp3',
     './assets/sounds/wrong-3.mp3',
     './assets/sounds/timer-10s.mp3',
     './assets/sounds/victory-1.mp3',
     './assets/sounds/victory-2.mp3',
-    './assets/sounds/victory-3.mp3',
+    './assets/sounds/start-game.mp3',
+    './assets/sounds/passe.mp3',
     'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
     'https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Gabarito:wght@400;600;700;900&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&display=swap'
   ];

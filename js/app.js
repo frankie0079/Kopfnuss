@@ -88,14 +88,29 @@ async function initApp() {
     document.documentElement.setAttribute('data-theme', savedTheme);
   }
 
+  // Auf localhost: SW deregistrieren, bevor Views geladen werden
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+    }
+    if ('caches' in window) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k => caches.delete(k)));
+    }
+  }
+
   // Views registrieren (mit Error-Handling)
+  // Auf localhost: Cache-Buster erzwingen, damit immer frische Dateien geladen werden
+  const _v = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? '?_=' + Date.now() : '';
   try {
     const [setup, game, victory, imp, admin] = await Promise.all([
-      import('./views/setup.js'),
-      import('./views/game.js'),
-      import('./views/victory.js'),
-      import('./views/import.js'),
-      import('./admin/admin.js')
+      import('./views/setup.js' + _v),
+      import('./views/game.js' + _v),
+      import('./views/victory.js' + _v),
+      import('./views/import.js' + _v),
+      import('./admin/admin.js' + _v)
     ]);
     setup.registerSetup();
     game.registerGame();
@@ -105,7 +120,8 @@ async function initApp() {
   } catch (err) {
     console.error('[App] View-Import fehlgeschlagen:', err);
     document.getElementById('app').innerHTML =
-      '<p style="padding:2rem;color:red;font-size:1.2rem;">Fehler beim Laden. Bitte Seite neu laden (F5).</p>';
+      '<p style="padding:2rem;color:red;font-size:1.2rem;">Fehler beim Laden: ' +
+      (err.message || err) + '<br><br>Bitte Cache leeren (Ctrl+Shift+Delete) und Seite neu laden (F5).</p>';
     return;
   }
 

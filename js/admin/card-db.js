@@ -166,6 +166,21 @@ class CardDB {
     }
   }
 
+  /** Alle Karten als exportiert markieren */
+  async markAllAsExported() {
+    const allCards = await this.getAllCards();
+    let count = 0;
+    for (const card of allCards) {
+      if (!card.exported) {
+        card.exported = true;
+        card.exportedAt = Date.now();
+        await this.saveCard(card);
+        count++;
+      }
+    }
+    return count;
+  }
+
   /** Alle Karten loeschen */
   async deleteAllCards() {
     const allCards = await this.getAllCards();

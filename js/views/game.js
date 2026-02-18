@@ -5,7 +5,7 @@
    ============================================ */
 
 import { state } from '../state.js';
-import { router } from '../app.js';
+import { router } from '../app.js?v=66';
 import { renderRing, updateRingItem, setItemRevealing } from '../components/ring.js';
 import { renderScoreboard, resetScoreboardState, animateScorePoint } from '../components/scoreboard.js';
 import { TimerComponent } from '../components/timer.js';
@@ -288,6 +288,7 @@ function _onWrong() {
 
 function _onPass() {
   if (!game || game.phase !== 'turnActive') return;
+  try { audio.playPass(); } catch (e) { /* audio noch nicht geladen */ }
 
   try {
     game.pass();
@@ -314,16 +315,16 @@ function _onQuitGame() {
   overlay.className = 'round-overlay';
   overlay.innerHTML = `
     <div class="round-overlay-content goodbye-overlay">
-      <h2>Dankeschön!</h2>
+      <h2>bye, bye....</h2>
       <p>Bis zum nächsten Mal ...</p>
     </div>
   `;
   elRoot.appendChild(overlay);
 
-  // Nach 2.5 Sekunden zurueck zum Setup
+  // Nach Animation (5s) + kurze Pause zurueck zum Setup
   setTimeout(() => {
     router.navigate('setup');
-  }, 2500);
+  }, 6000);
 }
 
 function _onItemResult(result) {

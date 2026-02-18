@@ -416,14 +416,48 @@
   margin-bottom: var(--space-md);
 }
 
+.goodbye-overlay {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border: 3px solid var(--border);
+  box-shadow: 6px 6px 0 var(--accent-hover);
+  animation: goodbyeGrow 5s ease-out forwards;
+}
+
+@keyframes goodbyeGrow {
+  from { transform: scale(0.05); opacity: 0; }
+  10%  { opacity: 1; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+[data-theme="dark"] .goodbye-overlay {
+  background: #1a1625;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
 .goodbye-overlay h2 {
-  font-size: var(--font-size-2xl);
+  font-family: var(--font-title);
+  font-size: 3.5rem;
+  color: var(--accent);
+  text-shadow: 3px 3px 0 var(--title-shadow);
+}
+
+[data-theme="dark"] .goodbye-overlay h2 {
+  color: #ffb088;
+  text-shadow: 0 0 30px rgba(255, 140, 80, 0.3), 3px 3px 0 rgba(180, 77, 45, 0.4);
 }
 
 .goodbye-overlay p {
   font-family: var(--font-handwriting);
-  font-size: var(--font-size-lg);
-  color: var(--text-secondary);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-top: var(--space-md);
 }
 
 /* --- Timer-Anzeige --- */

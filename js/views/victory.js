@@ -3,7 +3,7 @@
    ============================================ */
 
 import { state } from '../state.js';
-import { router } from '../app.js';
+import { router } from '../app.js?v=66';
 import { audio } from '../services/audio.js';
 import { GameModel } from '../models/game.js';
 import { CARDS } from '../data/cards.js';

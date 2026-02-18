@@ -5,10 +5,11 @@
    ============================================ */
 
 import { state } from '../state.js';
-import { router } from '../app.js';
+import { router } from '../app.js?v=66';
 import { GameModel } from '../models/game.js';
 import { CARDS } from '../data/cards.js';
 import { normalizeCardSet } from '../models/card.js';
+import { audio } from '../services/audio.js';
 
 // ── Konstanten ──────────────────────────────
 
@@ -47,11 +48,11 @@ const TIMER_OPTIONS = [
 const SM_SPIN_DURATION = 3000;
 const SM_EXTRA_ROTATIONS = 4;
 
-// Item-Hoehen je nach Teamanzahl (Fenster-Hoehe kommt aus DOM via flex)
-const SM_ITEM_HEIGHTS = { 2: 34, 3: 30, 4: 26, 5: 22 };
+// Item-Hoehe konstant -- Slot-Streifen schrumpft nicht mit Teamanzahl
+const SM_ITEM_HEIGHT = 34;
 
 function _itemH() {
-  return SM_ITEM_HEIGHTS[teamCount] || 34;
+  return SM_ITEM_HEIGHT;
 }
 
 const COOLDOWN_SESSIONS = 10;
@@ -191,10 +192,6 @@ function render() {
   const cats = _getCategories();
 
   el.innerHTML = `
-    <button class="theme-toggle" id="theme-toggle" aria-label="Tag/Nacht umschalten">
-      ${document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙'}
-    </button>
-
     <span class="star" style="top:90px;right:40px;">✦</span>
     <span class="star" style="bottom:120px;left:60px;">✧</span>
     <span class="star" style="top:300px;right:120px;">⋆</span>
@@ -259,6 +256,15 @@ function render() {
           ${showCategoryMix ? '▼' : '▶'} Karten anpassen
         </button>
         ${showCategoryMix ? _renderCategorySliders(cats) : ''}
+
+        <div class="theme-switch">
+          <span class="theme-switch-icon">☀️</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="theme-toggle" ${document.documentElement.getAttribute('data-theme') === 'dark' ? 'checked' : ''}>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="theme-switch-icon">🌙</span>
+        </div>
       </div>
     </div>
 
@@ -555,9 +561,8 @@ function _bindEvents() {
   });
 
   // Theme Toggle
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
+  document.getElementById('theme-toggle')?.addEventListener('change', (e) => {
+    const next = e.target.checked ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
     state.set('theme', next);
     state.save();
@@ -590,6 +595,7 @@ function _bindEvents() {
 // ── Spiel starten ───────────────────────────
 
 function _startGame() {
+  try { audio.playStartGame(); } catch (e) { /* audio noch nicht geladen */ }
   _incrementSession();
 
   const availableCards = _getAvailableCards();

@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-17T17:57:52.926Z",
+  "updatedAt": "2026-02-18T11:46:28.834Z",
   "cards": [
     {
       "prompt": {
@@ -114,6 +114,115 @@ export const CARDS = {
           "solution": {
             "text": "Richtig",
             "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ordne die Himmelskörper nach ihrem Durchmesser (1=größter)!",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Sonne",
+            "image": null
+          },
+          "solution": {
+            "text": "1",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erde",
+            "image": null
+          },
+          "solution": {
+            "text": "6",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Saturn",
+            "image": null
+          },
+          "solution": {
+            "text": "3",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Neptun",
+            "image": null
+          },
+          "solution": {
+            "text": "5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Mars",
+            "image": null
+          },
+          "solution": {
+            "text": "7",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Jupiter",
+            "image": null
+          },
+          "solution": {
+            "text": "2",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Titan",
+            "image": null
+          },
+          "solution": {
+            "text": "9",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ganymed",
+            "image": null
+          },
+          "solution": {
+            "text": "8",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Merkur",
+            "image": null
+          },
+          "solution": {
+            "text": "10",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Uranus",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
           }
         }
       ]
@@ -338,115 +447,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Ordne die Himmelskörper nach ihrem Durchmesser (1=größter)!",
-        "image": null
-      },
-      "category": "Wissenschaft",
-      "items": [
-        {
-          "label": {
-            "text": "Sonne",
-            "image": null
-          },
-          "solution": {
-            "text": "1",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Erde",
-            "image": null
-          },
-          "solution": {
-            "text": "6",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Saturn",
-            "image": null
-          },
-          "solution": {
-            "text": "3",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Neptun",
-            "image": null
-          },
-          "solution": {
-            "text": "5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Mars",
-            "image": null
-          },
-          "solution": {
-            "text": "7",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Jupiter",
-            "image": null
-          },
-          "solution": {
-            "text": "2",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Titan",
-            "image": null
-          },
-          "solution": {
-            "text": "9",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Ganymed",
-            "image": null
-          },
-          "solution": {
-            "text": "8",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Merkur",
-            "image": null
-          },
-          "solution": {
-            "text": "10",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Uranus",
-            "image": null
-          },
-          "solution": {
-            "text": "4",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "Anzahl der ... ? (Stand 2019)",
         "image": null
       },
@@ -549,551 +549,6 @@ export const CARDS = {
           },
           "solution": {
             "text": "22",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Für welchen Sport ist diese Person berühmt?",
-        "image": null
-      },
-      "category": "Sport",
-      "items": [
-        {
-          "label": {
-            "text": "Fußball",
-            "image": null
-          },
-          "solution": {
-            "text": "Marta Vieira da Silva",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tennis",
-            "image": null
-          },
-          "solution": {
-            "text": "Serena Williams",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Skilanglauf",
-            "image": null
-          },
-          "solution": {
-            "text": "Marit Bjørgen",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Snowboarden",
-            "image": null
-          },
-          "solution": {
-            "text": "Anna Gasser",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tennis",
-            "image": null
-          },
-          "solution": {
-            "text": "Marija Scharapowa",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Fußball",
-            "image": null
-          },
-          "solution": {
-            "text": "Birgit Prinz",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Stabhochsprung",
-            "image": null
-          },
-          "solution": {
-            "text": "Jelena Issinbajewa",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Langstreckenlauf",
-            "image": null
-          },
-          "solution": {
-            "text": "Paula Radcliffe",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kunstturnen",
-            "image": null
-          },
-          "solution": {
-            "text": "Nadia Comăneci",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Autorennen",
-            "image": null
-          },
-          "solution": {
-            "text": "Danica Patrick",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Ordne die Werke nach dem Jahr ihrer Veröffentlichung (1=ältestes)!",
-        "image": null
-      },
-      "category": "Allgemeinwissen",
-      "items": [
-        {
-          "label": {
-            "text": "Anonym: Gilgamesch-Epos",
-            "image": null
-          },
-          "solution": {
-            "text": "1",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Franz Kafka: Der Prozess",
-            "image": null
-          },
-          "solution": {
-            "text": "9",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "John Milton: Das verlorene Paradies",
-            "image": null
-          },
-          "solution": {
-            "text": "5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "William Shakespeare: Macbeth",
-            "image": null
-          },
-          "solution": {
-            "text": "4",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Daniel Defoe: Robinson Crusoe",
-            "image": null
-          },
-          "solution": {
-            "text": "6",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sophokles: König Ödipus",
-            "image": null
-          },
-          "solution": {
-            "text": "2",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Fjodor Dostojewski: Der Idiot",
-            "image": null
-          },
-          "solution": {
-            "text": "8",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Mary Shelley: Frankenstein",
-            "image": null
-          },
-          "solution": {
-            "text": "7",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Aldous Huxley: Schöne neue Welt",
-            "image": null
-          },
-          "solution": {
-            "text": "10",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Dante Alighieri: Die göttliche Komödie",
-            "image": null
-          },
-          "solution": {
-            "text": "3",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Ist eines der sieben Weltwunder der Neuzeit?",
-        "image": null
-      },
-      "category": "Geografie",
-      "items": [
-        {
-          "label": {
-            "text": "Moai-Statuen (Osterinseln)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Christo Redentor (Rio de Janeiro)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Chinesische Mauer (China)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Eiffelturm (Paris)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Burj Khalifa (Dubai)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Schloss Neuschwanstein (Deutschland)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Timbuktu (Mali)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Kolosseum (Rom)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Akropolis (Athen)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Chichén Itzá (Yucatán)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Nenne das Jahr des Ereignisses!",
-        "image": null
-      },
-      "category": "Geschichte",
-      "items": [
-        {
-          "label": {
-            "text": "Arabischer Frühling (Beginn)",
-            "image": null
-          },
-          "solution": {
-            "text": "2010",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Hindenburg-Katastrophe",
-            "image": null
-          },
-          "solution": {
-            "text": "1937",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Hurrikan Katrina",
-            "image": null
-          },
-          "solution": {
-            "text": "2005",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tschernobyl-Katastrophe",
-            "image": null
-          },
-          "solution": {
-            "text": "1986",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tod von Prinzessin Diana",
-            "image": null
-          },
-          "solution": {
-            "text": "1997",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Ermordung von Erzherzog Franz Ferdinand",
-            "image": null
-          },
-          "solution": {
-            "text": "1914",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Erste Mondlandung",
-            "image": null
-          },
-          "solution": {
-            "text": "1969",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Angriff auf Pearl Harbor",
-            "image": null
-          },
-          "solution": {
-            "text": "1941",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Ermordung von Benazir Bhutto",
-            "image": null
-          },
-          "solution": {
-            "text": "2007",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kuba-Krise",
-            "image": null
-          },
-          "solution": {
-            "text": "1962",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wofür steht dieses Wort in der Seemannssprache?",
-        "image": null
-      },
-      "category": "Allgemeinwissen",
-      "items": [
-        {
-          "label": {
-            "text": "Schiffsjunge",
-            "image": null
-          },
-          "solution": {
-            "text": "Moses",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "links",
-            "image": null
-          },
-          "solution": {
-            "text": "Backbord",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "rechts",
-            "image": null
-          },
-          "solution": {
-            "text": "Steuerbord",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Schmuggelschiff",
-            "image": null
-          },
-          "solution": {
-            "text": "Blender",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Schiffsgefängnis",
-            "image": null
-          },
-          "solution": {
-            "text": "Brig",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Besatzung",
-            "image": null
-          },
-          "solution": {
-            "text": "Crew",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Seile",
-            "image": null
-          },
-          "solution": {
-            "text": "Ende",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Vorsegel",
-            "image": null
-          },
-          "solution": {
-            "text": "Fock",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Teufel",
-            "image": null
-          },
-          "solution": {
-            "text": "Der Gast",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "vorne",
-            "image": null
-          },
-          "solution": {
-            "text": "Bug",
             "type": "text"
           }
         }
@@ -1210,14 +665,232 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Ist ein Bezirk Bayerns?",
+        "text": "Wofür steht dieses Wort in der Seemannssprache?",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "Schiffsjunge",
+            "image": null
+          },
+          "solution": {
+            "text": "Moses",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "links",
+            "image": null
+          },
+          "solution": {
+            "text": "Backbord",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "rechts",
+            "image": null
+          },
+          "solution": {
+            "text": "Steuerbord",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schmuggelschiff",
+            "image": null
+          },
+          "solution": {
+            "text": "Blender",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schiffsgefängnis",
+            "image": null
+          },
+          "solution": {
+            "text": "Brig",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Besatzung",
+            "image": null
+          },
+          "solution": {
+            "text": "Crew",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Seile",
+            "image": null
+          },
+          "solution": {
+            "text": "Ende",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Vorsegel",
+            "image": null
+          },
+          "solution": {
+            "text": "Fock",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Teufel",
+            "image": null
+          },
+          "solution": {
+            "text": "Der Gast",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "vorne",
+            "image": null
+          },
+          "solution": {
+            "text": "Bug",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Nenne das Jahr des Ereignisses!",
+        "image": null
+      },
+      "category": "Geschichte",
+      "items": [
+        {
+          "label": {
+            "text": "Arabischer Frühling (Beginn)",
+            "image": null
+          },
+          "solution": {
+            "text": "2010",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Hindenburg-Katastrophe",
+            "image": null
+          },
+          "solution": {
+            "text": "1937",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Hurrikan Katrina",
+            "image": null
+          },
+          "solution": {
+            "text": "2005",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tschernobyl-Katastrophe",
+            "image": null
+          },
+          "solution": {
+            "text": "1986",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tod von Prinzessin Diana",
+            "image": null
+          },
+          "solution": {
+            "text": "1997",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ermordung von Erzherzog Franz Ferdinand",
+            "image": null
+          },
+          "solution": {
+            "text": "1914",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erste Mondlandung",
+            "image": null
+          },
+          "solution": {
+            "text": "1969",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Angriff auf Pearl Harbor",
+            "image": null
+          },
+          "solution": {
+            "text": "1941",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ermordung von Benazir Bhutto",
+            "image": null
+          },
+          "solution": {
+            "text": "2007",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Kuba-Krise",
+            "image": null
+          },
+          "solution": {
+            "text": "1962",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist eines der sieben Weltwunder der Neuzeit?",
         "image": null
       },
       "category": "Geografie",
       "items": [
         {
           "label": {
-            "text": "Unterbayern",
+            "text": "Moai-Statuen (Osterinseln)",
             "image": null
           },
           "solution": {
@@ -1227,7 +900,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Oberpfalz",
+            "text": "Christo Redentor (Rio de Janeiro)",
             "image": null
           },
           "solution": {
@@ -1237,27 +910,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Niederpfalz",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Ostfranken",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Mittelfranken",
+            "text": "Chinesische Mauer (China)",
             "image": null
           },
           "solution": {
@@ -1267,7 +920,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "München",
+            "text": "Eiffelturm (Paris)",
             "image": null
           },
           "solution": {
@@ -1277,7 +930,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Schwabingen",
+            "text": "Burj Khalifa (Dubai)",
             "image": null
           },
           "solution": {
@@ -1287,7 +940,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Schwalben",
+            "text": "Schloss Neuschwanstein (Deutschland)",
             "image": null
           },
           "solution": {
@@ -1297,7 +950,17 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Unterfranken",
+            "text": "Timbuktu (Mali)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Kolosseum (Rom)",
             "image": null
           },
           "solution": {
@@ -1307,12 +970,240 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Oberbayern",
+            "text": "Akropolis (Athen)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Chichén Itzá (Yucatán)",
             "image": null
           },
           "solution": {
             "text": "Richtig",
             "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ordne die Werke nach dem Jahr ihrer Veröffentlichung (1=ältestes)!",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "Anonym: Gilgamesch-Epos",
+            "image": null
+          },
+          "solution": {
+            "text": "1",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Franz Kafka: Der Prozess",
+            "image": null
+          },
+          "solution": {
+            "text": "9",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "John Milton: Das verlorene Paradies",
+            "image": null
+          },
+          "solution": {
+            "text": "5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "William Shakespeare: Macbeth",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Daniel Defoe: Robinson Crusoe",
+            "image": null
+          },
+          "solution": {
+            "text": "6",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sophokles: König Ödipus",
+            "image": null
+          },
+          "solution": {
+            "text": "2",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fjodor Dostojewski: Der Idiot",
+            "image": null
+          },
+          "solution": {
+            "text": "8",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Mary Shelley: Frankenstein",
+            "image": null
+          },
+          "solution": {
+            "text": "7",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Aldous Huxley: Schöne neue Welt",
+            "image": null
+          },
+          "solution": {
+            "text": "10",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dante Alighieri: Die göttliche Komödie",
+            "image": null
+          },
+          "solution": {
+            "text": "3",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Für welchen Sport ist diese Person berühmt?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Fußball",
+            "image": null
+          },
+          "solution": {
+            "text": "Marta Vieira da Silva",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tennis",
+            "image": null
+          },
+          "solution": {
+            "text": "Serena Williams",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Skilanglauf",
+            "image": null
+          },
+          "solution": {
+            "text": "Marit Bjørgen",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Snowboarden",
+            "image": null
+          },
+          "solution": {
+            "text": "Anna Gasser",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tennis",
+            "image": null
+          },
+          "solution": {
+            "text": "Marija Scharapowa",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fußball",
+            "image": null
+          },
+          "solution": {
+            "text": "Birgit Prinz",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Stabhochsprung",
+            "image": null
+          },
+          "solution": {
+            "text": "Jelena Issinbajewa",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Langstreckenlauf",
+            "image": null
+          },
+          "solution": {
+            "text": "Paula Radcliffe",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Kunstturnen",
+            "image": null
+          },
+          "solution": {
+            "text": "Nadia Comăneci",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Autorennen",
+            "image": null
+          },
+          "solution": {
+            "text": "Danica Patrick",
+            "type": "text"
           }
         }
       ]
@@ -1646,6 +1537,224 @@ export const CARDS = {
     },
     {
       "prompt": {
+        "text": "Ist ein Bezirk Bayerns?",
+        "image": null
+      },
+      "category": "Geografie",
+      "items": [
+        {
+          "label": {
+            "text": "Unterbayern",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Oberpfalz",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederpfalz",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Ostfranken",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Mittelfranken",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "München",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Schwabingen",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Schwalben",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Unterfranken",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Oberbayern",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Anzahl der ... (Stand 2019)",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "Punkte, um einen Satz beim Tischtennis zu gewinnen",
+            "image": null
+          },
+          "solution": {
+            "text": "11",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Minuten einer Spielhälfte beim Fußball",
+            "image": null
+          },
+          "solution": {
+            "text": "45",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Kilometer bei einem Halbmarathon",
+            "image": null
+          },
+          "solution": {
+            "text": "21,1",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Löcher auf einem Golfplatz",
+            "image": null
+          },
+          "solution": {
+            "text": "18",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Spieler in einer Handball-Mannschaft",
+            "image": null
+          },
+          "solution": {
+            "text": "7",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Runden beim 5000-Meter-Lauf",
+            "image": null
+          },
+          "solution": {
+            "text": "12,5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "maximalen Punkte für einen Wurf im Basketball",
+            "image": null
+          },
+          "solution": {
+            "text": "3",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Grands Prix in einer F1-Saison",
+            "image": null
+          },
+          "solution": {
+            "text": "21",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Grand Slam Turniere im Tennissport",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Mannschaften im Viertelfinale eines Cups",
+            "image": null
+          },
+          "solution": {
+            "text": "8",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
         "text": "Geschah im Jahr 1917?",
         "image": null
       },
@@ -1744,6 +1853,224 @@ export const CARDS = {
         {
           "label": {
             "text": "USA kauften die Jungferninseln",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist ein Auto von VW?",
+        "image": null
+      },
+      "category": "Wirtschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Down!",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "e-up!",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "T-Roc",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Tiger",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Touareg",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Caddy",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Amarok",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Cubit",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Sharan",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Touran",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "War einer der 12 Apostel?",
+        "image": null
+      },
+      "category": "Geschichte",
+      "items": [
+        {
+          "label": {
+            "text": "Stefan",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Philippus",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Simon Kananäus",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Simon Markus",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Jakobus",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Judas Iskariot",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Andreas",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Jesus",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Barabbas",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Thomas",
             "image": null
           },
           "solution": {
@@ -1864,6 +2191,115 @@ export const CARDS = {
     },
     {
       "prompt": {
+        "text": "Welche Hauptfarbe hat diese Frucht / Pflanze?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Aubergine",
+            "image": null
+          },
+          "solution": {
+            "text": "Violett",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "reifer Sanddorn",
+            "image": null
+          },
+          "solution": {
+            "text": "Orange",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Kaki",
+            "image": null
+          },
+          "solution": {
+            "text": "Orange",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Avocado",
+            "image": null
+          },
+          "solution": {
+            "text": "Grün",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Orangenblüte",
+            "image": null
+          },
+          "solution": {
+            "text": "Weiß",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Hagebutte",
+            "image": null
+          },
+          "solution": {
+            "text": "Rot",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Goji-Beere (Bocksdorn)",
+            "image": null
+          },
+          "solution": {
+            "text": "Rot",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Lavendel",
+            "image": null
+          },
+          "solution": {
+            "text": "Lila",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "asiatische Ginseng-Beere",
+            "image": null
+          },
+          "solution": {
+            "text": "Rot",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tomate",
+            "image": null
+          },
+          "solution": {
+            "text": "Rot",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
         "text": "Wie lautet der wissenschaftliche Begriff dafür?",
         "image": null
       },
@@ -1967,115 +2403,6 @@ export const CARDS = {
           "solution": {
             "text": "Axiom",
             "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "War einer der 12 Apostel?",
-        "image": null
-      },
-      "category": "Geschichte",
-      "items": [
-        {
-          "label": {
-            "text": "Stefan",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Philippus",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Simon Kananäus",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Simon Markus",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Jakobus",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Judas Iskariot",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Andreas",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Jesus",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Barabbas",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Thomas",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
           }
         }
       ]
@@ -2191,341 +2518,14 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Anzahl der ... (Stand 2019)",
-        "image": null
-      },
-      "category": "Allgemeinwissen",
-      "items": [
-        {
-          "label": {
-            "text": "Punkte, um einen Satz beim Tischtennis zu gewinnen",
-            "image": null
-          },
-          "solution": {
-            "text": "11",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Minuten einer Spielhälfte beim Fußball",
-            "image": null
-          },
-          "solution": {
-            "text": "45",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kilometer bei einem Halbmarathon",
-            "image": null
-          },
-          "solution": {
-            "text": "21,1",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Löcher auf einem Golfplatz",
-            "image": null
-          },
-          "solution": {
-            "text": "18",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Spieler in einer Handball-Mannschaft",
-            "image": null
-          },
-          "solution": {
-            "text": "7",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Runden beim 5000-Meter-Lauf",
-            "image": null
-          },
-          "solution": {
-            "text": "12,5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "maximalen Punkte für einen Wurf im Basketball",
-            "image": null
-          },
-          "solution": {
-            "text": "3",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Grands Prix in einer F1-Saison",
-            "image": null
-          },
-          "solution": {
-            "text": "21",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Grand Slam Turniere im Tennissport",
-            "image": null
-          },
-          "solution": {
-            "text": "4",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Mannschaften im Viertelfinale eines Cups",
-            "image": null
-          },
-          "solution": {
-            "text": "8",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Welche Hauptfarbe hat diese Frucht / Pflanze?",
-        "image": null
-      },
-      "category": "Wissenschaft",
-      "items": [
-        {
-          "label": {
-            "text": "Aubergine",
-            "image": null
-          },
-          "solution": {
-            "text": "Violett",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "reifer Sanddorn",
-            "image": null
-          },
-          "solution": {
-            "text": "Orange",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kaki",
-            "image": null
-          },
-          "solution": {
-            "text": "Orange",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Avocado",
-            "image": null
-          },
-          "solution": {
-            "text": "Grün",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Orangenblüte",
-            "image": null
-          },
-          "solution": {
-            "text": "Weiß",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Hagebutte",
-            "image": null
-          },
-          "solution": {
-            "text": "Rot",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Goji-Beere (Bocksdorn)",
-            "image": null
-          },
-          "solution": {
-            "text": "Rot",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Lavendel",
-            "image": null
-          },
-          "solution": {
-            "text": "Lila",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "asiatische Ginseng-Beere",
-            "image": null
-          },
-          "solution": {
-            "text": "Rot",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tomate",
-            "image": null
-          },
-          "solution": {
-            "text": "Rot",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Ist ein Auto von VW?",
-        "image": null
-      },
-      "category": "Wirtschaft",
-      "items": [
-        {
-          "label": {
-            "text": "Down!",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "e-up!",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "T-Roc",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Tiger",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Touareg",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Caddy",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Amarok",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Cubit",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Sharan",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Touran",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Gehört zum Marvel Cinematic Universe (MCU)?",
+        "text": "Spielte Leonardo DiCaprio die Hauptrolle?",
         "image": null
       },
       "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Avengers: Endgame",
+            "text": "Titanic",
             "image": null
           },
           "solution": {
@@ -2535,7 +2535,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Spider-Man: No Way Home",
+            "text": "The Wolf of Wall Street",
             "image": null
           },
           "solution": {
@@ -2545,7 +2545,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Black Panther",
+            "text": "The Departed",
             "image": null
           },
           "solution": {
@@ -2555,7 +2555,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Venom",
+            "text": "Fight Club",
             "image": null
           },
           "solution": {
@@ -2565,7 +2565,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Shang-Chi",
+            "text": "The Revenant",
             "image": null
           },
           "solution": {
@@ -2575,7 +2575,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "X-Men: Dark Phoenix",
+            "text": "American Psycho",
             "image": null
           },
           "solution": {
@@ -2585,7 +2585,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Eternals",
+            "text": "Catch Me If You Can",
             "image": null
           },
           "solution": {
@@ -2595,17 +2595,7 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Morbius",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Guardians of the Galaxy",
+            "text": "Gangs of New York",
             "image": null
           },
           "solution": {
@@ -2615,12 +2605,22 @@ export const CARDS = {
         },
         {
           "label": {
-            "text": "Logan",
+            "text": "The Talented Mr. Ripley",
             "image": null
           },
           "solution": {
             "text": "Falsch",
             "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Once Upon a Time in Hollywood",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         }
       ]
@@ -2954,6 +2954,224 @@ export const CARDS = {
     },
     {
       "prompt": {
+        "text": "Gehört zum Marvel Cinematic Universe (MCU)?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Avengers: Endgame",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Spider-Man: No Way Home",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Black Panther",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Venom",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Shang-Chi",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "X-Men: Dark Phoenix",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Eternals",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Morbius",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Guardians of the Galaxy",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Logan",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist ein Studio-Ghibli-Film?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Chihiros Reise ins Zauberland",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Mein Nachbar Totoro",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Your Name",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Prinzessin Mononoke",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Akira",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Das wandelnde Schloss",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ghost in the Shell",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Ponyo",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Weathering with You",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Die letzten Glühwürmchen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
         "text": "Ist ein Star-Wars-Film?",
         "image": null
       },
@@ -3172,327 +3390,109 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Ist ein Studio-Ghibli-Film?",
+        "text": "Erkennst du die Marke hinter dem Werbeslogan?",
         "image": null
       },
-      "category": "Musik/Entertainment/Movie",
+      "category": "Wirtschaft",
       "items": [
         {
           "label": {
-            "text": "Chihiros Reise ins Zauberland",
+            "text": "Nichts ist unmöglich",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Toyota",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Mein Nachbar Totoro",
+            "text": "Vorsprung durch Technik",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Audi",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Your Name",
+            "text": "Freude am Fahren",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "BMW",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Prinzessin Mononoke",
+            "text": "Haribo macht Kinder froh",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Haribo",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Akira",
+            "text": "Geiz ist geil",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Saturn",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Das wandelnde Schloss",
+            "text": "Wenn's um Geld geht",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Sparkasse",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ghost in the Shell",
+            "text": "Da weiß man, was man hat",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Persil",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ponyo",
+            "text": "Aus Erfahrung gut",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "AEG",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Weathering with You",
+            "text": "Die zarteste Versuchung",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Milka",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Die letzten Glühwürmchen",
+            "text": "Es gibt Dinge, die kann man nicht kaufen",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Spielte Leonardo DiCaprio die Hauptrolle?",
-        "image": null
-      },
-      "category": "Musik/Entertainment/Movie",
-      "items": [
-        {
-          "label": {
-            "text": "Titanic",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "The Wolf of Wall Street",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "The Departed",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Fight Club",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "The Revenant",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "American Psycho",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Catch Me If You Can",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Gangs of New York",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "The Talented Mr. Ripley",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Once Upon a Time in Hollywood",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Erschien zuerst als Manga, bevor der Kinofilm kam?",
-        "image": null
-      },
-      "category": "Musik/Entertainment/Movie",
-      "items": [
-        {
-          "label": {
-            "text": "Dragon Ball",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Naruto",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Pacific Rim",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "One Piece",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Alita: Battle Angel",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Attack on Titan",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Ready Player One",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Demon Slayer",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Inception",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Old Boy",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Mastercard",
+            "type": "text"
           }
         }
       ]
@@ -3608,108 +3608,217 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Erkennst du die Marke hinter dem Werbeslogan?",
+        "text": "Erschien zuerst als Manga, bevor der Kinofilm kam?",
         "image": null
       },
-      "category": "Wirtschaft",
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Nichts ist unmöglich",
+            "text": "Dragon Ball",
             "image": null
           },
           "solution": {
-            "text": "Toyota",
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Naruto",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Pacific Rim",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "One Piece",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Alita: Battle Angel",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Attack on Titan",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ready Player One",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Demon Slayer",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Inception",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Old Boy",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Mit welchem Land wird diese Biermarke in Verbindung gebracht?",
+        "image": null
+      },
+      "category": "Allgemein",
+      "items": [
+        {
+          "label": {
+            "text": "Coors",
+            "image": null
+          },
+          "solution": {
+            "text": "USA",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Vorsprung durch Technik",
+            "text": "Karlovačko",
             "image": null
           },
           "solution": {
-            "text": "Audi",
+            "text": "Kroatien",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Freude am Fahren",
+            "text": "Kronenbourg 1664",
             "image": null
           },
           "solution": {
-            "text": "BMW",
+            "text": "Frankreich",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Haribo macht Kinder froh",
+            "text": "Heineken",
             "image": null
           },
           "solution": {
-            "text": "Haribo",
+            "text": "Niederlande",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Geiz ist geil",
+            "text": "Beck's",
             "image": null
           },
           "solution": {
-            "text": "Saturn",
+            "text": "Deutschland",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Wenn's um Geld geht",
+            "text": "Stella Artois",
             "image": null
           },
           "solution": {
-            "text": "Sparkasse",
+            "text": "Belgien",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Da weiß man, was man hat",
+            "text": "Pilsner Urquell",
             "image": null
           },
           "solution": {
-            "text": "Persil",
+            "text": "Tschechien",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Aus Erfahrung gut",
+            "text": "Murauer",
             "image": null
           },
           "solution": {
-            "text": "AEG",
+            "text": "Österreich",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Die zarteste Versuchung",
+            "text": "Carlsberg",
             "image": null
           },
           "solution": {
-            "text": "Milka",
+            "text": "Dänemark",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Es gibt Dinge, die kann man nicht kaufen",
+            "text": "Sol",
             "image": null
           },
           "solution": {
-            "text": "Mastercard",
+            "text": "Mexiko",
             "type": "text"
           }
         }
@@ -3819,224 +3928,6 @@ export const CARDS = {
           },
           "solution": {
             "text": "Johnny Marr",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wer schrieb dieses Werk?",
-        "image": null
-      },
-      "category": "Allgemein",
-      "items": [
-        {
-          "label": {
-            "text": "Kritik der reinen Vernunft",
-            "image": null
-          },
-          "solution": {
-            "text": "Immanuel Kant",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Faust",
-            "image": null
-          },
-          "solution": {
-            "text": "Johann Wolfgang von Goethe",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Neue Astronomie",
-            "image": null
-          },
-          "solution": {
-            "text": "Johannes Kepler",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Siddhartha",
-            "image": null
-          },
-          "solution": {
-            "text": "Hermann Hesse",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Professor Unrat",
-            "image": null
-          },
-          "solution": {
-            "text": "Heinrich Mann",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Der Herr der Ringe",
-            "image": null
-          },
-          "solution": {
-            "text": "J.R.R. Tolkien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Der Fänger im Roggen",
-            "image": null
-          },
-          "solution": {
-            "text": "J.D. Salinger",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Gruppenbild mit Dame",
-            "image": null
-          },
-          "solution": {
-            "text": "Heinrich Böll",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Das Sein und das Nichts",
-            "image": null
-          },
-          "solution": {
-            "text": "Jean-Paul Sartre",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kleiner Mann - was nun?",
-            "image": null
-          },
-          "solution": {
-            "text": "Hans Fallada",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Mit welchem Land wird diese Biermarke in Verbindung gebracht?",
-        "image": null
-      },
-      "category": "Allgemein",
-      "items": [
-        {
-          "label": {
-            "text": "Coors",
-            "image": null
-          },
-          "solution": {
-            "text": "USA",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Karlovačko",
-            "image": null
-          },
-          "solution": {
-            "text": "Kroatien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kronenbourg 1664",
-            "image": null
-          },
-          "solution": {
-            "text": "Frankreich",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Heineken",
-            "image": null
-          },
-          "solution": {
-            "text": "Niederlande",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Beck's",
-            "image": null
-          },
-          "solution": {
-            "text": "Deutschland",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Stella Artois",
-            "image": null
-          },
-          "solution": {
-            "text": "Belgien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Pilsner Urquell",
-            "image": null
-          },
-          "solution": {
-            "text": "Tschechien",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Murauer",
-            "image": null
-          },
-          "solution": {
-            "text": "Österreich",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Carlsberg",
-            "image": null
-          },
-          "solution": {
-            "text": "Dänemark",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sol",
-            "image": null
-          },
-          "solution": {
-            "text": "Mexiko",
             "type": "text"
           }
         }
@@ -4262,108 +4153,108 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Welche Maßeinheit wird so abgekürzt?",
+        "text": "Wer schrieb dieses Werk?",
         "image": null
       },
-      "category": "Allgemeinwissen",
+      "category": "Allgemein",
       "items": [
         {
           "label": {
-            "text": "Joule",
+            "text": "Kritik der reinen Vernunft",
             "image": null
           },
           "solution": {
-            "text": "J",
+            "text": "Immanuel Kant",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Quadratkilometer",
+            "text": "Faust",
             "image": null
           },
           "solution": {
-            "text": "km²",
+            "text": "Johann Wolfgang von Goethe",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kalorien",
+            "text": "Neue Astronomie",
             "image": null
           },
           "solution": {
-            "text": "cal",
+            "text": "Johannes Kepler",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Megahertz",
+            "text": "Siddhartha",
             "image": null
           },
           "solution": {
-            "text": "MHz",
+            "text": "Hermann Hesse",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Newton",
+            "text": "Professor Unrat",
             "image": null
           },
           "solution": {
-            "text": "N",
+            "text": "Heinrich Mann",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Kilobyte",
+            "text": "Der Herr der Ringe",
             "image": null
           },
           "solution": {
-            "text": "KB",
+            "text": "J.R.R. Tolkien",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Watt",
+            "text": "Der Fänger im Roggen",
             "image": null
           },
           "solution": {
-            "text": "W",
+            "text": "J.D. Salinger",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ohm",
+            "text": "Gruppenbild mit Dame",
             "image": null
           },
           "solution": {
-            "text": "Ω",
+            "text": "Heinrich Böll",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Esslöffel",
+            "text": "Das Sein und das Nichts",
             "image": null
           },
           "solution": {
-            "text": "El",
+            "text": "Jean-Paul Sartre",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Pferdestärken",
+            "text": "Kleiner Mann - was nun?",
             "image": null
           },
           "solution": {
-            "text": "PS",
+            "text": "Hans Fallada",
             "type": "text"
           }
         }
@@ -4480,218 +4371,109 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Ist ein Film mit Tom Cruise?",
+        "text": "Welche Maßeinheit wird so abgekürzt?",
         "image": null
       },
-      "category": "Musik/Entertainment/Movie",
+      "category": "Allgemeinwissen",
       "items": [
         {
           "label": {
-            "text": "Cocktail",
+            "text": "Joule",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "J",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Tage des Donners",
+            "text": "Quadratkilometer",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "km²",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Der Staatsfeind Nr. 1",
+            "text": "Kalorien",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "cal",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Jerry Maguire",
+            "text": "Megahertz",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "MHz",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Mission: Impossible",
+            "text": "Newton",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "N",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Argo",
+            "text": "Kilobyte",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "KB",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Blood Diamond",
+            "text": "Watt",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "W",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Legende",
+            "text": "Ohm",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Ω",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Shape of Water-Das Flüstern des Wassers",
+            "text": "Esslöffel",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "El",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Elysium",
+            "text": "Pferdestärken",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wird zur Herstellung von Alkohol verwendet?",
-        "image": null
-      },
-      "category": "Essen & Trinken",
-      "items": [
-        {
-          "label": {
-            "text": "Aubergine",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Topinambur",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Mais",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Preiselbeeren",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Kartoffel",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Wacholder",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Apfel",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Roggen",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Hafer",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Agave",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "PS",
+            "type": "text"
           }
         }
       ]
@@ -4807,109 +4589,109 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Welches Tier gilt als ...?",
+        "text": "Ist ein Film mit Tom Cruise?",
         "image": null
       },
-      "category": "Allgemeinwissen",
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "das schwerste Landsäugetier",
+            "text": "Cocktail",
             "image": null
           },
           "solution": {
-            "text": "Afrikanischer Elefant",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "das größte",
+            "text": "Tage des Donners",
             "image": null
           },
           "solution": {
-            "text": "Blauwal",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "das höchste",
+            "text": "Der Staatsfeind Nr. 1",
             "image": null
           },
           "solution": {
-            "text": "Giraffe",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "das größte Nagetier",
+            "text": "Jerry Maguire",
             "image": null
           },
           "solution": {
-            "text": "Wasserschwein (Capybara)",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "die schwerste Schlange",
+            "text": "Mission: Impossible",
             "image": null
           },
           "solution": {
-            "text": "(Große) Anakonda",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "der größte Vogel",
+            "text": "Argo",
             "image": null
           },
           "solution": {
-            "text": "(Afrikanischer) Strauß",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "der kleinste Hund",
+            "text": "Blood Diamond",
             "image": null
           },
           "solution": {
-            "text": "Chihuahua",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "der kleinste Vogel",
+            "text": "Legende",
             "image": null
           },
           "solution": {
-            "text": "Hummelkolibri",
-            "type": "text"
+            "text": "Richtig",
+            "type": "boolean_true"
           }
         },
         {
           "label": {
-            "text": "das größte Krokodil",
+            "text": "Shape of Water-Das Flüstern des Wassers",
             "image": null
           },
           "solution": {
-            "text": "Leistenkrokodil",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         },
         {
           "label": {
-            "text": "das schnellste Landsäugetier",
+            "text": "Elysium",
             "image": null
           },
           "solution": {
-            "text": "Gepard",
-            "type": "text"
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         }
       ]
@@ -5134,6 +4916,442 @@ export const CARDS = {
     },
     {
       "prompt": {
+        "text": "Welches Tier gilt als ...?",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "das schwerste Landsäugetier",
+            "image": null
+          },
+          "solution": {
+            "text": "Afrikanischer Elefant",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "das größte",
+            "image": null
+          },
+          "solution": {
+            "text": "Blauwal",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "das höchste",
+            "image": null
+          },
+          "solution": {
+            "text": "Giraffe",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "das größte Nagetier",
+            "image": null
+          },
+          "solution": {
+            "text": "Wasserschwein (Capybara)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "die schwerste Schlange",
+            "image": null
+          },
+          "solution": {
+            "text": "(Große) Anakonda",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "der größte Vogel",
+            "image": null
+          },
+          "solution": {
+            "text": "(Afrikanischer) Strauß",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "der kleinste Hund",
+            "image": null
+          },
+          "solution": {
+            "text": "Chihuahua",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "der kleinste Vogel",
+            "image": null
+          },
+          "solution": {
+            "text": "Hummelkolibri",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "das größte Krokodil",
+            "image": null
+          },
+          "solution": {
+            "text": "Leistenkrokodil",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "das schnellste Landsäugetier",
+            "image": null
+          },
+          "solution": {
+            "text": "Gepard",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wird zur Herstellung von Alkohol verwendet?",
+        "image": null
+      },
+      "category": "Essen & Trinken",
+      "items": [
+        {
+          "label": {
+            "text": "Aubergine",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Topinambur",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Mais",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Preiselbeeren",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Kartoffel",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Wacholder",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Apfel",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Roggen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Hafer",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Agave",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Nach wie vielen Jahren feiert man dieses Hochzeitsjubiläum?",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "Baumwollhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "1",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Kristallhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "15",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Porzellanhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "20",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Goldene Hochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "50",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gnadenhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "70",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Rosenhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "10",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Diamantene Hochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "60",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Holzhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Petersilienhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "12,5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Silberhochzeit",
+            "image": null
+          },
+          "solution": {
+            "text": "25",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welche Schauspielerin/welcher Schauspieler verkörperte ...?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Reese Witherspoon",
+            "image": null
+          },
+          "solution": {
+            "text": "Elle Woods",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Renée Zellweger",
+            "image": null
+          },
+          "solution": {
+            "text": "Bridget Jones",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Audrey Tautou",
+            "image": null
+          },
+          "solution": {
+            "text": "Amélie Poulain",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ben Stiller",
+            "image": null
+          },
+          "solution": {
+            "text": "Greg Focker",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sigourney Weaver",
+            "image": null
+          },
+          "solution": {
+            "text": "Ellen Ripley",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Keanu Reeves",
+            "image": null
+          },
+          "solution": {
+            "text": "Neo",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Leslie Nielsen",
+            "image": null
+          },
+          "solution": {
+            "text": "Frank Drebin",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Russell Crowe",
+            "image": null
+          },
+          "solution": {
+            "text": "Maximus",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Rowan Atkinson",
+            "image": null
+          },
+          "solution": {
+            "text": "Mr. Bean",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Audrey Hepburn",
+            "image": null
+          },
+          "solution": {
+            "text": "Holly Golightly",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
         "text": "Ist eine Hunderasse?",
         "image": null
       },
@@ -5232,6 +5450,224 @@ export const CARDS = {
         {
           "label": {
             "text": "Holländischer Rattler",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Nenne das Jahrhundert, in dem diese Schlacht stattfand!",
+        "image": null
+      },
+      "category": "Geschichte",
+      "items": [
+        {
+          "label": {
+            "text": "Schlacht bei Lützen",
+            "image": null
+          },
+          "solution": {
+            "text": "17. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht von Trafalgar",
+            "image": null
+          },
+          "solution": {
+            "text": "19. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht von Gettysburg",
+            "image": null
+          },
+          "solution": {
+            "text": "19. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht von Gallipoli",
+            "image": null
+          },
+          "solution": {
+            "text": "20. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht bei Waterloo",
+            "image": null
+          },
+          "solution": {
+            "text": "19. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht von Azincourt",
+            "image": null
+          },
+          "solution": {
+            "text": "15. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht um Guadalcanal",
+            "image": null
+          },
+          "solution": {
+            "text": "20. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht bei Narva",
+            "image": null
+          },
+          "solution": {
+            "text": "18. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht bei Hastings",
+            "image": null
+          },
+          "solution": {
+            "text": "11. Jh.",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schlacht von Musa Qala",
+            "image": null
+          },
+          "solution": {
+            "text": "21. Jh.",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist giftig?",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "Maiglöckchen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Adlerfarn",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Frauenmantel",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Goldregen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Riesenbärenklau",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Geranie",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Veilchen",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Gänseblümchen",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Schafgarbe",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Belladonna (Tollkirsche)",
             "image": null
           },
           "solution": {
@@ -5461,224 +5897,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Nach wie vielen Jahren feiert man dieses Hochzeitsjubiläum?",
-        "image": null
-      },
-      "category": "Allgemeinwissen",
-      "items": [
-        {
-          "label": {
-            "text": "Baumwollhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "1",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kristallhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "15",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Porzellanhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "20",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Goldene Hochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "50",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Gnadenhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "70",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Rosenhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "10",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Diamantene Hochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "60",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Holzhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Petersilienhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "12,5",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Silberhochzeit",
-            "image": null
-          },
-          "solution": {
-            "text": "25",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Ist giftig?",
-        "image": null
-      },
-      "category": "Allgemeinwissen",
-      "items": [
-        {
-          "label": {
-            "text": "Maiglöckchen",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Adlerfarn",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Frauenmantel",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Goldregen",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Riesenbärenklau",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Geranie",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Veilchen",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Gänseblümchen",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Schafgarbe",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Belladonna (Tollkirsche)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "In welchem Buch/Film/Comic kommt diese Firma vor?",
         "image": null
       },
@@ -5788,108 +6006,108 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Welche Schauspielerin/welcher Schauspieler verkörperte ...?",
+        "text": "Nenne das Jahrzehnt, in dem dieses Unternehmen gegründet wurde!",
         "image": null
       },
-      "category": "Musik/Entertainment/Movie",
+      "category": "Wirtschaft",
       "items": [
         {
           "label": {
-            "text": "Reese Witherspoon",
+            "text": "Nike",
             "image": null
           },
           "solution": {
-            "text": "Elle Woods",
+            "text": "1960 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Renée Zellweger",
+            "text": "IKEA",
             "image": null
           },
           "solution": {
-            "text": "Bridget Jones",
+            "text": "1940 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Audrey Tautou",
+            "text": "Dolce & Gabbana",
             "image": null
           },
           "solution": {
-            "text": "Amélie Poulain",
+            "text": "1980 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ben Stiller",
+            "text": "Microsoft",
             "image": null
           },
           "solution": {
-            "text": "Greg Focker",
+            "text": "1970 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Sigourney Weaver",
+            "text": "Sony",
             "image": null
           },
           "solution": {
-            "text": "Ellen Ripley",
+            "text": "1940 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Keanu Reeves",
+            "text": "Nokia",
             "image": null
           },
           "solution": {
-            "text": "Neo",
+            "text": "1860 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Leslie Nielsen",
+            "text": "Lego",
             "image": null
           },
           "solution": {
-            "text": "Frank Drebin",
+            "text": "1930 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Russell Crowe",
+            "text": "IBM",
             "image": null
           },
           "solution": {
-            "text": "Maximus",
+            "text": "1910 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Rowan Atkinson",
+            "text": "Apple",
             "image": null
           },
           "solution": {
-            "text": "Mr. Bean",
+            "text": "1970 er",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Audrey Hepburn",
+            "text": "LM Ericsson",
             "image": null
           },
           "solution": {
-            "text": "Holly Golightly",
+            "text": "1870 er",
             "type": "text"
           }
         }
@@ -5897,108 +6115,435 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Nenne das Jahrhundert, in dem diese Schlacht stattfand!",
+        "text": "Wer komponierte ...?",
         "image": null
       },
-      "category": "Geschichte",
+      "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Schlacht bei Lützen",
+            "text": "Matthäus-Passion",
             "image": null
           },
           "solution": {
-            "text": "17. Jh.",
+            "text": "J. S. Bach",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht von Trafalgar",
+            "text": "Messiah",
             "image": null
           },
           "solution": {
-            "text": "19. Jh.",
+            "text": "Georg Friedrich Händel",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht von Gettysburg",
+            "text": "Rigoletto",
             "image": null
           },
           "solution": {
-            "text": "19. Jh.",
+            "text": "Giuseppe Verdi",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht von Gallipoli",
+            "text": "Radetzky-Marsch",
             "image": null
           },
           "solution": {
-            "text": "20. Jh.",
+            "text": "Johann Strauss (Vater)",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht bei Waterloo",
+            "text": "In der Halle des Bergkönigs",
             "image": null
           },
           "solution": {
-            "text": "19. Jh.",
+            "text": "Edvard Grieg",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht von Azincourt",
+            "text": "Nr. 5, „Schicksalssinfonie",
             "image": null
           },
           "solution": {
-            "text": "15. Jh.",
+            "text": "Ludwig van Beethoven",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht um Guadalcanal",
+            "text": "Die Hochzeit des Figaro",
             "image": null
           },
           "solution": {
-            "text": "20. Jh.",
+            "text": "Wolfgang Amadeus Mozart",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht bei Narva",
+            "text": "Der Nussknacker",
             "image": null
           },
           "solution": {
-            "text": "18. Jh.",
+            "text": "Pjotr Iljitsch Tschaikowski",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht bei Hastings",
+            "text": "Tosca",
             "image": null
           },
           "solution": {
-            "text": "11. Jh.",
+            "text": "Giacomo Puccini",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schlacht von Musa Qala",
+            "text": "Lohengrin",
             "image": null
           },
           "solution": {
-            "text": "21. Jh.",
+            "text": "Richard Wagner",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist ein Uhrenhersteller aus der Schweiz?",
+        "image": null
+      },
+      "category": "Wirtschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Zenith",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Junghans",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Gruen Watch Company",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Piaget",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Rolex",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ronda",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Antide Janvier",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Omega SA",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Chronoswiss",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Tissot",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wie heißt die Wissenschaft, die sich damit beschäftigt?",
+        "image": null
+      },
+      "category": "Allgemeinwissen",
+      "items": [
+        {
+          "label": {
+            "text": "menschliches Erleben und Verhalten",
+            "image": null
+          },
+          "solution": {
+            "text": "Psychologie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Elemente und chemische Reaktionen",
+            "image": null
+          },
+          "solution": {
+            "text": "Chemie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Struktur der Erdkruste und Gesteine",
+            "image": null
+          },
+          "solution": {
+            "text": "Geologie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Menschen und Kulturen der Welt",
+            "image": null
+          },
+          "solution": {
+            "text": "Anthropologie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Himmelskörper und Universum",
+            "image": null
+          },
+          "solution": {
+            "text": "Astronomie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Herkunft und Geschichte der Wörter",
+            "image": null
+          },
+          "solution": {
+            "text": "Etymologie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Schall und seine Ausbreitung",
+            "image": null
+          },
+          "solution": {
+            "text": "Akustik",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Energie und deren Erhaltung",
+            "image": null
+          },
+          "solution": {
+            "text": "Thermodynamik",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tod und Sterben",
+            "image": null
+          },
+          "solution": {
+            "text": "Thanatologie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "logische Beziehungen zwischen Zahlen",
+            "image": null
+          },
+          "solution": {
+            "text": "Mathematik",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wer hat den zugehörigen Oscar für den besten Hauptdarsteller erhalten?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "The King's Speech",
+            "image": null
+          },
+          "solution": {
+            "text": "Colin Firth",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Crazy Heart",
+            "image": null
+          },
+          "solution": {
+            "text": "Jeff Bridges",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Milk",
+            "image": null
+          },
+          "solution": {
+            "text": "Sean Penn",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Der letzte König von Schottland",
+            "image": null
+          },
+          "solution": {
+            "text": "Forest Whitaker",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Capote",
+            "image": null
+          },
+          "solution": {
+            "text": "Philip Seymour Hoffman",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ray",
+            "image": null
+          },
+          "solution": {
+            "text": "Jamie Foxx",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Mystic River",
+            "image": null
+          },
+          "solution": {
+            "text": "Sean Penn",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Training Day",
+            "image": null
+          },
+          "solution": {
+            "text": "Denzel Washington",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gladiator",
+            "image": null
+          },
+          "solution": {
+            "text": "Russel Crowe",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Revenant - Der Rückkehrer",
+            "image": null
+          },
+          "solution": {
+            "text": "Leonardo Di Caprio",
             "type": "text"
           }
         }
@@ -6333,762 +6878,108 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Nenne das Jahrzehnt, in dem dieses Unternehmen gegründet wurde!",
-        "image": null
-      },
-      "category": "Wirtschaft",
-      "items": [
-        {
-          "label": {
-            "text": "Nike",
-            "image": null
-          },
-          "solution": {
-            "text": "1960 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "IKEA",
-            "image": null
-          },
-          "solution": {
-            "text": "1940 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Dolce & Gabbana",
-            "image": null
-          },
-          "solution": {
-            "text": "1980 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Microsoft",
-            "image": null
-          },
-          "solution": {
-            "text": "1970 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sony",
-            "image": null
-          },
-          "solution": {
-            "text": "1940 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Nokia",
-            "image": null
-          },
-          "solution": {
-            "text": "1860 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Lego",
-            "image": null
-          },
-          "solution": {
-            "text": "1930 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "IBM",
-            "image": null
-          },
-          "solution": {
-            "text": "1910 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Apple",
-            "image": null
-          },
-          "solution": {
-            "text": "1970 er",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "LM Ericsson",
-            "image": null
-          },
-          "solution": {
-            "text": "1870 er",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wer hat den zugehörigen Oscar für den besten Hauptdarsteller erhalten?",
+        "text": "Welcher Künstler oder welche Band hatte diesen NDW-Hit?",
         "image": null
       },
       "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "The King's Speech",
+            "text": "99 Luftballons",
             "image": null
           },
           "solution": {
-            "text": "Colin Firth",
+            "text": "Nena",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Crazy Heart",
+            "text": "Da Da Da",
             "image": null
           },
           "solution": {
-            "text": "Jeff Bridges",
+            "text": "Trio",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Milk",
+            "text": "Skandal im Sperrbezirk",
             "image": null
           },
           "solution": {
-            "text": "Sean Penn",
+            "text": "Spider Murphy Gang",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Der letzte König von Schottland",
+            "text": "Goldener Reiter",
             "image": null
           },
           "solution": {
-            "text": "Forest Whitaker",
+            "text": "Joachim Witt",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Capote",
+            "text": "Der Kommissar",
             "image": null
           },
           "solution": {
-            "text": "Philip Seymour Hoffman",
+            "text": "Falco",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Ray",
+            "text": "Sternenhimmel",
             "image": null
           },
           "solution": {
-            "text": "Jamie Foxx",
+            "text": "Hubert Kah",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Mystic River",
+            "text": "Eisbär",
             "image": null
           },
           "solution": {
-            "text": "Sean Penn",
+            "text": "Grauzone",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Training Day",
+            "text": "Carbonara",
             "image": null
           },
           "solution": {
-            "text": "Denzel Washington",
+            "text": "Spliff",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Gladiator",
+            "text": "Codo",
             "image": null
           },
           "solution": {
-            "text": "Russel Crowe",
+            "text": "D.Ö.F.",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "The Revenant - Der Rückkehrer",
+            "text": "Bruttosozialprodukt",
             "image": null
           },
           "solution": {
-            "text": "Leonardo Di Caprio",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wer komponierte ...?",
-        "image": null
-      },
-      "category": "Musik/Entertainment/Movie",
-      "items": [
-        {
-          "label": {
-            "text": "Matthäus-Passion",
-            "image": null
-          },
-          "solution": {
-            "text": "J. S. Bach",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Messiah",
-            "image": null
-          },
-          "solution": {
-            "text": "Georg Friedrich Händel",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Rigoletto",
-            "image": null
-          },
-          "solution": {
-            "text": "Giuseppe Verdi",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Radetzky-Marsch",
-            "image": null
-          },
-          "solution": {
-            "text": "Johann Strauss (Vater)",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "In der Halle des Bergkönigs",
-            "image": null
-          },
-          "solution": {
-            "text": "Edvard Grieg",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Nr. 5, „Schicksalssinfonie",
-            "image": null
-          },
-          "solution": {
-            "text": "Ludwig van Beethoven",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Die Hochzeit des Figaro",
-            "image": null
-          },
-          "solution": {
-            "text": "Wolfgang Amadeus Mozart",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Der Nussknacker",
-            "image": null
-          },
-          "solution": {
-            "text": "Pjotr Iljitsch Tschaikowski",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tosca",
-            "image": null
-          },
-          "solution": {
-            "text": "Giacomo Puccini",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Lohengrin",
-            "image": null
-          },
-          "solution": {
-            "text": "Richard Wagner",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Wie heißt die Wissenschaft, die sich damit beschäftigt?",
-        "image": null
-      },
-      "category": "Allgemeinwissen",
-      "items": [
-        {
-          "label": {
-            "text": "menschliches Erleben und Verhalten",
-            "image": null
-          },
-          "solution": {
-            "text": "Psychologie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Elemente und chemische Reaktionen",
-            "image": null
-          },
-          "solution": {
-            "text": "Chemie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Struktur der Erdkruste und Gesteine",
-            "image": null
-          },
-          "solution": {
-            "text": "Geologie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Menschen und Kulturen der Welt",
-            "image": null
-          },
-          "solution": {
-            "text": "Anthropologie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Himmelskörper und Universum",
-            "image": null
-          },
-          "solution": {
-            "text": "Astronomie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Herkunft und Geschichte der Wörter",
-            "image": null
-          },
-          "solution": {
-            "text": "Etymologie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Schall und seine Ausbreitung",
-            "image": null
-          },
-          "solution": {
-            "text": "Akustik",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Energie und deren Erhaltung",
-            "image": null
-          },
-          "solution": {
-            "text": "Thermodynamik",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tod und Sterben",
-            "image": null
-          },
-          "solution": {
-            "text": "Thanatologie",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "logische Beziehungen zwischen Zahlen",
-            "image": null
-          },
-          "solution": {
-            "text": "Mathematik",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Ist ein Uhrenhersteller aus der Schweiz?",
-        "image": null
-      },
-      "category": "Wirtschaft",
-      "items": [
-        {
-          "label": {
-            "text": "Zenith",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Junghans",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Gruen Watch Company",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Piaget",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Rolex",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Ronda",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Antide Janvier",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Omega SA",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Chronoswiss",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Tissot",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Welches antialkoholische Getränk ist die Basis für diesen Cocktail?",
-        "image": null
-      },
-      "category": "Essen & Trinken",
-      "items": [
-        {
-          "label": {
-            "text": "Cosmopolitan",
-            "image": null
-          },
-          "solution": {
-            "text": "Preiselbeersaft",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Screwdriver",
-            "image": null
-          },
-          "solution": {
-            "text": "Orangensaft",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "White Russian",
-            "image": null
-          },
-          "solution": {
-            "text": "Sahne oder Milch",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Bloody Mary",
-            "image": null
-          },
-          "solution": {
-            "text": "Tomatensaft",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Cuba Libre",
-            "image": null
-          },
-          "solution": {
-            "text": "Cola",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Long Island Iced Tea",
-            "image": null
-          },
-          "solution": {
-            "text": "Cola",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Piña Colada",
-            "image": null
-          },
-          "solution": {
-            "text": "Ananassaft",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Tequila Sunrise",
-            "image": null
-          },
-          "solution": {
-            "text": "Orangensaft",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Margarita",
-            "image": null
-          },
-          "solution": {
-            "text": "Limettensaft",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Harvey Wallbanger",
-            "image": null
-          },
-          "solution": {
-            "text": "Orangensaft",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
-        "text": "Welche Substanz ist das?",
-        "image": null
-      },
-      "category": "Wissenschaft",
-      "items": [
-        {
-          "label": {
-            "text": "zwei H und ein O",
-            "image": null
-          },
-          "solution": {
-            "text": "Wasser",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Legierung aus Kupfer und Zink",
-            "image": null
-          },
-          "solution": {
-            "text": "Messing",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Eisen und Kohlenstoff",
-            "image": null
-          },
-          "solution": {
-            "text": "Stahl",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "ein Kohlenstoffund zwei Sauerstoffatome",
-            "image": null
-          },
-          "solution": {
-            "text": "Kohlenstoffdioxid",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "H2 SO4",
-            "image": null
-          },
-          "solution": {
-            "text": "Schwefelsäure",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Na Cl",
-            "image": null
-          },
-          "solution": {
-            "text": "Kochsalz (Natriumchlorid)",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "etwa 60% Kupfer, 25% Zink, 15% Nickel",
-            "image": null
-          },
-          "solution": {
-            "text": "Neusilber",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "C2 H5 OH",
-            "image": null
-          },
-          "solution": {
-            "text": "Alkohol (Ethanol)",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "O₃",
-            "image": null
-          },
-          "solution": {
-            "text": "Ozon",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "etwa 80% Kupfer, Zinn und unter 9% Kohlenstoff",
-            "image": null
-          },
-          "solution": {
-            "text": "Bronze",
+            "text": "Geier Sturzflug",
             "type": "text"
           }
         }
@@ -7205,115 +7096,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Wer war sein Untergang?",
-        "image": null
-      },
-      "category": "Musik/Entertainment/Movie",
-      "items": [
-        {
-          "label": {
-            "text": "Lex Luthor",
-            "image": null
-          },
-          "solution": {
-            "text": "Superman",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Ra's al Ghul",
-            "image": null
-          },
-          "solution": {
-            "text": "Batman",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Professor Moriarty",
-            "image": null
-          },
-          "solution": {
-            "text": "Sherlock Holmes",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Vilgax",
-            "image": null
-          },
-          "solution": {
-            "text": "Ben",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Galactus",
-            "image": null
-          },
-          "solution": {
-            "text": "Silver Surfer",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Kingpin",
-            "image": null
-          },
-          "solution": {
-            "text": "Daredevil",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Shir Khan",
-            "image": null
-          },
-          "solution": {
-            "text": "Mogli",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Norman Osborn",
-            "image": null
-          },
-          "solution": {
-            "text": "Spiderman",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Dormammu",
-            "image": null
-          },
-          "solution": {
-            "text": "Dr. Strange",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Lord Voldemort",
-            "image": null
-          },
-          "solution": {
-            "text": "Harry Potter",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "Welcher Komponist schrieb dieses berühmte Werk?",
         "image": null
       },
@@ -7416,6 +7198,115 @@ export const CARDS = {
           },
           "solution": {
             "text": "Carl Orff",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welches antialkoholische Getränk ist die Basis für diesen Cocktail?",
+        "image": null
+      },
+      "category": "Essen & Trinken",
+      "items": [
+        {
+          "label": {
+            "text": "Cosmopolitan",
+            "image": null
+          },
+          "solution": {
+            "text": "Preiselbeersaft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Screwdriver",
+            "image": null
+          },
+          "solution": {
+            "text": "Orangensaft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "White Russian",
+            "image": null
+          },
+          "solution": {
+            "text": "Sahne oder Milch",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Bloody Mary",
+            "image": null
+          },
+          "solution": {
+            "text": "Tomatensaft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Cuba Libre",
+            "image": null
+          },
+          "solution": {
+            "text": "Cola",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Long Island Iced Tea",
+            "image": null
+          },
+          "solution": {
+            "text": "Cola",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Piña Colada",
+            "image": null
+          },
+          "solution": {
+            "text": "Ananassaft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Tequila Sunrise",
+            "image": null
+          },
+          "solution": {
+            "text": "Orangensaft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Margarita",
+            "image": null
+          },
+          "solution": {
+            "text": "Limettensaft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Harvey Wallbanger",
+            "image": null
+          },
+          "solution": {
+            "text": "Orangensaft",
             "type": "text"
           }
         }
@@ -7532,115 +7423,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Welcher Künstler oder welche Band hatte diesen NDW-Hit?",
-        "image": null
-      },
-      "category": "Musik/Entertainment/Movie",
-      "items": [
-        {
-          "label": {
-            "text": "99 Luftballons",
-            "image": null
-          },
-          "solution": {
-            "text": "Nena",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Da Da Da",
-            "image": null
-          },
-          "solution": {
-            "text": "Trio",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Skandal im Sperrbezirk",
-            "image": null
-          },
-          "solution": {
-            "text": "Spider Murphy Gang",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Goldener Reiter",
-            "image": null
-          },
-          "solution": {
-            "text": "Joachim Witt",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Der Kommissar",
-            "image": null
-          },
-          "solution": {
-            "text": "Falco",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Sternenhimmel",
-            "image": null
-          },
-          "solution": {
-            "text": "Hubert Kah",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Eisbär",
-            "image": null
-          },
-          "solution": {
-            "text": "Grauzone",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Carbonara",
-            "image": null
-          },
-          "solution": {
-            "text": "Spliff",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Codo",
-            "image": null
-          },
-          "solution": {
-            "text": "D.Ö.F.",
-            "type": "text"
-          }
-        },
-        {
-          "label": {
-            "text": "Bruttosozialprodukt",
-            "image": null
-          },
-          "solution": {
-            "text": "Geier Sturzflug",
-            "type": "text"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "Aus welchem NDW-Hit stammt diese Textzeile?",
         "image": null
       },
@@ -7750,218 +7532,327 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Hat weltweit über 1 Milliarde US-Dollar eingespielt?",
+        "text": "Wer war sein Untergang?",
         "image": null
       },
       "category": "Musik/Entertainment/Movie",
       "items": [
         {
           "label": {
-            "text": "Barbie (2023)",
+            "text": "Lex Luthor",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Superman",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Top Gun: Maverick (2022)",
+            "text": "Ra's al Ghul",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Batman",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Avengers: Endgame (2019)",
+            "text": "Professor Moriarty",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Sherlock Holmes",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Spider-Man: No Way Home (2021)",
+            "text": "Vilgax",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Ben",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Inside Out 2 (2024)",
+            "text": "Galactus",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Silver Surfer",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Frozen II (2019)",
+            "text": "Kingpin",
             "image": null
           },
           "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
+            "text": "Daredevil",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Oppenheimer (2023)",
+            "text": "Shir Khan",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Mogli",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Dune: Part Two (2024)",
+            "text": "Norman Osborn",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Spiderman",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "The Batman (2022)",
+            "text": "Dormammu",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Dr. Strange",
+            "type": "text"
           }
         },
         {
           "label": {
-            "text": "Tenet (2020)",
+            "text": "Lord Voldemort",
             "image": null
           },
           "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
+            "text": "Harry Potter",
+            "type": "text"
           }
         }
       ]
     },
     {
       "prompt": {
-        "text": "Welcher Schauspieler spielte die Hauptrolle in diesem Blockbuster?",
+        "text": "Welche Substanz ist das?",
         "image": null
       },
-      "category": "Musik/Entertainment/Movie",
+      "category": "Wissenschaft",
       "items": [
         {
           "label": {
-            "text": "Barbie (2023)",
+            "text": "zwei H und ein O",
             "image": null
           },
           "solution": {
-            "text": "Margot Robbie",
+            "text": "Wasser",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Oppenheimer (2023)",
+            "text": "Legierung aus Kupfer und Zink",
             "image": null
           },
           "solution": {
-            "text": "Cillian Murphy",
+            "text": "Messing",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Top Gun: Maverick (2022)",
+            "text": "Eisen und Kohlenstoff",
             "image": null
           },
           "solution": {
-            "text": "Tom Cruise",
+            "text": "Stahl",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Joker (2019)",
+            "text": "ein Kohlenstoffund zwei Sauerstoffatome",
             "image": null
           },
           "solution": {
-            "text": "Joaquin Phoenix",
+            "text": "Kohlenstoffdioxid",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Black Panther (2018)",
+            "text": "H2 SO4",
             "image": null
           },
           "solution": {
-            "text": "Chadwick Boseman",
+            "text": "Schwefelsäure",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Dune: Part Two (2024)",
+            "text": "Na Cl",
             "image": null
           },
           "solution": {
-            "text": "Timothée Chalamet",
+            "text": "Kochsalz (Natriumchlorid)",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Spider-Man: No Way Home (2021)",
+            "text": "etwa 60% Kupfer, 25% Zink, 15% Nickel",
             "image": null
           },
           "solution": {
-            "text": "Tom Holland",
+            "text": "Neusilber",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Wonder Woman (2017)",
+            "text": "C2 H5 OH",
             "image": null
           },
           "solution": {
-            "text": "Gal Gadot",
+            "text": "Alkohol (Ethanol)",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Bohemian Rhapsody (2018)",
+            "text": "O₃",
             "image": null
           },
           "solution": {
-            "text": "Rami Malek",
+            "text": "Ozon",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "The Batman (2022)",
+            "text": "etwa 80% Kupfer, Zinn und unter 9% Kohlenstoff",
             "image": null
           },
           "solution": {
-            "text": "Robert Pattinson",
+            "text": "Bronze",
             "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hat mehr als 100 Länderspiele für Deutschland absolviert?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Lothar Matthäus",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Miroslav Klose",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Lukas Podolski",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Bastian Schweinsteiger",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Philipp Lahm",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Toni Kroos",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Oliver Kahn",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Michael Ballack",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Mesut Özil",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Mario Götze",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
           }
         }
       ]
@@ -8186,6 +8077,224 @@ export const CARDS = {
     },
     {
       "prompt": {
+        "text": "Welcher Schauspieler spielte die Hauptrolle in diesem Blockbuster?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Barbie (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Margot Robbie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Oppenheimer (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Cillian Murphy",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Top Gun: Maverick (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Tom Cruise",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Joker (2019)",
+            "image": null
+          },
+          "solution": {
+            "text": "Joaquin Phoenix",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Black Panther (2018)",
+            "image": null
+          },
+          "solution": {
+            "text": "Chadwick Boseman",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dune: Part Two (2024)",
+            "image": null
+          },
+          "solution": {
+            "text": "Timothée Chalamet",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Spider-Man: No Way Home (2021)",
+            "image": null
+          },
+          "solution": {
+            "text": "Tom Holland",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wonder Woman (2017)",
+            "image": null
+          },
+          "solution": {
+            "text": "Gal Gadot",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Bohemian Rhapsody (2018)",
+            "image": null
+          },
+          "solution": {
+            "text": "Rami Malek",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "The Batman (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Robert Pattinson",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hat weltweit über 1 Milliarde US-Dollar eingespielt?",
+        "image": null
+      },
+      "category": "Musik/Entertainment/Movie",
+      "items": [
+        {
+          "label": {
+            "text": "Barbie (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Top Gun: Maverick (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Avengers: Endgame (2019)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Spider-Man: No Way Home (2021)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Inside Out 2 (2024)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Frozen II (2019)",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Oppenheimer (2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Dune: Part Two (2024)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "The Batman (2022)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Tenet (2020)",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
         "text": "Wer war bei diesem Turnier Bundestrainer bzw. Teamchef?",
         "image": null
       },
@@ -8295,115 +8404,6 @@ export const CARDS = {
     },
     {
       "prompt": {
-        "text": "Hat mehr als 100 Länderspiele für Deutschland absolviert?",
-        "image": null
-      },
-      "category": "Sport",
-      "items": [
-        {
-          "label": {
-            "text": "Lothar Matthäus (150)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Miroslav Klose (137)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Lukas Podolski (130)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Bastian Schweinsteiger (121)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Philipp Lahm (113)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Toni Kroos (114)",
-            "image": null
-          },
-          "solution": {
-            "text": "Richtig",
-            "type": "boolean_true"
-          }
-        },
-        {
-          "label": {
-            "text": "Oliver Kahn (86)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Michael Ballack (98)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Mesut Özil (92)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        },
-        {
-          "label": {
-            "text": "Mario Götze (63)",
-            "image": null
-          },
-          "solution": {
-            "text": "Falsch",
-            "type": "boolean_false"
-          }
-        }
-      ]
-    },
-    {
-      "prompt": {
         "text": "Hat mehr als 40 Länderspieltore für Deutschland erzielt?",
         "image": null
       },
@@ -8507,6 +8507,1750 @@ export const CARDS = {
           "solution": {
             "text": "Falsch",
             "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Hatte weltweit über 1 Milliarde Dollar Einspielergebnis?",
+        "image": null
+      },
+      "category": "Kino",
+      "items": [
+        {
+          "label": {
+            "text": "Avatar",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Avengers: Endgame",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Inception",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Jurassic World",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Interstellar",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "The Dark Knight",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "La La Land",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Frozen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Oppenheimer",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Top Gun: Maverick",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wie oft gewann Steffi Graf dieses Grand-Slam-Turnier im Einzel?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Wimbledon",
+            "image": null
+          },
+          "solution": {
+            "text": "7",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "French Open",
+            "image": null
+          },
+          "solution": {
+            "text": "6",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "US Open",
+            "image": null
+          },
+          "solution": {
+            "text": "5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Australian Open",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Grand-Slam-Titel gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "22",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wochen auf Rang 1",
+            "image": null
+          },
+          "solution": {
+            "text": "377",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Turniersiege gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "107",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Olympia-Goldmedaillen",
+            "image": null
+          },
+          "solution": {
+            "text": "1",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fed-Cup-Siege",
+            "image": null
+          },
+          "solution": {
+            "text": "2",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "WTA Finals-Siege",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Trifft diese Aussage über Boris Beckers Tenniskarriere zu?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Gewann Wimbledon 1985 mit 17 Jahren",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Gewann 6 Grand-Slam-Titel im Einzel",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Gewann die French Open",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Olympiasieger 1992 im Doppel",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "War Trainer von Djokovic",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Gewann die US Open 1989",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "War Weltranglistenerster",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Gewann Wimbledon 4-mal",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Gewann die Australian Open 1991",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Gewann den Davis Cup 1988 und 1989",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "In welchem Jahr gewann Boris Becker dieses Wimbledon-Finale?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Sieg gegen Kevin Curren",
+            "image": null
+          },
+          "solution": {
+            "text": "1985",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sieg gegen Ivan Lendl",
+            "image": null
+          },
+          "solution": {
+            "text": "1986",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sieg gegen Stefan Edberg",
+            "image": null
+          },
+          "solution": {
+            "text": "1989",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederlage gegen Stefan Edberg",
+            "image": null
+          },
+          "solution": {
+            "text": "1990",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederlage gegen Michael Stich",
+            "image": null
+          },
+          "solution": {
+            "text": "1991",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederlage gegen Pete Sampras",
+            "image": null
+          },
+          "solution": {
+            "text": "1995",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erster Wimbledon-Sieg insgesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "1985",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Letzter Grand-Slam-Titel",
+            "image": null
+          },
+          "solution": {
+            "text": "1996",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Rücktritt vom Profisport",
+            "image": null
+          },
+          "solution": {
+            "text": "1999",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Beginn als Djokovic-Trainer",
+            "image": null
+          },
+          "solution": {
+            "text": "2013",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wie viele Deutsche Meistertitel hat der FC Bayern München gewonnen (Stand 2025)?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Deutsche Meistertitel gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "34",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "DFB-Pokalsiege gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "20",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Champions-League-Siege gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "6",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Triple-Gewinne (BL + Pokal + CL)",
+            "image": null
+          },
+          "solution": {
+            "text": "2",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Meistertitel in Folge (2013–2023)",
+            "image": null
+          },
+          "solution": {
+            "text": "11",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gründungsjahr des FC Bayern",
+            "image": null
+          },
+          "solution": {
+            "text": "1900",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Heimstadion seit 2005",
+            "image": null
+          },
+          "solution": {
+            "text": "Allianz Arena",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Lewandowski-Tore in Saison 2020/21",
+            "image": null
+          },
+          "solution": {
+            "text": "41",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Europapokale gesamt gewonnen",
+            "image": null
+          },
+          "solution": {
+            "text": "8",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Weltpokal- und Klub-WM-Titel",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Gehört dieser Verein zu den Deutschen Meistern der Fußball-Bundesliga?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "FC Bayern München",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Borussia Dortmund",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Borussia Mönchengladbach",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "VfB Stuttgart",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Bayer Leverkusen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "FC Schalke 04",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Hamburger SV",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Werder Bremen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Hertha BSC Berlin",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "1. FC Kaiserslautern",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wie viele Deutsche Meisterschaften hat der VfB Stuttgart gewonnen?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Deutsche Meistertitel gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "5",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "DFB-Pokalsiege gesamt",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Jüngster DFB-Pokalsieg",
+            "image": null
+          },
+          "solution": {
+            "text": "2025",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Letzter Meistertitel (Bundesliga)",
+            "image": null
+          },
+          "solution": {
+            "text": "2007",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erster Meistertitel (Nachkrieg)",
+            "image": null
+          },
+          "solution": {
+            "text": "1950",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Meistertitel in der Bundesliga-Ära",
+            "image": null
+          },
+          "solution": {
+            "text": "3",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Trainer beim Pokalsieg 1997",
+            "image": null
+          },
+          "solution": {
+            "text": "Joachim Löw",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Trainer beim Meistertitel 2007",
+            "image": null
+          },
+          "solution": {
+            "text": "Armin Veh",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gründungsjahr VfB Stuttgart",
+            "image": null
+          },
+          "solution": {
+            "text": "1893",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Platz in der ewigen Bundesliga-Tabelle",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Wann gewann der BVB Borussia Dortmund diesen Titel?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Champions League (einziger Sieg)",
+            "image": null
+          },
+          "solution": {
+            "text": "1997",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erste Deutsche Meisterschaft (Bundesliga-Ära)",
+            "image": null
+          },
+          "solution": {
+            "text": "1995",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Zweite Deutsche Meisterschaft in Folge",
+            "image": null
+          },
+          "solution": {
+            "text": "1996",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Weltpokal-Sieg (Tokio)",
+            "image": null
+          },
+          "solution": {
+            "text": "1997",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Europapokal der Pokalsieger",
+            "image": null
+          },
+          "solution": {
+            "text": "1966",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Meisterschaft unter Jürgen Klopp (erste)",
+            "image": null
+          },
+          "solution": {
+            "text": "2011",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Meisterschaft unter Jürgen Klopp (zweite)",
+            "image": null
+          },
+          "solution": {
+            "text": "2012",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "DFB-Pokal-Sieg gegen Bayern (Verlängerung)",
+            "image": null
+          },
+          "solution": {
+            "text": "1989",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gründungsjahr des BVB",
+            "image": null
+          },
+          "solution": {
+            "text": "1909",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "8. Deutsche Meisterschaft",
+            "image": null
+          },
+          "solution": {
+            "text": "2012",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welcher Planet hat die meisten bekannten Monde?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Größter bekannter Mond des Sonnensystems",
+            "image": null
+          },
+          "solution": {
+            "text": "Ganymed",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Planet mit den Ringen",
+            "image": null
+          },
+          "solution": {
+            "text": "Saturn",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Erdmond heißt",
+            "image": null
+          },
+          "solution": {
+            "text": "Mond / Luna",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Rote Planet",
+            "image": null
+          },
+          "solution": {
+            "text": "Mars",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Planet mit dem Großen Roten Fleck",
+            "image": null
+          },
+          "solution": {
+            "text": "Jupiter",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Eisriesen (erster, näher an Sonne)",
+            "image": null
+          },
+          "solution": {
+            "text": "Uranus",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fernster Planet vom Sonnensystem",
+            "image": null
+          },
+          "solution": {
+            "text": "Neptun",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Planet mit der längsten Tageslänge",
+            "image": null
+          },
+          "solution": {
+            "text": "Venus",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Planet mit dem höchsten Vulkan (Olympus Mons)",
+            "image": null
+          },
+          "solution": {
+            "text": "Mars",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Einziger Planet mit flüssigem Wasser (nachgewiesen)",
+            "image": null
+          },
+          "solution": {
+            "text": "Erde",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Ist dieser Himmelskörper ein Planet unseres Sonnensystems?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Jupiter",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Pluto",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Saturn",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Titan",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Uranus",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ganymed",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Neptun",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ceres",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Merkur",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Eris",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "In welchem Jahr fand dieses DFB-Pokal-Finale statt, an dem der VfB Stuttgart beteiligt war?",
+        "image": null
+      },
+      "category": "Sport",
+      "items": [
+        {
+          "label": {
+            "text": "Sieg gegen 1. FC Köln (erstes Finale)",
+            "image": null
+          },
+          "solution": {
+            "text": "1954",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sieg gegen Fortuna Düsseldorf",
+            "image": null
+          },
+          "solution": {
+            "text": "1958",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederlage gegen Bayern München (5:2)",
+            "image": null
+          },
+          "solution": {
+            "text": "1986",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sieg gegen Energie Cottbus (2:0)",
+            "image": null
+          },
+          "solution": {
+            "text": "1997",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederlage gegen 1. FC Nürnberg (n.V.)",
+            "image": null
+          },
+          "solution": {
+            "text": "2007",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Niederlage gegen FC Bayern München (2:3)",
+            "image": null
+          },
+          "solution": {
+            "text": "2013",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Sieg gegen Arminia Bielefeld (4:2)",
+            "image": null
+          },
+          "solution": {
+            "text": "2025",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Meistertitel im selben Jahr wie Pokalsieg",
+            "image": null
+          },
+          "solution": {
+            "text": "1954",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Finale im Berliner Olympiastadion (erstmals)",
+            "image": null
+          },
+          "solution": {
+            "text": "1986",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Jahr des bisher letzten Meistertitels",
+            "image": null
+          },
+          "solution": {
+            "text": "2007",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Was berechnet diese physikalische oder mathematische Formel?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "E = mc²",
+            "image": null
+          },
+          "solution": {
+            "text": "Energie-Masse-Äquivalenz",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "F = m · a",
+            "image": null
+          },
+          "solution": {
+            "text": "Kraft (Newton 2. Gesetz)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "a² + b² = c²",
+            "image": null
+          },
+          "solution": {
+            "text": "Hypotenuse (Pythagoras)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "A = π · r²",
+            "image": null
+          },
+          "solution": {
+            "text": "Kreisfläche",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "U = 2π · r",
+            "image": null
+          },
+          "solution": {
+            "text": "Kreisumfang",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "P = U · I",
+            "image": null
+          },
+          "solution": {
+            "text": "Elektrische Leistung",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "F = G · (m₁ · m₂) / r²",
+            "image": null
+          },
+          "solution": {
+            "text": "Gravitationskraft",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "v = λ · f",
+            "image": null
+          },
+          "solution": {
+            "text": "Wellengeschwindigkeit",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "V = (4/3) · π · r³",
+            "image": null
+          },
+          "solution": {
+            "text": "Kugelvolumen",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "s = v · t",
+            "image": null
+          },
+          "solution": {
+            "text": "Zurückgelegter Weg",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welches physikalische Gesetz oder Prinzip beschreibt dieses Phänomen?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Jeder Körper bleibt in Ruhe, sofern keine Kraft wirkt",
+            "image": null
+          },
+          "solution": {
+            "text": "Trägheitsgesetz (Newton 1.)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gleiche Atome, aber unterschiedliche Neutronenzahl",
+            "image": null
+          },
+          "solution": {
+            "text": "Isotope",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Licht verhält sich wie Welle und Teilchen",
+            "image": null
+          },
+          "solution": {
+            "text": "Welle-Teilchen-Dualismus",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Energie kann nicht erzeugt oder vernichtet werden",
+            "image": null
+          },
+          "solution": {
+            "text": "Energieerhaltungssatz",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Elektronen springen auf niedrigere Energieniveaus",
+            "image": null
+          },
+          "solution": {
+            "text": "Emission (Spektrallinien)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Auftriebskraft gleich Gewicht des verdrängten Fluids",
+            "image": null
+          },
+          "solution": {
+            "text": "Archimedisches Prinzip",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Bei Erwärmung dehnen sich Gase aus",
+            "image": null
+          },
+          "solution": {
+            "text": "Wärmeausdehnung / Gay-Lussac",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Position und Impuls eines Teilchens nicht gleichzeitig genau messbar",
+            "image": null
+          },
+          "solution": {
+            "text": "Heisenbergsche Unschärferelation",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Druckdifferenz erzeugt Auftrieb an Tragflächen",
+            "image": null
+          },
+          "solution": {
+            "text": "Bernoulli-Prinzip",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Wechselwirkung zweier Körper: gleich große, entgegengesetzte Kräfte",
+            "image": null
+          },
+          "solution": {
+            "text": "Reaktionsprinzip (Newton 3.)",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welche Zahl ergibt sich bei dieser mathematischen Aufgabe?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Summe aller Winkel im Dreieck (°)",
+            "image": null
+          },
+          "solution": {
+            "text": "180",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Summe aller Winkel im Viereck (°)",
+            "image": null
+          },
+          "solution": {
+            "text": "360",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fläche eines Quadrats mit Seite 7",
+            "image": null
+          },
+          "solution": {
+            "text": "49",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Primzahlen zwischen 1 und 10",
+            "image": null
+          },
+          "solution": {
+            "text": "4",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fakultät von 5 (5!)",
+            "image": null
+          },
+          "solution": {
+            "text": "120",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Binomialkoeffizient (4 über 2)",
+            "image": null
+          },
+          "solution": {
+            "text": "6",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Fibonacci-Folge: Glied nach 8",
+            "image": null
+          },
+          "solution": {
+            "text": "13",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dezimalwert von 1/8",
+            "image": null
+          },
+          "solution": {
+            "text": "0,125",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Kanten eines Würfels",
+            "image": null
+          },
+          "solution": {
+            "text": "12",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Ecken eines Dodekaeders",
+            "image": null
+          },
+          "solution": {
+            "text": "20",
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welche Aussage zur Mathematik ist korrekt?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "π ist eine irrationale Zahl",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "0 ist eine gerade Zahl",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Jede Primzahl ist ungerade",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "√2 lässt sich als Bruch darstellen",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Die Eulersche Zahl e ≈ 2,718",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Ein Würfel hat 12 Kanten",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "Das Produkt zweier negativer Zahlen ist negativ",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "1 ist eine Primzahl",
+            "image": null
+          },
+          "solution": {
+            "text": "Falsch",
+            "type": "boolean_false"
+          }
+        },
+        {
+          "label": {
+            "text": "Ein Tetraeder hat 4 Flächen",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        },
+        {
+          "label": {
+            "text": "log₁₀(100) = 2",
+            "image": null
+          },
+          "solution": {
+            "text": "Richtig",
+            "type": "boolean_true"
+          }
+        }
+      ]
+    },
+    {
+      "prompt": {
+        "text": "Welches Phänomen oder Objekt im Weltall beschreibt diese Aussage?",
+        "image": null
+      },
+      "category": "Wissenschaft",
+      "items": [
+        {
+          "label": {
+            "text": "Licht kann ihm nicht entkommen",
+            "image": null
+          },
+          "solution": {
+            "text": "Schwarzes Loch",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Überrest einer Supernova-Explosion",
+            "image": null
+          },
+          "solution": {
+            "text": "Neutronenstern",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Nächster Stern zur Sonne",
+            "image": null
+          },
+          "solution": {
+            "text": "Proxima Centauri",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Größte Galaxie unserer lokalen Gruppe",
+            "image": null
+          },
+          "solution": {
+            "text": "Andromeda-Galaxie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Unsere Galaxie heißt",
+            "image": null
+          },
+          "solution": {
+            "text": "Milchstraße",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Eisklumpen mit Schweif",
+            "image": null
+          },
+          "solution": {
+            "text": "Komet",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Gebiet zwischen Mars und Jupiter",
+            "image": null
+          },
+          "solution": {
+            "text": "Asteroidengürtel",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Theorie zum Ursprung des Universums",
+            "image": null
+          },
+          "solution": {
+            "text": "Urknall (Big Bang)",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Dunkelheit, Materie die Licht nicht aussendet",
+            "image": null
+          },
+          "solution": {
+            "text": "Dunkle Materie",
+            "type": "text"
+          }
+        },
+        {
+          "label": {
+            "text": "Mond der gleichzeitig größter im Sonnensystem ist",
+            "image": null
+          },
+          "solution": {
+            "text": "Ganymed (Jupiter)",
+            "type": "text"
           }
         }
       ]

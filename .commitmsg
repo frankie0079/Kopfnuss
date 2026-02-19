@@ -1,0 +1,9 @@
+Fix: Library-Paginierung merkt sich aktuelle Seite beim Bearbeiten von Karten
+
+- Library springt nicht mehr auf Seite 1 zurueck wenn man vom Card-Editor zurueckkehrt
+- Rundenende: Overlay ersetzt durch Aufloesung/Naechste-Karte Buttons mit Kartenflip-Animation
+- revealAllItems() fuer Ring-Komponente hinzugefuegt
+- CSS: Silbentrennung fuer Item-Labels/Loesungen, Spin-Button-Groessen fixiert
+- Kartenset: Label/Solution-Spalten bei Seemannssprache-Karte getauscht
+- CLAUDE.md: Umlaut- und Silbentrennungs-Regeln dokumentiert
+- Cache v74

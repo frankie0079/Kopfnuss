@@ -7,7 +7,7 @@
 
 export const CARDS = {
   "version": 1,
-  "updatedAt": "2026-02-18T11:46:28.834Z",
+  "updatedAt": "2026-02-19T09:19:59.662Z",
   "cards": [
     {
       "prompt": {
@@ -672,101 +672,101 @@ export const CARDS = {
       "items": [
         {
           "label": {
-            "text": "Schiffsjunge",
-            "image": null
-          },
-          "solution": {
             "text": "Moses",
+            "image": null
+          },
+          "solution": {
+            "text": "Schiffsjunge",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "links",
-            "image": null
-          },
-          "solution": {
             "text": "Backbord",
+            "image": null
+          },
+          "solution": {
+            "text": "links",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "rechts",
-            "image": null
-          },
-          "solution": {
             "text": "Steuerbord",
+            "image": null
+          },
+          "solution": {
+            "text": "rechts",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schmuggelschiff",
-            "image": null
-          },
-          "solution": {
             "text": "Blender",
+            "image": null
+          },
+          "solution": {
+            "text": "Schmuggelschiff",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Schiffsgefängnis",
-            "image": null
-          },
-          "solution": {
             "text": "Brig",
+            "image": null
+          },
+          "solution": {
+            "text": "Schiffsgefängnis",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Besatzung",
-            "image": null
-          },
-          "solution": {
             "text": "Crew",
+            "image": null
+          },
+          "solution": {
+            "text": "Besatzung",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Seile",
-            "image": null
-          },
-          "solution": {
             "text": "Ende",
+            "image": null
+          },
+          "solution": {
+            "text": "Seile",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Vorsegel",
-            "image": null
-          },
-          "solution": {
             "text": "Fock",
+            "image": null
+          },
+          "solution": {
+            "text": "Vorsegel",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "Teufel",
-            "image": null
-          },
-          "solution": {
             "text": "Der Gast",
+            "image": null
+          },
+          "solution": {
+            "text": "Teufel",
             "type": "text"
           }
         },
         {
           "label": {
-            "text": "vorne",
+            "text": "Bug",
             "image": null
           },
           "solution": {
-            "text": "Bug",
+            "text": "vorne",
             "type": "text"
           }
         }

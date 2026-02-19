@@ -4,7 +4,7 @@
    dem Spiel-Router.
    ============================================ */
 
-import { router } from '../app.js?v=69';
+import { router } from '../app.js?v=74';
 import { registerBatchImport } from './batch-import.js';
 import { registerLibrary } from './library.js';
 import { registerCardEditor } from './card-editor.js';

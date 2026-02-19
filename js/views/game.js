@@ -5,8 +5,8 @@
    ============================================ */
 
 import { state } from '../state.js';
-import { router } from '../app.js?v=69';
-import { renderRing, updateRingItem, setItemRevealing } from '../components/ring.js';
+import { router } from '../app.js?v=74';
+import { renderRing, updateRingItem, setItemRevealing, revealAllItems } from '../components/ring.js';
 import { renderScoreboard, resetScoreboardState, animateScorePoint } from '../components/scoreboard.js';
 import { TimerComponent } from '../components/timer.js';
 import { audio } from '../services/audio.js';
@@ -103,6 +103,7 @@ function initGame() {
 function destroyGame() {
   document.removeEventListener('visibilitychange', _onVisibilityChange);
   _clearPendingTimeouts();
+  _removeRoundEndButtons();
   if (typeof audio.stopAll === 'function') audio.stopAll();
   if (timer) {
     timer.destroy();
@@ -180,7 +181,7 @@ function _onGameStateChange(event, model) {
 
     case 'roundEnded':
       _stopTimer();
-      _showRoundEndOverlay();
+      _showRoundEndButtons();
       break;
 
     case 'victory':
@@ -194,6 +195,7 @@ function _onGameStateChange(event, model) {
 
 function _renderFullBoard() {
   if (!game || !game.currentCard) return;
+  _removeRoundEndButtons();
 
   // Scoreboard
   renderScoreboard(elScoreboard, game.teams, game.targetScore, game.activeTeam?.id);
@@ -407,26 +409,70 @@ function _onItemResult(result) {
   }, 700);
 }
 
-function _showRoundEndOverlay() {
+function _showRoundEndButtons() {
   if (!game) return;
 
-  // Overlay anzeigen
-  const overlay = document.createElement('div');
-  overlay.className = 'round-overlay';
-  overlay.innerHTML = `
-    <div class="round-overlay-content">
-      <h2>Runde beendet!</h2>
-      <p>Naechste Runde startet gleich...</p>
-    </div>
-  `;
-  elRoot.appendChild(overlay);
+  const skipBtn = document.getElementById('btn-skip-card');
+  if (skipBtn) skipBtn.classList.add('hidden');
 
-  _safeTimeout(() => {
-    overlay.remove();
-    if (game) {
-      game.startRound();
-    }
-  }, 2000);
+  elActions.innerHTML = `
+    <button class="btn-round-end btn-reveal" id="btn-reveal-all">Auflösung</button>
+    <button class="btn-round-end btn-next" id="btn-next-card">Nächste Karte</button>
+  `;
+
+  document.getElementById('btn-reveal-all')?.addEventListener('click', _onRevealAll);
+  document.getElementById('btn-next-card')?.addEventListener('click', _onNextCard);
+}
+
+function _removeRoundEndButtons() {
+  elActions.innerHTML = '';
+}
+
+function _onRevealAll() {
+  if (!game || !game.currentCard) return;
+  revealAllItems(elRing, game.currentCard);
+
+  const btn = document.getElementById('btn-reveal-all');
+  if (btn) {
+    btn.disabled = true;
+    btn.classList.add('used');
+  }
+}
+
+function _onNextCard() {
+  if (!game) return;
+  _removeRoundEndButtons();
+
+  const board = elRoot.querySelector('.game-board');
+  if (!board) {
+    game.startRound();
+    return;
+  }
+
+  board.style.transformOrigin = 'left center';
+  const outAnim = board.animate([
+    { transform: 'perspective(1200px) rotateY(0deg)', opacity: 1 },
+    { transform: 'perspective(1200px) rotateY(-90deg)', opacity: 0 }
+  ], { duration: 350, easing: 'ease-in' });
+
+  outAnim.onfinish = () => {
+    outAnim.cancel();
+    board.style.opacity = '0';
+
+    if (game) game.startRound();
+
+    board.style.transformOrigin = 'right center';
+    const inAnim = board.animate([
+      { transform: 'perspective(1200px) rotateY(90deg)', opacity: 0 },
+      { transform: 'perspective(1200px) rotateY(0deg)', opacity: 1 }
+    ], { duration: 350, easing: 'ease-out' });
+
+    inAnim.onfinish = () => {
+      board.style.transformOrigin = '';
+      board.style.transform = '';
+      board.style.opacity = '';
+    };
+  };
 }
 
 function _onVictory() {

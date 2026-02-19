@@ -55,3 +55,18 @@ Solange offene Fragen bestehen:
 - Nur iPad Landscape
 - Sprache: Deutsch
 - PWA mit Service Worker und IndexedDB
+
+**Umlaute in UI-Texten -- PFLICHT:**
+- Alle sichtbaren Texte (Button-Labels, Overlays, Meldungen, Platzhalter)
+  MÜSSEN echte deutsche Umlaute verwenden: ä, ö, ü, Ä, Ö, Ü, ß.
+- NICHT: ae, oe, ue, ss als Ersatz.
+- Beispiel: "Auflösung", "Nächste Karte", "Spiel beenden" -- NICHT "Aufloesung".
+- In Code-Kommentaren und Dateinamen darf ASCII (ae/oe/ue) verwendet werden.
+
+**Silbentrennung in UI-Texten -- PFLICHT:**
+- Alle Elemente, die laengere Texte anzeigen (Labels, Loesungen, Antworten),
+  MÜSSEN CSS-Silbentrennung aktiviert haben: `-webkit-hyphens: auto; hyphens: auto;`.
+- `<html lang="de">` ist gesetzt -- der Browser nutzt sein deutsches Trennwoerterbuch.
+- NICHT `word-break: break-word` verwenden -- das bricht an beliebigen Stellen ohne Trennstrich.
+- Stattdessen `overflow-wrap: break-word` als Fallback fuer extrem lange Woerter ohne Trennstelle.
+- Gilt fuer: `.item-label`, `.item-solution` und kuenftige Text-Container im Spiel.

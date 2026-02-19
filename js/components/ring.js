@@ -160,3 +160,36 @@ export function setItemRevealing(container, itemId) {
   if (!el) return;
   el.classList.add('revealing');
 }
+
+/**
+ * Alle 10 Items aufdecken (Aufloesung am Rundenende).
+ * Bereits aufgedeckte Items behalten ihre Farbe (correct/wrong).
+ * Noch nicht aufgedeckte Items werden neutral aufgedeckt.
+ *
+ * @param {HTMLElement} container
+ * @param {Object} card  -- aktuelle Karte
+ */
+export function revealAllItems(container, card) {
+  card.items.forEach(item => {
+    const el = container.querySelector(`[data-item-id="${item.id}"]`);
+    if (!el) return;
+
+    el.classList.remove('ring-item-gone', 'disabled', 'revealing');
+    el.classList.add('revealed');
+    el.style.opacity = '';
+    el.style.pointerEvents = '';
+    el.removeAttribute('tabindex');
+    el.removeAttribute('role');
+    el.setAttribute('aria-disabled', 'true');
+
+    const itemTranslate = el.style.getPropertyValue('--item-translate');
+    if (itemTranslate) {
+      el.style.transform = itemTranslate;
+    }
+
+    const content = el.querySelector('.item-content');
+    if (content) {
+      content.innerHTML = _renderItemContent(item, true);
+    }
+  });
+}

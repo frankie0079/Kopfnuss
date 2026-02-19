@@ -278,6 +278,9 @@
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .item-label {
@@ -285,7 +288,6 @@
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.2;
-  word-break: break-word;
 }
 
 .item-solution {
@@ -458,6 +460,66 @@
   font-size: 1.5rem;
   color: var(--text-primary);
   margin-top: var(--space-md);
+}
+
+/* --- Rundenende-Buttons (Aufloesung / Naechste Karte) --- */
+
+.btn-round-end {
+  width: 100%;
+  padding: 18px 14px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  animation: fadeSlideIn 0.4s ease-out;
+}
+
+.btn-round-end.btn-reveal {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  box-shadow: 4px 4px 0 var(--accent-hover);
+}
+
+.btn-round-end.btn-reveal:hover {
+  transform: scale(1.05);
+}
+
+.btn-round-end.btn-reveal.used {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn-round-end.btn-next {
+  background: var(--success);
+  color: var(--text-on-accent);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-round-end.btn-next:hover {
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .btn-round-end.btn-reveal {
+  box-shadow: 4px 4px 0 #8a3520;
+}
+
+[data-theme="dark"] .btn-round-end.btn-next {
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* --- Timer-Anzeige --- */

@@ -16,11 +16,10 @@ export function registerLibrary(app) {
   let currentPage = 0;
 
   app.on('show:library', () => {
-    currentPage = 0;
     render();
   });
 
-  async function render() {
+  async function render({ focusSearch = false, cursorPos = null } = {}) {
     const cards = await cardDB.getAllCards();
     const categories = await cardDB.getAllCategories();
 
@@ -205,15 +204,23 @@ export function registerLibrary(app) {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => {
         searchQuery = searchInput.value;
+        const cursorPos = searchInput.selectionStart;
         currentPage = 0;
-        render();
+        render({ focusSearch: true, cursorPos });
       }, 300);
     });
     view.querySelector('#lib-search-clear')?.addEventListener('click', () => {
       searchQuery = '';
       currentPage = 0;
-      render();
+      render({ focusSearch: true });
     });
+
+    if (focusSearch && searchInput) {
+      searchInput.focus();
+      if (cursorPos != null) {
+        searchInput.setSelectionRange(cursorPos, cursorPos);
+      }
+    }
 
     // Events: Status-Filter
     view.querySelectorAll('.lib-status-btn').forEach(btn => {

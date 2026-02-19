@@ -5,7 +5,7 @@
    ============================================ */
 
 import { state } from '../state.js';
-import { router } from '../app.js?v=66';
+import { router } from '../app.js?v=69';
 import { renderRing, updateRingItem, setItemRevealing } from '../components/ring.js';
 import { renderScoreboard, resetScoreboardState, animateScorePoint } from '../components/scoreboard.js';
 import { TimerComponent } from '../components/timer.js';
@@ -20,6 +20,31 @@ let timer = null;
 // DOM-Referenzen
 let elRoot, elScoreboard, elRing, elActions, elFooter, elTimer;
 
+/** @type {Set<number>} ausstehende setTimeout-IDs, die bei Quit/Destroy geraeumt werden */
+const _pendingTimeouts = new Set();
+
+function _safeTimeout(fn, ms) {
+  const id = setTimeout(() => {
+    _pendingTimeouts.delete(id);
+    fn();
+  }, ms);
+  _pendingTimeouts.add(id);
+  return id;
+}
+
+function _clearPendingTimeouts() {
+  for (const id of _pendingTimeouts) clearTimeout(id);
+  _pendingTimeouts.clear();
+}
+
+// ── Visibility-Handler (iPad: App im Hintergrund) ──
+
+function _onVisibilityChange() {
+  if (!document.hidden || !game) return;
+  _stopTimer();
+  _clearPendingTimeouts();
+}
+
 // ── Init / Destroy ──────────────────────────
 
 function initGame() {
@@ -28,6 +53,8 @@ function initGame() {
     router.navigate('setup');
     return;
   }
+
+  document.addEventListener('visibilitychange', _onVisibilityChange);
 
   // Sounds vorladen (safe check fuer Cache-Kompatibilitaet)
   if (typeof audio.preload === 'function') audio.preload();
@@ -74,6 +101,8 @@ function initGame() {
 }
 
 function destroyGame() {
+  document.removeEventListener('visibilitychange', _onVisibilityChange);
+  _clearPendingTimeouts();
   if (typeof audio.stopAll === 'function') audio.stopAll();
   if (timer) {
     timer.destroy();
@@ -92,9 +121,7 @@ function _startTurnTimer() {
   if (!timer || !game || !game.timerSeconds) return;
 
   timer.start(game.timerSeconds, () => {
-    // Timer abgelaufen -> Team raus
     if (game && game.phase === 'turnActive') {
-      audio.play('wrong');
       game.timerExpired();
     }
   });
@@ -245,8 +272,7 @@ function _startRevealAnimation() {
     </div>
   `;
 
-  // Nach 2 Sekunden: Reveal abschliessen
-  setTimeout(() => {
+  _safeTimeout(() => {
     if (game && game.phase === 'revealing') {
       game.revealComplete();
     }
@@ -308,9 +334,11 @@ function _onSkipCard() {
 }
 
 function _onQuitGame() {
+  _clearPendingTimeouts();
   _stopTimer();
+  audio.stopAll();
+  if (game) game.onStateChange = null;
 
-  // Danke-Overlay anzeigen
   const overlay = document.createElement('div');
   overlay.className = 'round-overlay';
   overlay.innerHTML = `
@@ -321,8 +349,7 @@ function _onQuitGame() {
   `;
   elRoot.appendChild(overlay);
 
-  // Nach Animation (5s) + kurze Pause zurueck zum Setup
-  setTimeout(() => {
+  _safeTimeout(() => {
     router.navigate('setup');
   }, 6000);
 }
@@ -365,7 +392,7 @@ function _onItemResult(result) {
   // Siegeserkennung: Wenn ein Gewinner feststeht (durch markCorrect gesetzt),
   // kurz das Feedback zeigen und dann sofort zum Victory-Screen wechseln.
   if (game.winner) {
-    setTimeout(() => {
+    _safeTimeout(() => {
       if (game) {
         _onVictory();
       }
@@ -373,8 +400,7 @@ function _onItemResult(result) {
     return;
   }
 
-  // Nach 700ms: zum naechsten Zug uebergehen
-  setTimeout(() => {
+  _safeTimeout(() => {
     if (game && game.phase === 'showingResult') {
       game.advanceTurn();
     }
@@ -395,8 +421,7 @@ function _showRoundEndOverlay() {
   `;
   elRoot.appendChild(overlay);
 
-  // Nach 2 Sekunden: naechste Runde starten
-  setTimeout(() => {
+  _safeTimeout(() => {
     overlay.remove();
     if (game) {
       game.startRound();

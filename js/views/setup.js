@@ -5,7 +5,7 @@
    ============================================ */
 
 import { state } from '../state.js';
-import { router } from '../app.js?v=66';
+import { router } from '../app.js?v=69';
 import { GameModel } from '../models/game.js';
 import { CARDS } from '../data/cards.js';
 import { normalizeCardSet } from '../models/card.js';

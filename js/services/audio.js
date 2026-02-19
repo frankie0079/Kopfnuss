@@ -29,6 +29,9 @@ class AudioManager {
     /** @type {HTMLAudioElement|null} */
     this._currentSound = null;
 
+    /** @type {number|null} fade-out setInterval ID */
+    this._fadeIntervalId = null;
+
     this._preloaded = false;
   }
 
@@ -107,7 +110,7 @@ class AudioManager {
    * Timer-Countdown starten (10s durchgehender Clip).
    */
   playTimerCountdown() {
-    if (this._muted) return;
+    if (this._muted || document.hidden) return;
     this.preload();
 
     this.stopTimerCountdown();
@@ -138,7 +141,7 @@ class AudioManager {
    * @param {'correct'|'wrong'|'fanfare'|'tick'} soundName
    */
   play(soundName) {
-    if (this._muted) return;
+    if (this._muted || document.hidden) return;
 
     switch (soundName) {
       case 'correct': this.playCorrect(); break;
@@ -149,18 +152,29 @@ class AudioManager {
   }
 
   /**
-   * Zufaelligen Freudensound (Alias fuer playCorrect).
-   */
-  playRandomJoy() {
-    this.playCorrect();
-  }
-
-  /**
-   * Alle laufenden Sounds sofort stoppen.
+   * Alle laufenden Sounds sofort stoppen und Audio-Session freigeben.
    */
   stopAll() {
     this._stopCurrent();
     this.stopTimerCountdown();
+    this._stopAllPools();
+
+    if (this._ctx && this._ctx.state === 'running') {
+      this._ctx.suspend().catch(() => {});
+    }
+  }
+
+  /**
+   * ALLE Audio-Elemente in ALLEN Pools stoppen (Brute-Force).
+   */
+  _stopAllPools() {
+    for (const pool of this._pools.values()) {
+      for (const a of pool) {
+        a.pause();
+        a.currentTime = 0;
+        a.volume = 1.0;
+      }
+    }
   }
 
   /**
@@ -188,6 +202,7 @@ class AudioManager {
    * @returns {boolean} true wenn erfolgreich
    */
   _playRandom(category, maxDuration = 0) {
+    if (document.hidden) return false;
     const pool = this._pools.get(category);
     if (!pool || pool.length === 0) return false;
 
@@ -219,14 +234,20 @@ class AudioManager {
    * Sanftes Ausblenden eines Audio-Elements (500ms Fade-Out).
    */
   _fadeOut(audioEl) {
+    if (this._fadeIntervalId) {
+      clearInterval(this._fadeIntervalId);
+      this._fadeIntervalId = null;
+    }
+
     const steps = 10;
     const interval = 50;
     let vol = audioEl.volume;
     const dec = vol / steps;
-    const fade = setInterval(() => {
+    this._fadeIntervalId = setInterval(() => {
       vol -= dec;
       if (vol <= 0) {
-        clearInterval(fade);
+        clearInterval(this._fadeIntervalId);
+        this._fadeIntervalId = null;
         audioEl.pause();
         audioEl.currentTime = 0;
         audioEl.volume = 1.0;
@@ -242,6 +263,10 @@ class AudioManager {
       clearTimeout(this._fadeOutTimer);
       this._fadeOutTimer = null;
     }
+    if (this._fadeIntervalId) {
+      clearInterval(this._fadeIntervalId);
+      this._fadeIntervalId = null;
+    }
     if (this._currentSound) {
       this._currentSound.pause();
       this._currentSound.currentTime = 0;
@@ -253,6 +278,7 @@ class AudioManager {
   // ── Synthese-Fallback (Web Audio API) ─────
 
   _ensureContext() {
+    if (document.hidden) return;
     if (!this._ctx) {
       this._ctx = new (window.AudioContext || window.webkitAudioContext)();
     }

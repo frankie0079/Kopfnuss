@@ -4,7 +4,7 @@
    verlinkt zur Kartenverwaltung (Admin).
    ============================================ */
 
-import { router } from '../app.js?v=66';
+import { router } from '../app.js?v=69';
 import { CARDS } from '../data/cards.js';
 
 // ── Init / Destroy ──────────────────────────

@@ -4,8 +4,6 @@
    Fluganimation bei richtiger Antwort.
    ============================================ */
 
-import { audio } from '../services/audio.js';
-
 /** Vorherige aktive Team-ID */
 let _previousActiveId = null;
 
@@ -134,9 +132,6 @@ export function animateScorePoint(ringItemEl, teamId) {
     fly.style.overflow = 'hidden';
     fly.style.background = 'white';
     document.body.appendChild(fly);
-
-    // Zufaelligen Freudensound abspielen
-    audio.playRandomJoy();
 
     // 3 Boegen mit abnehmender Hoehe, Kreis schrumpft stufenweise
     const BOUNCES = 3;
